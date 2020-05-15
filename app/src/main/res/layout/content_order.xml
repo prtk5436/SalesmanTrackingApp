@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Order"
+    tools:showIn="@layout/app_bar_order">
+
+    <LinearLayout
+        android:id="@+id/delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/marginplus2">
+
+        <EditText
+            android:id="@+id/et_id"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:background="@drawable/rect_grayoutline1"
+            android:hint="@string/enter_order_id_to_delete"
+            android:inputType="number"
+            android:paddingStart="@dimen/marginplus3" />
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginplus2"
+            android:background="@drawable/redbtn"
+            android:text="@string/delete"
+            android:textColor="@color/textwhite" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDATA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/delete"
+        android:text="@string/no_data"
+        android:textSize="30dp"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvDATA"
+        android:orientation="vertical"
+        android:padding="@dimen/marginplus2">
+
+        <ListView
+            android:id="@+id/lvlistviewOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </ListView>
+    </LinearLayout>
+
+
+</RelativeLayout>

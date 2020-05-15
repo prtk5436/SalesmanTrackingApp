@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/marginplus2">
+
+        <LinearLayout
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvsale_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Salesman"
+                android:textColor="@color/text"
+                android:textSize="@dimen/text" />
+
+            <TextView
+                android:id="@+id/tvtime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Time : "
+                android:textColor="@color/text"
+                android:textSize="@dimen/textsub" />
+
+            <TextView
+                android:id="@+id/tvaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:maxLines="2"
+                android:text="Location : "
+                android:textColor="@color/textsub"
+                android:textSize="@dimen/textsub"
+
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="218dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <Button
+
+                android:id="@+id/i_btnview_order"
+                style="@android:style/Widget.DeviceDefault.Light.Button"
+                android:layout_width="28dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rect2"
+                android:gravity="center"
+                android:text="i"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="@dimen/text" />
+
+            <Button
+                android:id="@+id/btn_done1"
+                style="@android:style/Widget.DeviceDefault.Light.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/rect"
+                android:gravity="center"
+                android:padding="@dimen/marginplus3"
+                android:text="Done"
+                android:textColor="#fff"
+                android:textSize="@dimen/text" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:background="@color/textsub"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:layout_marginRight="16dp"-->
+    <!--&gt;-->
+
+    <!--</View>-->
+
+</RelativeLayout>

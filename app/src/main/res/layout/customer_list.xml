@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/marginplus3">
+
+    <TextView
+        android:id="@+id/tvname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="@string/name"
+        android:textColor="@color/text"
+        android:textSize="@dimen/text" />
+
+    <TextView
+        android:id="@+id/tvmob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Customer_mobile"
+        android:textColor="@color/textsub"
+        android:textSize="@dimen/textsub" />
+
+
+    <TextView
+        android:id="@+id/tvaddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/address"
+        android:textColor="@color/textsub"
+        android:textSize="@dimen/textsub" />
+
+
+</LinearLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mysts">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon8"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon8"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <service
+            android:name=".Service.MyService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name=".SalesmanDetailsActivity" />
+        <activity android:name=".OTPGenerationActivity" />
+        <activity android:name=".ViewTaskActivity" />
+        <activity android:name=".SalesmanPanelActivity" />
+        <activity android:name=".SalesmanLoginActivity" />
+        <activity android:name=".OrderDetailsActivity" />
+        <activity android:name=".AddProductActivity" />
+        <activity
+            android:name=".Product"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AddOrderActivity" />
+        <activity
+            android:name=".Order"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CustomerRegistrationActivity" />
+        <activity
+            android:name=".Customer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SalesmanRegistrationActivity"
+            android:label="@string/title_activity_SalesmanRegistration" />
+        <activity
+            android:name=".Salesman"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AdminSignUpActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DistributorLoginActivity" />
+        <activity android:name=".UserSelectionActivity" />
+        <activity
+            android:name=".SplacescreenActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

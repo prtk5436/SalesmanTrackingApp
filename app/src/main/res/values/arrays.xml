@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Customer_Name">
+        <item>Mayuri</item>
+        <item>Arati</item>
+        <item>Nilambari</item>
+        <item>Vrushali</item>
+    </string-array>
+    <string-array name="Salesman_Name">
+        <item>Salesman1</item>
+        <item>Salesman2</item>
+        <item>Salesman3</item>
+        <item>Salesman4</item>
+    </string-array>
+    <string-array name="Time_Slot">
+        <item>AM</item>
+        <item>PM</item>
+    </string-array>
+
+
+</resources>
