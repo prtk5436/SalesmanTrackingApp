@@ -73,4 +73,5 @@
     <string name="email_admin">Email</string>
     <string name="todo">TODO</string>
     <string name="new_user_admin">new user?</string>
+    <string name="phone">phone</string>
 </resources>

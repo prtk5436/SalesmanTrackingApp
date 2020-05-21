@@ -1,66 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".AddProductActivity">
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".AddProductActivity">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/product_name"
+            android:textSize="20sp" />
 
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/name"
+            android:inputType="text"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/price"
+            android:textSize="20sp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/product_name"
-                android:textSize="20sp" />
+        <EditText
+            android:id="@+id/et_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/phone"
+            android:inputType="number"
+            android:maxLength="10"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp" />
 
-            <EditText
-                android:id="@+id/et_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/marginplus6"
+            android:background="@color/colorPrimary"
+            android:onClick="add_product"
+            android:text="@string/submit_product"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
 
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="20sp"
-                android:inputType="text"
-                android:autofillHints="" />
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/price"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/et_price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLength="10"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="20sp"
-                android:autofillHints=""
-                android:inputType="number" />
-
-            <Button
-                android:id="@+id/btn_submit"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:onClick="add_product"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/marginplus6"
-                android:background="@color/colorPrimary"
-
-                android:text="@string/submit_product"
-                android:textAllCaps="false"
-                android:textColor="#ffffff"
-                android:textSize="20sp" />
-
-    </ScrollView>
-</RelativeLayout>
+</ScrollView>
