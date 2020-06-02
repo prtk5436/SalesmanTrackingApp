@@ -1,5 +1,5 @@
 # mySTS2 
-**My Diploma Project : Salesman Tracking App***
+**My Diploma Project : Salesman Tracking App**
 
 java files contain backend code of app
 xml files contain UI or frontend code of app 
