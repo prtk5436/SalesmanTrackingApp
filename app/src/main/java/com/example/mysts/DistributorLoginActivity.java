@@ -20,10 +20,10 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class DistributorLoginActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
     EditText etemail, etpassword;
     TextView tv_newuser;
     Context context;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

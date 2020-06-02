@@ -7,10 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.example.mysts.sql.tables.ProductTable;
-import com.example.mysts.sql.tables.SalesmanTable;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ProductModel {
     private static final String TAG = "Product Model";
@@ -21,7 +17,7 @@ public class ProductModel {
         db = DBConnection.getDatabase(context);
     }
 
-    public long addProduct(String name,String price,  int prod_cnt) {
+    public long addProduct(String name, String price, int prod_cnt) {
         ContentValues values = new ContentValues();
         values.put(ProductTable.Columns.NAME, name);
         values.put(ProductTable.Columns.PRICE, price);
@@ -38,9 +34,9 @@ public class ProductModel {
         if (cursor.moveToFirst()) {
             do {
 
-                Log.d(TAG, "showProductDetails name: "+cursor.getString(1));
-                Log.d(TAG, "showProductDetails price: "+cursor.getString(2));
-                Log.d(TAG, "showSalesmanDetails count: "+cursor.getString(3));
+                Log.d(TAG, "showProductDetails name: " + cursor.getString(1));
+                Log.d(TAG, "showProductDetails price: " + cursor.getString(2));
+                Log.d(TAG, "showSalesmanDetails count: " + cursor.getString(3));
             } while (cursor.moveToNext());
         }
         return cursor;
@@ -48,15 +44,15 @@ public class ProductModel {
 
 
     public Cursor getProductDetails(String prdtname) {
-        String name="name";
-        String[] columns ={"price", "productId"};
-        Cursor cursor = db.query(ProductTable.TABLE_NAME, columns, "name=?", new String[] { prdtname }, null, null, null);
-        int price=0, prdt_id=0;
+        String name = "name";
+        String[] columns = {"price", "productId"};
+        Cursor cursor = db.query(ProductTable.TABLE_NAME, columns, "name=?", new String[]{prdtname}, null, null, null);
+        int price = 0, prdt_id = 0;
         if (cursor.moveToFirst()) {
             do {
                 price = cursor.getInt(cursor.getColumnIndex(ProductTable.Columns.PRICE));
-                prdt_id= cursor.getInt(cursor.getColumnIndex(ProductTable.Columns.PROD_ID));
-                Log.d(TAG, "getProductDetails: "+price);
+                prdt_id = cursor.getInt(cursor.getColumnIndex(ProductTable.Columns.PROD_ID));
+                Log.d(TAG, "getProductDetails: " + price);
             } while (cursor.moveToNext());
         }
         return cursor;
@@ -67,8 +63,8 @@ public class ProductModel {
         Log.d(TAG, "Inside getPrdtDetailsOnId: ");
         String productId = "productId";
         String[] columns = {"price", "name"};
-        Cursor cursor = db.query(ProductTable.TABLE_NAME, columns, "productId=?", new String[]{prdt_id+""}, null, null, null);
-        return  cursor;
+        Cursor cursor = db.query(ProductTable.TABLE_NAME, columns, "productId=?", new String[]{prdt_id + ""}, null, null, null);
+        return cursor;
     }
 
 }

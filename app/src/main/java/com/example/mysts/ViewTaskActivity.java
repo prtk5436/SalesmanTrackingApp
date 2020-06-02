@@ -14,7 +14,7 @@ import com.example.mysts.sql.OrderModel;
 
 import static android.content.ContentValues.TAG;
 
-public class ViewTaskActivity  extends AppCompatActivity{
+public class ViewTaskActivity extends AppCompatActivity {
     ListView lvtask_list;
     Context context;
     int sale_id;

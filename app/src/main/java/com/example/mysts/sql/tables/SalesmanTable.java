@@ -10,16 +10,6 @@ package com.example.mysts.sql.tables;
 );*/
 public class SalesmanTable {
     public static final String TABLE_NAME = "salesman_table";
-
-    public static final class Columns {
-        public static final String SALE_ID = "salesmanId",
-                NAME = "name",
-                MOBILE = "mobile",
-                EMAIL_ID = "email_id",
-                PASSWORD = "password",
-                SALE_CNT = "sale_cnt";
-    }
-
     public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME +
             "(" +
             Columns.SALE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -29,6 +19,15 @@ public class SalesmanTable {
             Columns.PASSWORD + " text," +
             Columns.SALE_CNT + " INTEGER" +
             ")";
+
+    public static final class Columns {
+        public static final String SALE_ID = "salesmanId",
+                NAME = "name",
+                MOBILE = "mobile",
+                EMAIL_ID = "email_id",
+                PASSWORD = "password",
+                SALE_CNT = "sale_cnt";
+    }
 
 
  /*  // public static final String TABLE_NAME = "book";

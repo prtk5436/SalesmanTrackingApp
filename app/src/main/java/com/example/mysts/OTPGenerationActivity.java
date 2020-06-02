@@ -26,7 +26,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class OTPGenerationActivity  extends AppCompatActivity implements View.OnClickListener {
+public class OTPGenerationActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView tvorderId, et_mobno, et_cust_name;
     EditText et_otp;

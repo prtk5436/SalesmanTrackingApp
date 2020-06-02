@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,7 +9,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -19,115 +20,117 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@string/add_order"
                 android:textAlignment="center"
-                android:text="Add Order"
-                android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/large"
-                />
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus6"
-                android:orientation="horizontal"
                 android:minHeight="40dp"
-                >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="Select Customer:"
                     android:layout_weight="1"
+                    android:text="@string/select_customer"
                     android:textSize="20sp" />
+
                 <Spinner
                     android:id="@+id/spinner_select_customer"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginplus3"
-                android:orientation="horizontal"
-                android:minHeight="40dp">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:text="Mobile No. :"
-                    android:textSize="20sp" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:id="@+id/tvmob"
-                    android:layout_height="match_parent" />
+                    android:layout_weight="1" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus3"
-                android:orientation="horizontal"
-                android:minHeight="40dp">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:text="Address :"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:id="@+id/tvaddress"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginplus3"
-                android:orientation="horizontal"
                 android:minHeight="40dp"
-                >
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="Select Product:"
                     android:layout_weight="1"
+                    android:text="@string/mobile_no"
                     android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvmob"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marginplus3"
+                android:minHeight="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/address_"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvaddress"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marginplus3"
+                android:minHeight="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/select_product"
+                    android:textSize="20sp" />
+
                 <Spinner
                     android:id="@+id/spinner_select_product"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:minHeight="50dp"/>
+                    android:minHeight="50dp" />
             </LinearLayout>
+
             <TextView
-                android:visibility="gone"
+                android:id="@+id/tvproduct"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/tvproduct"/>
+                android:visibility="gone" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus3"
-                android:orientation="horizontal"
-                android:minHeight="40dp">
+                android:minHeight="40dp"
+                android:orientation="horizontal">
 
                 <TextView
 
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Price :"
+                    android:text="@string/price__"
                     android:textSize="20sp" />
 
                 <TextView
@@ -142,58 +145,62 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus3"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="Assign Order to:"
                     android:layout_weight="1"
-                    android:textSize="@dimen/marginplus4" />
+                    android:text="@string/assign_order_to"
+                    android:textSize="20sp" />
+
                 <Spinner
                     android:id="@+id/spinner_select_salesman"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:minHeight="50dp"/>
+                    android:minHeight="50dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus6"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Time:"
                     android:layout_weight="1"
-                    android:textSize="@dimen/marginplus4" />
+                    android:text="@string/time_"
+                    android:textSize="20sp" />
+
                 <EditText
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
                     android:id="@+id/ettime"
-                    android:hint="time"
-                    />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autofillHints=""
+                    android:hint="@string/time__"
+                    android:inputType="numberDecimal" />
+
                 <Spinner
                     android:id="@+id/spinner_select_time"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:entries="@array/Time_Slot"
-                    android:minHeight="50dp"/>
+                    android:minHeight="50dp" />
             </LinearLayout>
 
             <Button
-                android:onClick="submit_order"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/marginplus6"
                 android:background="@color/colorPrimary"
-                android:text="Submit"
+                android:onClick="submit_order"
+                android:text="@string/submit"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white" />
 

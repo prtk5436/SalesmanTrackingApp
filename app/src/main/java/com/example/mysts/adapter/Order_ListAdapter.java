@@ -24,11 +24,11 @@ import com.example.mysts.sql.tables.TaskTable;
 import static android.content.ContentValues.TAG;
 
 public class Order_ListAdapter extends CursorAdapter {
-   // int count = 0;
+    // int count = 0;
     TextView tvsr_no, tvaddress, tvtime, tvSalesman;
     Button btnview_order;
     String address = "", time = "", mobile = "", salesman_name = "", cus_name = "", prdt_name = "";
-    int order_id,cus_id, sale_id, prdt_id, prdt_price;
+    int order_id, cus_id, sale_id, prdt_id, prdt_price;
 
     public Order_ListAdapter(Context context, Cursor cursor) {
         super(context, cursor, true);
@@ -45,7 +45,7 @@ public class Order_ListAdapter extends CursorAdapter {
     public void bindView(View view, final Context context, Cursor cursor) {
         Log.d(TAG, "bindView: cursor order adapter");
         tvsr_no = view.findViewById(R.id.tvsr_no);
-        tvSalesman=view.findViewById(R.id.tvsalesman);
+        tvSalesman = view.findViewById(R.id.tvsalesman);
         tvaddress = view.findViewById(R.id.tvaddress);
         tvtime = view.findViewById(R.id.tvtime);
         btnview_order = view.findViewById(R.id.btnview_order);
@@ -57,7 +57,7 @@ public class Order_ListAdapter extends CursorAdapter {
             prdt_id = cursor.getInt(cursor.getColumnIndex(TaskTable.Columns.PRDT_ID));
             time = cursor.getString(cursor.getColumnIndex(TaskTable.Columns.TIME));
             Log.d(TAG, "getAllOrder:bindView cus_id" + cus_id);
-              Log.d(TAG, "getAllOrder:bindView order_id" + order_id);
+            Log.d(TAG, "getAllOrder:bindView order_id" + order_id);
             Log.d(TAG, "getAllOrder:bindView sale_id" + sale_id);
             Log.d(TAG, "getAllOrder:bindView prdt_id" + prdt_id);
             Log.d(TAG, "getAllOrder:bindView time" + time);
@@ -97,7 +97,7 @@ public class Order_ListAdapter extends CursorAdapter {
 
 
             tvaddress.setText("Location : " + address);
-            tvSalesman.setText("Salesman : "+salesman_name);
+            tvSalesman.setText("Salesman : " + salesman_name);
             tvsr_no.setText("Order No." + order_id);
             tvtime.setText("Time : " + time);
 

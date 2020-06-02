@@ -10,18 +10,19 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-public class UserSelectionActivity   extends AppCompatActivity implements View.OnClickListener {
+public class UserSelectionActivity extends AppCompatActivity implements View.OnClickListener {
 
     Context context;
     Button btndistri, btnsales;
     String TAG = "TAG";
     TextView tv_newuser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_selection);
         context = this;
-        tv_newuser=findViewById(R.id.tv_newuser);
+        tv_newuser = findViewById(R.id.tv_newuser);
 
         btndistri = (Button) findViewById(R.id.btn_distributor);
         btnsales = (Button) findViewById(R.id.btn_salesman);

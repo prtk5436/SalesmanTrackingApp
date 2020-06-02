@@ -23,12 +23,11 @@ import java.util.List;
 public class DBHelper extends SQLiteOpenHelper {
     private static int version = 2;
     private static String dbname = "SalesmanDB";
+    String TAG = "Error Message";
 
     public DBHelper(Context context) {
         super(context, dbname, null, version);
     }
-
-    String TAG = "Error Message";
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -64,16 +63,15 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public Integer DeleteSalesmanOnId(String id)
-    {
-        SQLiteDatabase db =this.getWritableDatabase();
-        return db.delete(SalesmanTable.TABLE_NAME, "salesmanId = ?",new String[]{id});
+    public Integer DeleteSalesmanOnId(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(SalesmanTable.TABLE_NAME, "salesmanId = ?", new String[]{id});
 
     }
-    public Integer DeleteOrderOnId(String id)
-    {
-        SQLiteDatabase db =this.getWritableDatabase();
-        return db.delete(TaskTable.TABLE_NAME, "order_id = ?",new String[]{id});
+
+    public Integer DeleteOrderOnId(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TaskTable.TABLE_NAME, "order_id = ?", new String[]{id});
 
     }
 
@@ -104,32 +102,30 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
+    public List<String> getAllProduct() {
+        List<String> labels = new ArrayList<>();
 
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + ProductTable.TABLE_NAME;
 
-        public List<String> getAllProduct() {
-            List<String> labels = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
 
-            // Select All Query
-            String selectQuery = "SELECT  * FROM " + ProductTable.TABLE_NAME;
-
-            SQLiteDatabase db = this.getReadableDatabase();
-            Cursor cursor = db.rawQuery(selectQuery, null);
-
-            // looping through all rows and adding to list
-            if (cursor.moveToFirst()) {
-                do {
-                    labels.add(cursor.getString(1));
-                    Log.d(TAG, "getAllLabels: new " + cursor.getString(1));
-                } while (cursor.moveToNext());
-            }
-
-            // closing connection
-            cursor.close();
-            db.close();
-
-            // returning lables
-            return labels;
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                labels.add(cursor.getString(1));
+                Log.d(TAG, "getAllLabels: new " + cursor.getString(1));
+            } while (cursor.moveToNext());
         }
+
+        // closing connection
+        cursor.close();
+        db.close();
+
+        // returning lables
+        return labels;
+    }
 
     public List<String> getAllSalesman() {
         List<String> labels = new ArrayList<>();

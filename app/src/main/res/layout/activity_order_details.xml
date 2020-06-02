@@ -10,8 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-
-        >
+        tools:ignore="UselessParent">
 
         <FrameLayout
             android:layout_width="299dp"
@@ -27,25 +26,26 @@
                     android:id="@+id/ordersummary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="49dp"
-                    android:layout_marginTop="35dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="40dp"
                     android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:contentDescription="@string/todo"
                         android:src="@drawable/order" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="ORDER SUMMARY"
+                        android:text="@string/order_summary"
                         android:textColor="@color/textwhite"
-                        android:textSize="17dp" />
+                        android:textSize="20sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -62,22 +62,23 @@
                         android:layout_gravity="center"
                         android:layout_weight="0.8"
                         android:gravity="right"
-
-                        android:text="Your order no.:"
+                        android:text="@string/your_order_no"
                         android:textColor="@color/text"
-                        android:textSize="16dp" />
+                        android:textSize="20sp"
+                        tools:ignore="RtlHardcoded" />
 
                     <TextView
+                        android:id="@+id/tvOrderno"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tvOrderno"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="6dp"
+                        android:layout_marginStart="6dp"
                         android:layout_weight="1"
                         android:gravity="left"
-                        android:text="#4343"
+                        android:text="@string/_4343"
                         android:textColor="@color/textred"
-                        android:textSize="21dp" />
+                        android:textSize="20sp"
+                        tools:ignore="RtlHardcoded" />
 
                 </LinearLayout>
 
@@ -90,16 +91,17 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="6dp"
-                    android:background="@color/div"></View>
+                    android:background="@color/div" />
 
                 <LinearLayout
                     android:id="@+id/date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/div1"
-                    android:layout_marginLeft="55dp"
+                    android:layout_marginStart="55dp"
                     android:layout_marginTop="16dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
 
 
                     <ImageView
@@ -107,19 +109,22 @@
                         android:layout_width="45dp"
                         android:layout_height="28dp"
                         android:layout_gravity="right"
-                        android:src="@drawable/ic_clock" />
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_clock"
+                        tools:ignore="RtlHardcoded" />
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:id="@+id/tv_time"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="6dp"
-                        android:id="@+id/tv_time"
+                        android:layout_marginStart="6dp"
                         android:layout_weight="1"
                         android:gravity="left"
-                        android:text="TIME"
+                        android:text="@string/time"
                         android:textColor="@color/textred"
-                        android:textSize="21dp" />
+                        android:textSize="20sp"
+                        tools:ignore="RtlHardcoded" />
 
                 </LinearLayout>
 
@@ -128,9 +133,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/date"
-                    android:layout_marginLeft="55dp"
+                    android:layout_marginStart="55dp"
                     android:layout_marginTop="16dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
 
 
                     <ImageView
@@ -138,20 +144,23 @@
                         android:layout_width="45dp"
                         android:layout_height="28dp"
                         android:layout_gravity="right"
-                        android:src="@drawable/ic_location" />
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_location"
+                        tools:ignore="RtlHardcoded" />
 
                     <TextView
 
                         android:id="@+id/tv_address"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="6dp"
+                        android:layout_marginStart="6dp"
                         android:layout_weight="1"
                         android:gravity="left"
-                        android:text="location"
+                        android:text="@string/location"
                         android:textColor="@color/textred"
-                        android:textSize="@dimen/marginplus3" />
+                        android:textSize="20sp"
+                        tools:ignore="RtlHardcoded" />
 
                 </LinearLayout>
 
@@ -164,7 +173,7 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="6dp"
-                    android:background="@color/div"></View>
+                    android:background="@color/div" />
 
                 <LinearLayout
                     android:id="@+id/address"
@@ -178,13 +187,14 @@
 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:contentDescription="@string/todo"
                             android:src="@drawable/arrow" />
                     </LinearLayout>
 
@@ -192,17 +202,17 @@
 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="6dp"
+                        android:layout_marginStart="6dp"
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/tvsale_name"
-
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Salesman Name"
+                            android:layout_marginTop="@dimen/marginplus1"
+                            android:text="@string/salesman_name"
                             android:textColor="@color/text"
-                            android:textSize="17dp"
+                            android:textSize="18sp"
 
                             />
 
@@ -211,38 +221,41 @@
                             android:id="@+id/tvcus_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="13dp"
-                            android:text="customer name."
+                            android:layout_marginTop="15dp"
+                            android:text="@string/customer_name"
                             android:textColor="@color/text"
-                            android:textSize="17dp" />
+                            android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/tv_mob"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="right"
-                            android:text="customer mob."
+                            android:text="@string/customer_mob"
                             android:textColor="@color/text"
-                            android:textSize="@dimen/marginplus3" />
+                            android:textSize="13sp"
+                            tools:ignore="RtlHardcoded" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="34dp"
                             android:layout_height="34dp"
+                            android:contentDescription="@string/todo"
                             android:src="@drawable/truck" />
 
 
                         <ImageView
 
                             android:layout_width="34dp"
-                            android:layout_height="34dp"
-                            android:layout_marginTop="13dp"
+                            android:layout_height="38dp"
+                            android:layout_marginTop="10dp"
+                            android:contentDescription="@string/todo"
                             android:src="@drawable/ic_customer1" />
 
                     </LinearLayout>
@@ -257,20 +270,21 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="6dp"
-                    android:background="@color/div"></View>
+                    android:background="@color/div" />
 
                 <LinearLayout
                     android:id="@+id/items"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/div3"
+                    android:baselineAligned="false"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="5dp"
                         android:layout_weight="1"
@@ -280,18 +294,18 @@
                             android:id="@+id/tvproduct"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableLeft="@drawable/ic_product"
+                            android:drawableStart="@drawable/ic_product"
                             android:drawablePadding="13dp"
-                            android:text="product name"
+                            android:text="@string/product_name_"
                             android:textColor="@color/text"
-                            android:textSize="17dp" />
+                            android:textSize="20sp" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
                         android:layout_marginTop="6dp"
                         android:layout_weight="2"
                         android:orientation="vertical">
@@ -299,9 +313,9 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="* 01"
+                            android:text="@string/_01"
                             android:textColor="@color/textred"
-                            android:textSize="21dp"
+                            android:textSize="20sp"
 
                             />
 
@@ -317,10 +331,9 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="6dp"
-                    android:background="@color/div"></View>
+                    android:background="@color/div" />
 
                 <LinearLayout
-                    android:id="@+id/total"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/div4"
@@ -333,21 +346,23 @@
                         android:layout_gravity="bottom"
                         android:layout_weight="1"
                         android:gravity="right"
-                        android:text="$"
+                        android:text="@string/dollar"
                         android:textColor="@color/textred"
-                        android:textSize="16dp" />
+                        android:textSize="20sp"
+                        tools:ignore="RtlHardcoded" />
 
                     <TextView
                         android:id="@+id/tvprice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="1dp"
+                        android:layout_marginStart="2dp"
                         android:layout_weight="1"
                         android:gravity="left"
-                        android:text="PRICE"
+                        android:text="@string/price_"
                         android:textColor="@color/textred"
-                        android:textSize="26dp" />
+                        android:textSize="20sp"
+                        tools:ignore="RtlHardcoded" />
                 </LinearLayout>
             </RelativeLayout>
         </FrameLayout>

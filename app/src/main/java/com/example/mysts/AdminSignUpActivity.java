@@ -31,18 +31,17 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-public class AdminSignUpActivity extends AppCompatActivity{
+public class AdminSignUpActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
+    static int PReqCode = 1;
+    static int REQUESCODE = 1;
     EditText etemail, etpassword, etCpassword, et_username;
     Button btnsubmit;
-
     TextView newuser;
     ImageView Userpic;
     ProgressBar progressBar;
     Uri uriprofileImg;
-    static int PReqCode = 1;
-    static int REQUESCODE = 1;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +57,7 @@ public class AdminSignUpActivity extends AppCompatActivity{
         btnsubmit = findViewById(R.id.btn_newsubmit);
         Userpic = findViewById(R.id.iv_pic);
         progressBar = findViewById(R.id.progbar);
-        newuser=findViewById(R.id.tv_newuser);
+        newuser = findViewById(R.id.tv_newuser);
 
         Userpic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,7 +161,7 @@ public class AdminSignUpActivity extends AppCompatActivity{
 
                             saveUserInfo(name, uriprofileImg, mAuth.getCurrentUser());
                             finish();
-                            Intent salesman1 = new Intent(AdminSignUpActivity.this,Salesman.class);
+                            Intent salesman1 = new Intent(AdminSignUpActivity.this, Salesman.class);
                             startActivity(salesman1);
                         } else {
                             // If sign in fails, display a message to the user.
@@ -179,7 +178,6 @@ public class AdminSignUpActivity extends AppCompatActivity{
 
                 });
     }
-
 
 
     private void saveUserInfo(final String Name, Uri uriprofileImg, final FirebaseUser currentUser) {

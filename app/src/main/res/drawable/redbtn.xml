@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <shape xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/listview_background_shapeRED"
-        android:shape="rectangle"
-        tools:ignore="MissingDefaultResource">
-        <stroke
-            android:width="0dp"
-            android:color="#4c71f5" />
-        <padding
-            android:bottom="0dp"
-            android:left="0dp"
-            android:right="0dp"
-            android:top="0dp" />
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:shape="rectangle"
+    tools:ignore="MissingDefaultResource">
+    <stroke
+        android:width="0dp"
+        android:color="#4c71f5" />
+    <padding
+        android:bottom="0dp"
+        android:left="0dp"
+        android:right="0dp"
+        android:top="0dp" />
 
-        <corners android:radius="10dp" />
-        <solid android:color="#E80B37" />
+    <corners android:radius="10dp" />
+    <solid android:color="#E80B37" />
 
-        <!--<gradient-->
-        <!--android:startColor="#fff"-->
-        <!--android:endColor="#fff"></gradient>-->
-    </shape>
+    <!--<gradient-->
+    <!--android:startColor="#fff"-->
+    <!--android:endColor="#fff"></gradient>-->
+</shape>

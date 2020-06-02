@@ -350,7 +350,7 @@ import com.example.mysts.sql.tables.SalesmanTable;
 import java.util.List;
 
 
-public class AddOrderActivity  extends AppCompatActivity {
+public class AddOrderActivity extends AppCompatActivity {
     private static final String TAG = "list items: ";
     Spinner spinner_select_time, spinner_select_salesman, spinner_select_product, spinner_select_customer;
     TextView tvproduct, tvprice, tvaddress, tvmob;
@@ -410,21 +410,22 @@ public class AddOrderActivity  extends AppCompatActivity {
             }
         });
     }
+
     private void fetch_customer_details(String label) {
 
         Log.d(TAG, "fetchdetails: item " + label);
-        String address="",mobile="";
+        String address = "", mobile = "";
         Cursor customer_cursor = new CustomerModel(AddOrderActivity.this).getCustomerDetails(label);
         try {
-            if(customer_cursor.moveToFirst())
+            if (customer_cursor.moveToFirst())
                 do {
                     Log.d(TAG, "fetch_customer_details: inside if loop");
                     address = customer_cursor.getString(customer_cursor.getColumnIndex(CustomerTable.Columns.ADDRESS));
                     mobile = customer_cursor.getString(customer_cursor.getColumnIndex(CustomerTable.Columns.MOBILE));
-                    cus_id= customer_cursor.getInt(customer_cursor.getColumnIndex(CustomerTable.Columns.CUST_ID));
+                    cus_id = customer_cursor.getInt(customer_cursor.getColumnIndex(CustomerTable.Columns.CUST_ID));
                     Log.d(TAG, "onItemSelected: address" + address);
                     Log.d(TAG, "onItemSelected: mobile" + mobile);
-                    Log.d(TAG, "fetch_customer_details: id "+ cus_id);
+                    Log.d(TAG, "fetch_customer_details: id " + cus_id);
                 } while (customer_cursor.moveToNext());
             tvaddress.setText("" + address);
             tvmob.setText("" + mobile);
@@ -435,50 +436,51 @@ public class AddOrderActivity  extends AppCompatActivity {
 
     private void add_productname_ToSpinner() {
 
-         DBHelper db = new DBHelper(getApplicationContext());
-         List<String> lables = db.getAllProduct();
-         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lables);
-         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-         spinner_select_product.setAdapter(dataAdapter);
-         click_product();
+        DBHelper db = new DBHelper(getApplicationContext());
+        List<String> lables = db.getAllProduct();
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lables);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_select_product.setAdapter(dataAdapter);
+        click_product();
 
-     }
-     private void click_product()
-     {
-         spinner_select_product.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-             @Override
-             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+    }
 
-                 product = parent.getItemAtPosition(position).toString();
-                 Log.d(TAG, "onItemSelected: product"+product);
-                 fetch_product_details(product);
-                 Toast.makeText(parent.getContext(), "You selected: " + product, Toast.LENGTH_LONG).show();
-             }
-             @Override
-             public void onNothingSelected(AdapterView<?> parent) {
-             }
-         });
-     }
+    private void click_product() {
+        spinner_select_product.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                product = parent.getItemAtPosition(position).toString();
+                Log.d(TAG, "onItemSelected: product" + product);
+                fetch_product_details(product);
+                Toast.makeText(parent.getContext(), "You selected: " + product, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+    }
+
     private void fetch_product_details(String label) {
 
         Log.d(TAG, "fetch_product_details: item " + label);
-        int  price =0;
+        int price = 0;
         Cursor product_cursor = new ProductModel(AddOrderActivity.this).getProductDetails(label);
         try {
-            if(product_cursor.moveToFirst())
+            if (product_cursor.moveToFirst())
                 do {
                     Log.d(TAG, "fetch_product_details: inside if loop");
                     price = product_cursor.getInt(product_cursor.getColumnIndex(ProductTable.Columns.PRICE));
                     Log.d(TAG, "fetch_product_details: price" + price);
-                    prdt_id= product_cursor.getInt(product_cursor.getColumnIndex(ProductTable.Columns.PROD_ID));
-                    Log.d(TAG, "fetch_product_details: prdt_id"+prdt_id);
+                    prdt_id = product_cursor.getInt(product_cursor.getColumnIndex(ProductTable.Columns.PROD_ID));
+                    Log.d(TAG, "fetch_product_details: prdt_id" + prdt_id);
                 } while (product_cursor.moveToNext());
             tvprice.setText("" + price);
         } finally {
             product_cursor.close();
         }
     }
-
 
 
     private void add_salename_ToSpinner() {
@@ -500,7 +502,7 @@ public class AddOrderActivity  extends AppCompatActivity {
 
 
                 Log.d(TAG, "onItemSelected: salesman" + salesman);
-Toast.makeText(parent.getContext(), "You selected: " + salesman, Toast.LENGTH_LONG).show();
+                Toast.makeText(parent.getContext(), "You selected: " + salesman, Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -508,6 +510,7 @@ Toast.makeText(parent.getContext(), "You selected: " + salesman, Toast.LENGTH_LO
             }
         });
     }
+
     private void getTime() {
         spinner_select_time.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -532,10 +535,10 @@ Toast.makeText(parent.getContext(), "You selected: " + salesman, Toast.LENGTH_LO
 
         order_cursor = new SalesmanModel(this).getSalesmanId(salesman);
         try {
-            if(order_cursor.moveToFirst())
+            if (order_cursor.moveToFirst())
                 do {
-                    sale_id= order_cursor.getInt(order_cursor.getColumnIndex(SalesmanTable.Columns.SALE_ID));
-                    Log.d(TAG, "order_cursor: sale_id"+sale_id);
+                    sale_id = order_cursor.getInt(order_cursor.getColumnIndex(SalesmanTable.Columns.SALE_ID));
+                    Log.d(TAG, "order_cursor: sale_id" + sale_id);
                 } while (order_cursor.moveToNext());
             tvprice.setText("" + price);
         } finally {
@@ -543,33 +546,31 @@ Toast.makeText(parent.getContext(), "You selected: " + salesman, Toast.LENGTH_LO
         }
 
 
-        String t= ettime.getText().toString();
-        Log.d(TAG, "submit_order: t : "+t);
+        String t = ettime.getText().toString();
+        Log.d(TAG, "submit_order: t : " + t);
 
-        String finalT= t+" "+time_am_pm;
-        Log.d(TAG, "submit_order: finalT :"+ finalT);
-        Log.d(TAG, "submit_order: time_am_pm"+time_am_pm);
+        String finalT = t + " " + time_am_pm;
+        Log.d(TAG, "submit_order: finalT :" + finalT);
+        Log.d(TAG, "submit_order: time_am_pm" + time_am_pm);
 
         OrderModel model = new OrderModel(this);
-        Log.d(TAG, "submit_order: cus_id"+cus_id);
-        Log.d(TAG, "submit_order: sale_id"+sale_id);
-        Log.d(TAG, "submit_order: prdt_id "+prdt_id);
-        Log.d(TAG, "submit_order: time "+ finalT);
+        Log.d(TAG, "submit_order: cus_id" + cus_id);
+        Log.d(TAG, "submit_order: sale_id" + sale_id);
+        Log.d(TAG, "submit_order: prdt_id " + prdt_id);
+        Log.d(TAG, "submit_order: time " + finalT);
 
-        int order_cnt=0;
-        if(cus_id!=0 && sale_id!=0 && prdt_id!=0 && finalT!=null) {
+        int order_cnt = 0;
+        if (cus_id != 0 && sale_id != 0 && prdt_id != 0 && finalT != null) {
             long id = (long) model.addOrder(cus_id, sale_id, prdt_id, finalT, order_cnt);
-            Log.d(TAG, "submit_order: Id  :"+ id);
+            Log.d(TAG, "submit_order: Id  :" + id);
             if (id != -1) {
                 Toast.makeText(this, "Order Added with id : " + id, Toast.LENGTH_LONG).show();
                 finish();
             } else {
                 Toast.makeText(this, "Failed to add Order.", Toast.LENGTH_LONG).show();
             }
-        }
-        else
-        {
-            Toast.makeText(context,"Do not Enter Empty Field",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Do not Enter Empty Field", Toast.LENGTH_SHORT).show();
         }
         spinner_select_time.setPrompt("Select Time");
         spinner_select_salesman.setPrompt("Select Salesman");

@@ -8,7 +8,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
-                android:text="Destination"
+                android:text="@string/destination"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="40sp"
@@ -29,18 +30,20 @@
             <TextView
                 android:id="@+id/tvOrderno"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/marginplus5"
                 android:layout_weight="4"
-                android:text="Order no. : "
+                android:text="@string/order_no"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/marginplus4" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/et_cust_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:inputType="text" />
+                android:inputType="text"
+                tools:ignore="TextViewEdits" />
 
             <TextView
                 android:id="@+id/et_mobno"
@@ -58,11 +61,11 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="60dp"
                 android:background="@color/colorPrimary"
-                android:visibility="visible"
-                android:text="Generate OTP"
+                android:text="@string/generate_otp"
                 android:textAllCaps="false"
                 android:textColor="#ffffff"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:visibility="visible" />
 
             <EditText
                 android:id="@+id/et_otp"
@@ -71,8 +74,10 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="20dp"
-                android:hint="Enter OTP"
-                android:visibility="gone"/>
+                android:autofillHints=""
+                android:hint="@string/enter_otp"
+                android:inputType="number"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/btn_done"
@@ -84,18 +89,16 @@
                 android:layout_marginRight="60dp"
                 android:layout_marginBottom="60dp"
                 android:background="@color/colorPrimary"
-                android:text="Done"
-                android:visibility="gone"
+                android:text="@string/done"
                 android:textAllCaps="false"
                 android:textColor="#ffffff"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:visibility="gone" />
 
             <android.support.v4.widget.ContentLoadingProgressBar
                 android:id="@+id/progbar"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:layout_below="@+id/et_otp"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="214dp"
                 android:visibility="gone" />
 

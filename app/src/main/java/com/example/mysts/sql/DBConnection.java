@@ -12,7 +12,7 @@ public class DBConnection {
     private static SQLiteDatabase db;
 
     public static SQLiteDatabase getDatabase(Context context) {
-        if ( db == null ) {
+        if (db == null) {
             db = new DBHelper(context).getWritableDatabase();
         }
 

@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Salesman">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello"/>
+        android:text="@string/hello" />
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -32,6 +33,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/ic_add_new"/>
+        app:srcCompat="@drawable/ic_add_new" />
 
 </android.support.design.widget.CoordinatorLayout>

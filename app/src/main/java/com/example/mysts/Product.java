@@ -3,6 +3,7 @@ package com.example.mysts;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -10,7 +11,6 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -27,30 +27,31 @@ import com.example.mysts.sql.ProductModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Product  extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Product extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth auth;
     Context context;
-    String TAG="TAG";
+    String TAG = "TAG";
     FirebaseAuth mAuth;
     FirebaseUser currentUser;
-
+    TextView data;
     ProductAdapter pro_adapter;
     ListView lvlistview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        auth= FirebaseAuth.getInstance();
+        data = findViewById(R.id.tvDATA);
+        auth = FirebaseAuth.getInstance();
         FloatingActionButton fab = findViewById(R.id.fab_addProduct);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Product.this,AddProductActivity.class);
+                Intent i = new Intent(Product.this, AddProductActivity.class);
                 startActivity(i);
-                Toast.makeText(Product.this,"Product",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Product.this, "Product", Toast.LENGTH_SHORT).show();
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
@@ -65,14 +66,17 @@ public class Product  extends AppCompatActivity implements NavigationView.OnNavi
         context = this;
 
 
-
         Log.d(TAG, "onCreate:ShowCustomerList_Activity ");
 
-        lvlistview =(ListView) findViewById(R.id.lvlistviewProduct);
-        Cursor cursor= new ProductModel(this).showProductDetails();
-        pro_adapter= new ProductAdapter(context,cursor);
+        lvlistview = (ListView) findViewById(R.id.lvlistviewProduct);
+        Cursor cursor = new ProductModel(this).showProductDetails();
+        pro_adapter = new ProductAdapter(context, cursor);
         lvlistview.setAdapter(pro_adapter);
-
+        if (pro_adapter.isEmpty())
+            data.setVisibility(View.VISIBLE);
+        else {
+            data.setVisibility(View.GONE);
+        }
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
         UpdateNavHeader();
@@ -107,7 +111,7 @@ public class Product  extends AppCompatActivity implements NavigationView.OnNavi
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_refresh) {
-            Intent i = new Intent(Product.this,Product.class);
+            Intent i = new Intent(Product.this, Product.class);
             startActivity(i);
 
             return true;
@@ -120,33 +124,33 @@ public class Product  extends AppCompatActivity implements NavigationView.OnNavi
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
 
             case R.id.nav_salesman:
                 finish();
-                Intent i2 = new Intent(Product.this,Salesman.class);
+                Intent i2 = new Intent(Product.this, Salesman.class);
                 startActivity(i2);
                 break;
             case R.id.nav_customer:
                 finish();
-                Intent i3 = new Intent(Product.this,Customer.class);
+                Intent i3 = new Intent(Product.this, Customer.class);
                 startActivity(i3);
                 break;
             case R.id.nav_order:
                 finish();
-                Intent i4 = new Intent(Product.this,Order.class);
+                Intent i4 = new Intent(Product.this, Order.class);
                 startActivity(i4);
                 break;
             case R.id.nav_product:
                 finish();
-                Intent i5 = new Intent(Product.this,Product.class);
+                Intent i5 = new Intent(Product.this, Product.class);
                 startActivity(i5);
                 break;
 
-            case R.id.nav_logOut:auth.signOut();
+            case R.id.nav_logOut:
+                auth.signOut();
                 finish();
-                Intent i6 = new Intent(Product.this,UserSelectionActivity.class);
+                Intent i6 = new Intent(Product.this, UserSelectionActivity.class);
                 startActivity(i6);
                 break;
 
@@ -156,6 +160,7 @@ public class Product  extends AppCompatActivity implements NavigationView.OnNavi
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
     public void UpdateNavHeader() {
         NavigationView navigationView = findViewById(R.id.nav_view);
 

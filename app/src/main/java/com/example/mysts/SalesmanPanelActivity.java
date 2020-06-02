@@ -16,31 +16,32 @@ import android.widget.TextView;
 import com.example.mysts.adapter.Salesman_Task_Adapter;
 import com.example.mysts.sql.OrderModel;
 
-public class SalesmanPanelActivity  extends AppCompatActivity{
+public class SalesmanPanelActivity extends AppCompatActivity {
 
     Context context;
     int sale_id;
-    String TAG="TAG";
+    String TAG = "TAG";
 
     ListView lvtask_list;
 
     Salesman_Task_Adapter salesman_task_adapter;
-    Button btn_done1,btn_generateOTP;
+    Button btn_done1, btn_generateOTP;
     TextView tv_closed;
     EditText et_otp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        String TAG="TAG";
+        String TAG = "TAG";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salesman_panel);
-        context=this;
+        context = this;
 
-        lvtask_list= findViewById(R.id.lvtask_list);
-        context=this;
+        lvtask_list = findViewById(R.id.lvtask_list);
+        context = this;
         btn_generateOTP = findViewById(R.id.btn_generateOTP);
-        et_otp=findViewById(R.id.et_otp);
+        et_otp = findViewById(R.id.et_otp);
 
-        btn_done1=findViewById(R.id.btn_done1);
+        btn_done1 = findViewById(R.id.btn_done1);
         Log.d(TAG, "onCreate: Inside View Task Activity");
 
 
@@ -49,19 +50,21 @@ public class SalesmanPanelActivity  extends AppCompatActivity{
             sale_id = extras.getInt("sale_id");
         }
 
-        Log.d(TAG, "onCreate: Inside Show Order Activity sale_id"+sale_id);
+        Log.d(TAG, "onCreate: Inside Show Order Activity sale_id" + sale_id);
         Cursor cursor = new OrderModel(this).getAllOrder();
         Log.d(TAG, "onCreate: Cursor to Adapter");
-        salesman_task_adapter= new Salesman_Task_Adapter(context,cursor);
+        salesman_task_adapter = new Salesman_Task_Adapter(context, cursor);
         lvtask_list.setAdapter(salesman_task_adapter);
         Log.d(TAG, "onCreate: Adapter to cusro");
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.salesman_logout, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

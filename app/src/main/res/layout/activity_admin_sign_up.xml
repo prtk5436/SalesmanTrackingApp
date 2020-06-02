@@ -13,6 +13,7 @@
         android:gravity="center"
         android:orientation="vertical">
 
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -20,30 +21,37 @@
             android:gravity="center"
             android:text="@string/new_user"
             android:textColor="@color/colorLightAccent"
-            android:textSize="@dimen/marginplus8" />
+            android:textSize="40sp" />
 
-        <ImageView
-            android:id="@+id/iv_pic"
-            android:layout_width="170dp"
-            android:layout_height="170dp"
-            android:layout_marginTop="@dimen/marginplus1"
-            android:background="@drawable/ic_camera"
-            android:scaleType="centerCrop"
-            android:contentDescription="@string/todo" />
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <android.support.v4.widget.ContentLoadingProgressBar
-            android:id="@+id/progbar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone" />
+            <ImageView
+                android:id="@+id/iv_pic"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_marginTop="@dimen/marginplus1"
+                android:background="@drawable/ic_camera"
+                android:contentDescription="@string/todo"
+                android:scaleType="centerCrop" />
 
-        <TextView
-            android:id="@+id/click"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/tap_on_camera_to_add_img"
-            android:textSize="@dimen/marginplus2" />
+            <android.support.v4.widget.ContentLoadingProgressBar
+                android:id="@+id/progbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/tap_on_camera_to_add_img"
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
+        </android.support.v7.widget.CardView>
+
+
     </LinearLayout>
 
     <ScrollView
@@ -54,97 +62,103 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/marginplus2">
+            android:layout_margin="@dimen/marginplus1"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus2"
                 android:text="@string/company_name"
-                android:textSize="@dimen/marginplus3" />
+                android:textSize="15sp" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimaryDark"
                 android:autofillHints=""
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/colorPrimaryDark"
+                tools:ignore="LabelFor" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus2"
                 android:text="@string/company_address"
-                android:textSize="@dimen/marginplus3" />
+                android:textSize="15sp" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:importantForAutofill="no"
                 android:inputType="text"
                 android:textColor="@color/colorPrimaryDark"
-                android:importantForAutofill="no" />
+                tools:ignore="LabelFor" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus2"
                 android:text="@string/user_name"
-                android:textSize="@dimen/marginplus3" />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/et_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimaryDark"
                 android:importantForAutofill="no"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/colorPrimaryDark"
+                tools:ignore="LabelFor" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus2"
                 android:text="@string/email_address"
-                android:textSize="@dimen/marginplus3" />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/etemail"
                 android:layout_width="match_parent"
-                android:textColor="@color/colorPrimaryDark"
                 android:layout_height="wrap_content"
+                android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
-                android:importantForAutofill="no" />
+                android:textColor="@color/colorPrimaryDark"
+                tools:ignore="LabelFor" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus3"
                 android:text="@string/new_password"
-                android:textSize="@dimen/marginplus3" />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/etpassword"
-                android:textColor="@color/colorLightAccent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:importantForAutofill="no" />
+                android:textColor="@color/colorLightAccent"
+                tools:ignore="LabelFor" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus3"
                 android:text="@string/confirm_password"
-                android:textSize="@dimen/marginplus3" />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/etCpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorLightAccent"
                 android:layout_marginBottom="@dimen/marginplus3"
                 android:autofillHints=""
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColor="@color/colorLightAccent"
+                tools:ignore="LabelFor" />
 
             <Button
                 android:id="@+id/btn_newsubmit"
@@ -152,8 +166,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/marginplus2"
-                android:padding="@dimen/marginplus3"
                 android:background="@color/colorPrimary"
+                android:padding="@dimen/marginplus3"
                 android:text="@string/submit"
                 android:textColor="#ffffff"
                 android:textSize="25sp" />

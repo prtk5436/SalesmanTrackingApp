@@ -29,7 +29,7 @@ public class Salesman_Task_Adapter extends CursorAdapter {
     int count = 0;
 
     DBHelper dbHelper;
-    Button btnview_order, btn_done1,btn_generateOTP;
+    Button btnview_order, btn_done1, btn_generateOTP;
     TextView tvsale_name, tvaddress, tvtime, tvorderId;
     String address = "", time = "", mobile = "", salesman_name = "", cus_name = "", prdt_name = "";
     int order_id, cus_id, sale_id, prdt_id, prdt_price;
@@ -50,7 +50,7 @@ public class Salesman_Task_Adapter extends CursorAdapter {
     public void bindView(View view, final Context context, Cursor cursor) {
         Log.d(TAG, "bindView: ");
 
-        btnview_order= view.findViewById(R.id.i_btnview_order);
+        btnview_order = view.findViewById(R.id.i_btnview_order);
         tvsale_name = (TextView) view.findViewById(R.id.tvsale_name);
         tvaddress = (TextView) view.findViewById(R.id.tvaddress);
         tvtime = (TextView) view.findViewById(R.id.tvtime);
@@ -118,16 +118,16 @@ public class Salesman_Task_Adapter extends CursorAdapter {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent= new Intent(context, OrderDetailsActivity.class);
+                    Intent intent = new Intent(context, OrderDetailsActivity.class);
 
                     intent.putExtra("order_no", order_id);
                     intent.putExtra("time", time);
-                    intent.putExtra("cus_name",cus_name);
-                    intent.putExtra("address",address);
-                    intent.putExtra("mobile",mobile);
-                    intent.putExtra("prdt_name",prdt_name);
-                    intent.putExtra("prdt_price",prdt_price);
-                    intent.putExtra("salesman_name",salesman_name);
+                    intent.putExtra("cus_name", cus_name);
+                    intent.putExtra("address", address);
+                    intent.putExtra("mobile", mobile);
+                    intent.putExtra("prdt_name", prdt_name);
+                    intent.putExtra("prdt_price", prdt_price);
+                    intent.putExtra("salesman_name", salesman_name);
                     context.startActivity(intent);
 
                     // context.startActivity(new Intent(context, OTPGenerationActivity.class));
@@ -139,10 +139,10 @@ public class Salesman_Task_Adapter extends CursorAdapter {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, OTPGenerationActivity.class);
-                    intent.putExtra("order_id",order_id);
-                    intent.putExtra("cus_id",cus_id);
-                    intent.putExtra("mobile",mobile);
-                    intent.putExtra("cus_name",cus_name);
+                    intent.putExtra("order_id", order_id);
+                    intent.putExtra("cus_id", cus_id);
+                    intent.putExtra("mobile", mobile);
+                    intent.putExtra("cus_name", cus_name);
                     context.startActivity(intent);
 
                     // context.startActivity(new Intent(context, OTPGenerationActivity.class));

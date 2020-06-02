@@ -8,9 +8,6 @@ import android.util.Log;
 
 import com.example.mysts.sql.tables.CustomerTable;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CustomerModel {
     private static final String TAG = "Customer Model";
     SQLiteDatabase db;
@@ -46,8 +43,6 @@ public class CustomerModel {
     }
 
 
-
-
     public Cursor getCustomerDetails(String cusname) {
         Log.d(TAG, "getCustomerDetails: inside method");
         String[] columns = {"address", "mobile", "customerId"};
@@ -69,8 +64,8 @@ public class CustomerModel {
     public Cursor getCusDetailsOnId(int cust_id) {
         String cus_Id = "customerId";
         String[] columns = {"address", "mobile", "name"};
-        Cursor cursor = db.query(CustomerTable.TABLE_NAME, columns, "customerId=?", new String[]{cust_id+""}, null, null, null);
-        return  cursor;
+        Cursor cursor = db.query(CustomerTable.TABLE_NAME, columns, "customerId=?", new String[]{cust_id + ""}, null, null, null);
+        return cursor;
 
     }
 

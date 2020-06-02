@@ -121,7 +121,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class SalesmanModel {
     private static final String TAG = "Salesman Model";
     SQLiteDatabase db;
@@ -131,13 +130,13 @@ public class SalesmanModel {
         db = DBConnection.getDatabase(context);
     }
 
-    public long addSalesman(String name,String email, String password, String mobile,  int sale_cnt) {
+    public long addSalesman(String name, String email, String password, String mobile, int sale_cnt) {
         ContentValues values = new ContentValues();
         values.put(SalesmanTable.Columns.NAME, name);
-        values.put(SalesmanTable.Columns.EMAIL_ID,email);
+        values.put(SalesmanTable.Columns.EMAIL_ID, email);
         values.put(SalesmanTable.Columns.MOBILE, mobile);
         values.put(SalesmanTable.Columns.PASSWORD, password);
-        values.put(SalesmanTable.Columns.SALE_CNT,sale_cnt);
+        values.put(SalesmanTable.Columns.SALE_CNT, sale_cnt);
 
         long id = db.insert(SalesmanTable.TABLE_NAME, null, values);
         return id;
@@ -149,18 +148,18 @@ public class SalesmanModel {
         // Cursor cursor = db.rawQuery("select *  from salesman_table", null);
         if (cursor.moveToFirst()) {
             do {
-                Log.d(TAG, "showSalesmanDetails id: "+cursor.getString(1));
-                Log.d(TAG, "showSalesmanDetails name: "+cursor.getString(2));
-                Log.d(TAG, "showSalesmanDetails email: "+cursor.getString(3));
-                Log.d(TAG, "showSalesmanDetails password: "+cursor.getString(4));
-                Log.d(TAG, "showSalesmanDetails count: "+cursor.getString(5));
+                Log.d(TAG, "showSalesmanDetails id: " + cursor.getString(1));
+                Log.d(TAG, "showSalesmanDetails name: " + cursor.getString(2));
+                Log.d(TAG, "showSalesmanDetails email: " + cursor.getString(3));
+                Log.d(TAG, "showSalesmanDetails password: " + cursor.getString(4));
+                Log.d(TAG, "showSalesmanDetails count: " + cursor.getString(5));
             } while (cursor.moveToNext());
         }
         return cursor;
     }
 
 
-    public List<String> getAllSalesman(){
+    public List<String> getAllSalesman() {
         List<String> labels = new ArrayList<>();
 
         // Select All Query
@@ -183,15 +182,16 @@ public class SalesmanModel {
         // returning lables
         return labels;
     }
+
     public Cursor getSalesmanId(String salename) {
         Log.d(TAG, "getSalesmanId: inside method");
-        String name="name";
-        String[] columns ={"salesmanId"};
-        Cursor cursor = db.query(SalesmanTable.TABLE_NAME, columns, "name=?", new String[] { salename }, null, null, null);
+        String name = "name";
+        String[] columns = {"salesmanId"};
+        Cursor cursor = db.query(SalesmanTable.TABLE_NAME, columns, "name=?", new String[]{salename}, null, null, null);
         if (cursor.moveToFirst()) {
             do {
-               int salesman_id= cursor.getInt(cursor.getColumnIndex("salesmanId"));
-                Log.d(TAG, "getSalesmanId: salesmanId"+salesman_id);
+                int salesman_id = cursor.getInt(cursor.getColumnIndex("salesmanId"));
+                Log.d(TAG, "getSalesmanId: salesmanId" + salesman_id);
 
             } while (cursor.moveToNext());
         }
@@ -201,9 +201,9 @@ public class SalesmanModel {
     public Cursor getSaleDetailsOnId(int sales_id) {
         Log.d(TAG, "Inside getSaleDetailsOnId: ");
         String salesmanId = "salesmanId";
-        String[] columns = {"name","email_id","mobile","password","sale_cnt"};
-        Cursor cursor = db.query(SalesmanTable.TABLE_NAME, columns, "salesmanId=?", new String[]{sales_id+""}, null, null, null);
-        return  cursor;
+        String[] columns = {"name", "email_id", "mobile", "password", "sale_cnt"};
+        Cursor cursor = db.query(SalesmanTable.TABLE_NAME, columns, "salesmanId=?", new String[]{sales_id + ""}, null, null, null);
+        return cursor;
     }
 
     public int incrementSaleCnt(int sale_id) {
@@ -238,7 +238,7 @@ public class SalesmanModel {
                 db.endTransaction();
             }
         }
-    return sale_cnt;
+        return sale_cnt;
     }
 }
 

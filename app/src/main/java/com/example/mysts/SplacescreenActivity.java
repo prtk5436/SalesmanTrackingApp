@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class SplacescreenActivity  extends AppCompatActivity {
+public class SplacescreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,9 +16,9 @@ public class SplacescreenActivity  extends AppCompatActivity {
 
                 try {
                     // Thread will sleep for 5 seconds
-                    sleep(2*1000);
+                    sleep(2 * 1000);
 
-                    Intent intent = new Intent(SplacescreenActivity.this,UserSelectionActivity.class);
+                    Intent intent = new Intent(SplacescreenActivity.this, UserSelectionActivity.class);
                     startActivity(intent);
 
                     // After 5 seconds redirect to another intent

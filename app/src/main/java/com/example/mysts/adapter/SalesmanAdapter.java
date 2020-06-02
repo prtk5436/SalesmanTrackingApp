@@ -34,7 +34,7 @@ public class SalesmanAdapter extends CursorAdapter {
 
     @Override
     public void bindView(final View view, final Context context, Cursor cursor) {
-       // TextView tvID = view.findViewById(R.id.tvID);
+        // TextView tvID = view.findViewById(R.id.tvID);
         TextView tvname = view.findViewById(R.id.tvname);
         TextView tvmob = view.findViewById(R.id.tvmob);
         //TextView tvemail = view.findViewById(R.id.tvemail);
@@ -54,7 +54,7 @@ public class SalesmanAdapter extends CursorAdapter {
         Log.d(TAG, "bindView: " + id);
         Log.d(TAG, "bindView: password " + password);
 
-         //tvID.setText("Salesman ID : "+id);
+        //tvID.setText("Salesman ID : "+id);
         tvmob.setText("Mobile : " + mobile);
         //tvemail.setText("Email : "+email);
         tvname.setText("Name : " + name);
