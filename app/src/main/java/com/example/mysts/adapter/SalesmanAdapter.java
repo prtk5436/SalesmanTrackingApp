@@ -59,17 +59,20 @@ public class SalesmanAdapter extends CursorAdapter {
         //tvemail.setText("Email : "+email);
         tvname.setText("Name : " + name);
         final String url = et_url.getText().toString().trim();
-        btnget_location.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(url));
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
-                context.startActivity(intent);
-            }
-        });
+        if (url.isEmpty()) {
+            et_url.setError("enter link");
+        } else {
+            btnget_location.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(url));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+                    context.startActivity(intent);
+                }
+            });
 
-
+        }
         i_btnview_salesman.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

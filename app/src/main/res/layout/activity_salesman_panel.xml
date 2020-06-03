@@ -21,6 +21,7 @@
     <ListView
         android:id="@+id/lvtask_list"
         android:layout_width="match_parent"
+        android:dividerHeight="@dimen/marginplus1"
         android:layout_height="wrap_content"
         android:background="#36FAFAFA" />
 

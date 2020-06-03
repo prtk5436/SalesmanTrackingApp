@@ -81,7 +81,7 @@
                     android:layout_marginTop="15dp"
                     android:background="@drawable/rect_grayoutline1"
                     android:orientation="vertical"
-                    android:padding="15dp">
+                    android:padding="10dp">
 
                     <EditText
                         android:id="@+id/etemail"
@@ -93,7 +93,7 @@
                         android:inputType="text"
                         android:textColor="@color/black"
                         android:textColorHint="@color/black"
-                        android:textSize="30sp"
+                        android:textSize="20sp"
                         tools:ignore="LabelFor,TextFields" />
                 </LinearLayout>
 
@@ -114,7 +114,7 @@
                     android:layout_marginTop="15dp"
                     android:background="@drawable/rect_grayoutline1"
                     android:orientation="vertical"
-                    android:padding="15dp">
+                    android:padding="10dp">
 
                     <EditText
 
@@ -128,7 +128,7 @@
                         android:maxLength="10"
                         android:textColor="@color/black"
                         android:textColorHint="@color/black"
-                        android:textSize="30sp"
+                        android:textSize="20sp"
                         tools:ignore="LabelFor,TextFields" />
                 </LinearLayout>
 

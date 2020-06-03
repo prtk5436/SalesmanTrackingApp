@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,9 +10,11 @@
         android:id="@+id/tvname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginplus1"
         android:text="@string/name"
         android:textColor="@color/text"
-        android:textSize="@dimen/text" />
+        android:textSize="15sp"
+        tools:ignore="SpUsage" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,46 +26,51 @@
             android:id="@+id/tvmob"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginplus1"
             android:layout_weight="1"
-            android:text="Mobile"
+            android:text="@string/mobile"
             android:textColor="@color/text"
-            android:textSize="@dimen/text" />
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/i_btnview_salesman"
             style="@android:style/Widget.DeviceDefault.Light.Button"
-            android:layout_width="21dp"
+            android:layout_width="20dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginRight="@dimen/marginplus5"
+            android:layout_marginEnd="@dimen/marginplus5"
             android:background="@drawable/rect2"
             android:gravity="center"
-            android:text="i"
+            android:text="@string/i"
             android:textAllCaps="false"
-            android:textColor="#fff"
-            android:textSize="@dimen/text" />
+            android:textColor="@color/textred"
+            android:textSize="16sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="175dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="2.5"
             android:background="@drawable/rect_grayoutline1"
             android:padding="3dp">
 
             <EditText
                 android:id="@+id/et_url"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_margin="@dimen/marginplus1"
+                android:autofillHints=""
                 android:hint="@string/copy_amp_paste_location_url_link_shared_by_salesman"
+                android:inputType="textUri"
                 android:lines="2"
-                android:textSize="@dimen/marginplus2" />
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
         </LinearLayout>
 
         <Button
@@ -70,7 +78,7 @@
             style="@android:style/Widget.DeviceDefault.Light.Button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/marginplus3"
+            android:layout_marginStart="@dimen/marginplus3"
             android:layout_weight="1"
             android:background="@drawable/rectgreen"
             android:gravity="center"

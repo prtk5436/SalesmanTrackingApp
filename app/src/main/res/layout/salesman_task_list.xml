@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:text="Salesman"
                 android:textColor="@color/text"
-                android:textSize="@dimen/text" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tvtime"
@@ -31,7 +31,7 @@
                 android:layout_marginTop="6dp"
                 android:text="Time : "
                 android:textColor="@color/text"
-                android:textSize="@dimen/textsub" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tvaddress"
@@ -41,7 +41,7 @@
                 android:maxLines="2"
                 android:text="Location : "
                 android:textColor="@color/textsub"
-                android:textSize="@dimen/textsub"
+                android:textSize="15sp"
 
                 />
 
@@ -67,8 +67,8 @@
                 android:gravity="center"
                 android:text="i"
                 android:textAllCaps="false"
-                android:textColor="#fff"
-                android:textSize="@dimen/text" />
+                android:textColor="@color/textred"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/btn_done1"

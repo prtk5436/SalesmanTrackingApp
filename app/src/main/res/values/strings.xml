@@ -77,6 +77,9 @@
     <string name="dollar">$</string>
     <string name="price_">PRICE</string>
     <string name="add_order">Add Order</string>
+    <string name="add_customer">Add New Customer</string>
+    <string name="add_salesman">Add New Salesman</string>
+    <string name="add_product">Add Product</string>
     <string name="select_customer">Select Customer:</string>
     <string name="mobile_no">Mobile No. :</string>
     <string name="address_">Address :</string>
@@ -89,10 +92,13 @@
     <string name="enter_mobile">Enter Mobile:</string>
     <string name="enter_email">Enter Email:</string>
     <string name="enter_password">Enter Password:</string>
-    <string name="saleman_login">Saleman Login</string>
+    <string name="saleman_login">Salesman Login</string>
     <string name="password">Password</string>
     <string name="login">LOGIN</string>
     <string name="new_id_amp_password_given_by_distributor"><![CDATA[New? ID & PASSWORD given by distributor..]]></string>
     <string name="task_list">Task List</string>
     <string name="other">Other</string>
+    <string name="customer_name_">Customer Name:</string>
+    <string name="mobile_">Mobile:</string>
+    <string name="i">i</string>
 </resources>
