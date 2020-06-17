@@ -1,8 +1,8 @@
 # mySTS2 
 **My Diploma Project : Salesman Tracking App**
 
-java files contain backend code of app
-xml files contain UI or frontend code of app 
+java files contain backend code of app.
+xml files contain UI or frontend code of app. 
 
 
 ***To track the realtime location of salesman follow steps give below :
@@ -20,7 +20,7 @@ Admin with this link can see salesman location for as long as you choose, up to 
 1)Firebase Authentication.
 2)Database Operations.
 3)OTP Generation.
-4)Nice GUI.
+4)Userfriendly GUI.
 5)Smooth Performance.
 
 
