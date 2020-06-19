@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Salesman"
@@ -13,6 +15,8 @@
         android:id="@+id/delete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:orientation="horizontal"
         android:padding="10dp">
 
@@ -24,9 +28,9 @@
             android:autofillHints=""
             android:background="@drawable/rect_grayoutline1"
             android:hint="@string/salesman_id_delete"
-            android:textSize="15sp"
             android:inputType="number"
             android:paddingStart="@dimen/marginplus3"
+            android:textSize="15sp"
             tools:ignore="RtlSymmetry" />
 
         <Button
@@ -50,7 +54,7 @@
             android:id="@+id/lvSalesmanlist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:dividerHeight="@dimen/marginplus1">
+            android:dividerHeight="2dp">
 
         </ListView>
     </LinearLayout>

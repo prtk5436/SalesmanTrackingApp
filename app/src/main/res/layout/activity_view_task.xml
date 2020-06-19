@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/marginplus2"
     android:orientation="vertical"
     tools:context=".ViewTaskActivity">
 
@@ -14,13 +13,13 @@
         android:gravity="center"
         android:text="@string/task_list"
         android:textColor="@color/colorPrimary"
-        android:textSize="40sp"
+        android:textSize="50sp"
         android:textStyle="bold" />
 
     <ListView
         android:id="@+id/lvtask_list"
-        android:dividerHeight="@dimen/marginplus1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#36FAFAFA" />
+        android:background="#36FAFAFA"
+        android:dividerHeight="2dp" />
 </LinearLayout>

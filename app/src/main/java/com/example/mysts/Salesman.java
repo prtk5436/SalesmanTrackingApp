@@ -73,7 +73,7 @@ public class Salesman extends AppCompatActivity implements NavigationView.OnNavi
 
         newUser = findViewById(R.id.tv_newuser);
         Log.d(TAG, "onCreate:ShowSalesmanList_Activity ");
-        lvlistview = (ListView) findViewById(R.id.lvSalesmanlist);
+        lvlistview = findViewById(R.id.lvSalesmanlist);
         Cursor cursor = new SalesmanModel(this).showSalesmanDetails();
         sales_adapter = new SalesmanAdapter(context, cursor);
         lvlistview.setAdapter(sales_adapter);
@@ -203,12 +203,12 @@ public class Salesman extends AppCompatActivity implements NavigationView.OnNavi
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         View headerview = navigationView.getHeaderView(0);
-        TextView navUserName = headerview.findViewById(R.id.nav_username);
+        //   TextView navUserName = headerview.findViewById(R.id.nav_username);
         TextView navEmail = headerview.findViewById(R.id.nav_email);
         ImageView navProfileDP = headerview.findViewById(R.id.nav_iv_dp);
 
         navEmail.setText(currentUser.getEmail());
-        navUserName.setText(currentUser.getDisplayName());
+        ///navUserName.setText(currentUser.getDisplayName());
 
         Glide.with(this).load(currentUser.getPhotoUrl()).into(navProfileDP);
     }

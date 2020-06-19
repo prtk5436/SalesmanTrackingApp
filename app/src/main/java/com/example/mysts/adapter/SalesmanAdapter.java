@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,7 +39,7 @@ public class SalesmanAdapter extends CursorAdapter {
         TextView tvname = view.findViewById(R.id.tvname);
         TextView tvmob = view.findViewById(R.id.tvmob);
         //TextView tvemail = view.findViewById(R.id.tvemail);
-        EditText et_url = view.findViewById(R.id.et_url);
+        final EditText et_url = view.findViewById(R.id.et_url);
 
         Button i_btnview_salesman = view.findViewById(R.id.i_btnview_salesman);
         Button btnget_location = view.findViewById(R.id.btnget_location);
@@ -54,25 +55,15 @@ public class SalesmanAdapter extends CursorAdapter {
         Log.d(TAG, "bindView: " + id);
         Log.d(TAG, "bindView: password " + password);
 
+
         //tvID.setText("Salesman ID : "+id);
         tvmob.setText("Mobile : " + mobile);
         //tvemail.setText("Email : "+email);
         tvname.setText("Name : " + name);
-        final String url = et_url.getText().toString().trim();
-        if (url.isEmpty()) {
-            et_url.setError("enter link");
-        } else {
-            btnget_location.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(url));
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                    intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
-                    context.startActivity(intent);
-                }
-            });
+        final String str_url = et_url.getText().toString().trim();
 
-        }
+        Log.d(TAG, "bindView: " + str_url);
+
         i_btnview_salesman.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +80,26 @@ public class SalesmanAdapter extends CursorAdapter {
             }
         });
 
+        btnget_location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!TextUtils.isEmpty(str_url)) {
+
+                    Log.d(TAG, "bindView:BTN " + str_url);
+                    //Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(url));
+                    Uri url = Uri.parse(str_url);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, url);
+
+                    Log.d(TAG, "bindView:BTN " + str_url);
+                    //   intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+                    context.startActivity(intent);
+
+                } else {
+                    et_url.setError("enter link");
+
+                }
+            }
+        });
 
     }
 }

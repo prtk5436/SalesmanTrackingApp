@@ -25,9 +25,9 @@ public class SalesmanLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salesman_login);
-        etpassword = (EditText) findViewById(R.id.etpassword);
-        etusername = (EditText) findViewById(R.id.etusername);
-        btn_submit_salesman = (Button) findViewById(R.id.submit_salesman);
+        etpassword = findViewById(R.id.etpassword);
+        etusername = findViewById(R.id.etusername);
+        btn_submit_salesman = findViewById(R.id.submit_salesman);
         context = this;
         btn_submit_salesman.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +59,7 @@ public class SalesmanLoginActivity extends AppCompatActivity {
                     Log.d(TAG, "submit_salesman: inside if loop");
                     finish();
                     Intent intent = new Intent(context, SalesmanPanelActivity.class);
+                    Toast.makeText(SalesmanLoginActivity.this, "successfuly Login..!", Toast.LENGTH_SHORT).show();
                     intent.putExtra("sale_id", sale_id);
                     startActivity(intent);
                 } else {

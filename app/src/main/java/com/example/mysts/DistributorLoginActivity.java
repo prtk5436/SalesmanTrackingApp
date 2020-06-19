@@ -34,8 +34,8 @@ public class DistributorLoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         context = this;
         tv_newuser = findViewById(R.id.tv_newuser);
-        etpassword = (EditText) findViewById(R.id.etpassword);
-        etemail = (EditText) findViewById(R.id.etemail);
+        etpassword = findViewById(R.id.etpassword);
+        etemail = findViewById(R.id.etemail);
 
         tv_newuser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +55,7 @@ public class DistributorLoginActivity extends AppCompatActivity {
         if (mAuth.getCurrentUser() != null) {
             finish();
             Intent salesman = new Intent(context, Salesman.class);
+            //   Toast.makeText(DistributorLoginActivity.this,"successfuly Login..!",Toast.LENGTH_SHORT).show();
             startActivity(salesman);
         }
     }
@@ -88,23 +89,20 @@ public class DistributorLoginActivity extends AppCompatActivity {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d("MSG", "signInWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
-
+                                Toast.makeText(DistributorLoginActivity.this, "LOGIN SUCCESS..!!", Toast.LENGTH_SHORT).show();
                                 Intent salesman = new Intent(context, Salesman.class);
                                 startActivity(salesman);
                                 //                            updateUI(user);
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.w("MSG", "signInWithEmail:failure", task.getException());
-                                Toast.makeText(DistributorLoginActivity.this, "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
+                                Toast.makeText(DistributorLoginActivity.this, "Invalid Username or Password",
+                                        Toast.LENGTH_LONG).show();
                                 //                          updateUI(null);
                             }
 
-                            // ...
                         }
                     });
-
         }
     }
-
 }

@@ -63,7 +63,7 @@ public class Customer extends AppCompatActivity implements NavigationView.OnNavi
 
         Log.d(TAG, "onCreate:ShowCustomerList_Activity ");
 
-        lvlistview = (ListView) findViewById(R.id.lvlistviewCustomer);
+        lvlistview = findViewById(R.id.lvlistviewCustomer);
         Cursor cursor = new CustomerModel(this).showCustomerDetails();
         cust_adapter = new CustomerAdapter(context, cursor);
         lvlistview.setAdapter(cust_adapter);
@@ -159,12 +159,12 @@ public class Customer extends AppCompatActivity implements NavigationView.OnNavi
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         View headerview = navigationView.getHeaderView(0);
-        TextView navUserName = headerview.findViewById(R.id.nav_username);
+        //   TextView navUserName = headerview.findViewById(R.id.nav_username);
         TextView navEmail = headerview.findViewById(R.id.nav_email);
         ImageView navProfileDP = headerview.findViewById(R.id.nav_iv_dp);
 
         navEmail.setText(currentUser.getEmail());
-        navUserName.setText(currentUser.getDisplayName());
+        //navUserName.setText(currentUser.getDisplayName());
 
         Glide.with(this).load(currentUser.getPhotoUrl()).into(navProfileDP);
     }

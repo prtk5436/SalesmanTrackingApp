@@ -73,12 +73,10 @@ public class AdminSignUpActivity extends AppCompatActivity {
         btnsubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnsubmit.setVisibility(View.INVISIBLE);
-                progressBar.setVisibility(View.INVISIBLE);
+                final String name = et_username.getText().toString();
                 final String email = etemail.getText().toString();
                 final String password = etpassword.getText().toString();
                 final String Cpassword = etCpassword.getText().toString();
-                final String name = et_username.getText().toString();
                 if (name.isEmpty()) {
                     et_username.setError("enter valid email");
                     et_username.requestFocus();
@@ -92,15 +90,25 @@ public class AdminSignUpActivity extends AppCompatActivity {
                     etCpassword.setError("password ");
                     etpassword.requestFocus();
                     return;
-                } else if (password.equals(Cpassword)) {
-                    createnewuser(email, name, password);
-                } else {
-
+                } else if (Cpassword.isEmpty()) {
+                    etCpassword.setError("enter password again");
+                    return;
+                } else if (!password.equals(Cpassword)) {
                     etCpassword.setError("password not match");
                     etCpassword.requestFocus();
                     return;
+                    /*
+                    createnewuser(email, name, password);*/
+                } else {/*
+                    etCpassword.setError("password not match");
+                    etCpassword.requestFocus();*/
+
+                    createnewuser(email, name, password);
 
                 }
+
+                btnsubmit.setVisibility(View.INVISIBLE);
+                progressBar.setVisibility(View.VISIBLE);
 
             }
 

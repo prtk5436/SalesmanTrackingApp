@@ -68,7 +68,7 @@ public class Product extends AppCompatActivity implements NavigationView.OnNavig
 
         Log.d(TAG, "onCreate:ShowCustomerList_Activity ");
 
-        lvlistview = (ListView) findViewById(R.id.lvlistviewProduct);
+        lvlistview = findViewById(R.id.lvlistviewProduct);
         Cursor cursor = new ProductModel(this).showProductDetails();
         pro_adapter = new ProductAdapter(context, cursor);
         lvlistview.setAdapter(pro_adapter);
@@ -165,12 +165,12 @@ public class Product extends AppCompatActivity implements NavigationView.OnNavig
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         View headerview = navigationView.getHeaderView(0);
-        TextView navUserName = headerview.findViewById(R.id.nav_username);
+        // TextView navUserName = headerview.findViewById(R.id.nav_username);
         TextView navEmail = headerview.findViewById(R.id.nav_email);
         ImageView navProfileDP = headerview.findViewById(R.id.nav_iv_dp);
 
         navEmail.setText(currentUser.getEmail());
-        navUserName.setText(currentUser.getDisplayName());
+        //navUserName.setText(currentUser.getDisplayName());
 
         Glide.with(this).load(currentUser.getPhotoUrl()).into(navProfileDP);
     }

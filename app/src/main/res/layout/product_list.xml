@@ -3,12 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="@dimen/marginplus3">
+    android:padding="@dimen/marginplus2">
 
     <TextView
         android:id="@+id/tvname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginplus3"
         android:textColor="@color/black"
         android:textSize="20sp" />
 
@@ -16,5 +17,6 @@
         android:id="@+id/tvprice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginplus3"
         android:textSize="20sp" />
 </LinearLayout>

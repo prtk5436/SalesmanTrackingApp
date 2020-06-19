@@ -96,7 +96,7 @@ public class Order_ListAdapter extends CursorAdapter {
             }
 
 
-         //   tvaddress.setText("Location : " + address);
+            //   tvaddress.setText("Location : " + address);
             tvSalesman.setText("Salesman : " + salesman_name);
             tvsr_no.setText("Order No." + order_id);
             //  tvtime.setText("Time : " + time);

@@ -71,7 +71,7 @@ public class Order extends AppCompatActivity implements NavigationView.OnNavigat
         navigationView.setNavigationItemSelectedListener(this);
         context = this;
 
-        lvorder = (ListView) findViewById(R.id.lvlistviewOrder);
+        lvorder = findViewById(R.id.lvlistviewOrder);
         context = this;
         Log.d(TAG, "onCreate: Inside Show Order Activity");
         Cursor cursor = new OrderModel(this).getAllOrder();
@@ -188,12 +188,12 @@ public class Order extends AppCompatActivity implements NavigationView.OnNavigat
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         View headerview = navigationView.getHeaderView(0);
-        TextView navUserName = headerview.findViewById(R.id.nav_username);
+        //   TextView navUserName = headerview.findViewById(R.id.nav_username);
         TextView navEmail = headerview.findViewById(R.id.nav_email);
         ImageView navProfileDP = headerview.findViewById(R.id.nav_iv_dp);
 
         navEmail.setText(currentUser.getEmail());
-        navUserName.setText(currentUser.getDisplayName());
+        //navUserName.setText(currentUser.getDisplayName());
 
         Glide.with(this).load(currentUser.getPhotoUrl()).into(navProfileDP);
     }

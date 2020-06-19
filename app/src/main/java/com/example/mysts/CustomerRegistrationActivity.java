@@ -18,9 +18,9 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_registration);
         context = this;
-        et_name = (EditText) findViewById(R.id.et_name);
-        et_address = (EditText) findViewById(R.id.et_address);
-        et_mob = (EditText) findViewById(R.id.et_mob);
+        et_name = findViewById(R.id.et_name);
+        et_address = findViewById(R.id.et_address);
+        et_mob = findViewById(R.id.et_mob);
     }
 
     //Add Salesman Details into database
@@ -32,12 +32,12 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
         String address = et_address.getText().toString();
         CustomerModel model = new CustomerModel(this);
         if (name != null || mob != null || address != null) {
-            long id = (long) model.addCustomer(name, address, mob, cust_cnt);
+            long id = model.addCustomer(name, address, mob, cust_cnt);
             if (id != -1) {
                 Toast.makeText(this, "New Customer Added with id : " + id, Toast.LENGTH_LONG).show();
                 finish();
             } else {
-                Toast.makeText(this, "Failed to add salesman.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Failed to add New Customer.", Toast.LENGTH_LONG).show();
             }
         } else {
             Toast.makeText(this, "Do not Enter Empty Field", Toast.LENGTH_LONG).show();
