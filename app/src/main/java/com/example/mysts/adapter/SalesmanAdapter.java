@@ -18,9 +18,9 @@ import com.example.mysts.R;
 import com.example.mysts.SalesmanDetailsActivity;
 import com.example.mysts.sql.tables.SalesmanTable;
 
-
 public class SalesmanAdapter extends CursorAdapter {
     String TAG = "cursor data";
+    int count = 0;
 
     public SalesmanAdapter(Context context, Cursor cursor) {
         super(context, cursor, true);
@@ -60,9 +60,7 @@ public class SalesmanAdapter extends CursorAdapter {
         tvmob.setText("Mobile : " + mobile);
         //tvemail.setText("Email : "+email);
         tvname.setText("Name : " + name);
-        final String str_url = et_url.getText().toString().trim();
 
-        Log.d(TAG, "bindView: " + str_url);
 
         i_btnview_salesman.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,17 +81,19 @@ public class SalesmanAdapter extends CursorAdapter {
         btnget_location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                final String str_url = et_url.getText().toString().trim();
+                Log.d(TAG, "bindView: link " + str_url);
                 if (!TextUtils.isEmpty(str_url)) {
 
                     Log.d(TAG, "bindView:BTN " + str_url);
-                    //Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(url));
-                    Uri url = Uri.parse(str_url);
-                    Intent intent = new Intent(Intent.ACTION_VIEW, url);
-
+                    Uri gmmIntentUri = Uri.parse(str_url);
+                    Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                     Log.d(TAG, "bindView:BTN " + str_url);
-                    //   intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
-                    context.startActivity(intent);
+                    mapIntent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+                    context.startActivity(mapIntent);
 
+                    Log.d(TAG, "bindView:BTN " + gmmIntentUri);
                 } else {
                     et_url.setError("enter link");
 

@@ -1,5 +1,6 @@
 package com.example.mysts;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -10,6 +11,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
     int prdt_price = 0, orderno = 0;
     TextView tvsale_name, tvprice, tvproduct, tv_mob, tv_address, tvcus_name, tv_time, tv_orderno;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

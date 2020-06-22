@@ -29,10 +29,12 @@ public class Salesman_Task_Adapter extends CursorAdapter {
     int count = 0;
 
     DBHelper dbHelper;
-    Button btnview_order, btn_done1, btn_generateOTP;
+    Button btn_done1, btn_generateOTP;
+
     TextView tvsale_name, tvaddress, tvtime, tvorderId;
     String address = "", time = "", mobile = "", salesman_name = "", cus_name = "", prdt_name = "";
     int order_id, cus_id, sale_id, prdt_id, prdt_price;
+
 
     public Salesman_Task_Adapter(Context context, Cursor cursor) {
         super(context, cursor, true);
@@ -50,14 +52,13 @@ public class Salesman_Task_Adapter extends CursorAdapter {
     public void bindView(View view, final Context context, Cursor cursor) {
         Log.d(TAG, "bindView: ");
 
-        btnview_order = view.findViewById(R.id.i_btnview_order);
-        tvsale_name = (TextView) view.findViewById(R.id.tvsale_name);
-        tvaddress = (TextView) view.findViewById(R.id.tvaddress);
-        tvtime = (TextView) view.findViewById(R.id.tvtime);
+        Button btnview_order = view.findViewById(R.id.i_btnview_order);
+        TextView tvsale_name = (TextView) view.findViewById(R.id.tvsale_name);
+        TextView tvaddress = (TextView) view.findViewById(R.id.tvaddress);
+        TextView tvtime = (TextView) view.findViewById(R.id.tvtime);
         btn_done1 = (Button) view.findViewById(R.id.btn_done1);
-
         btn_generateOTP = view.findViewById(R.id.btn_generateOTP);
-        tvorderId = view.findViewById(R.id.tvOrderno);
+        TextView tvorderId = view.findViewById(R.id.tvOrderno);
 
         Log.d(TAG, "bindView: cursor order adapter");
         if (cursor != null) {

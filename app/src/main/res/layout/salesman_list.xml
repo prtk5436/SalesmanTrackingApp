@@ -58,20 +58,16 @@
             android:layout_height="match_parent"
             android:layout_weight="2.5"
             android:background="@drawable/rect_grayoutline1"
-            android:padding="3dp">
+            android:padding="1dp">
 
             <EditText
                 android:id="@+id/et_url"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/marginplus1"
-                android:ems="10"
                 android:hint="@string/copy_amp_paste_location_url_link_shared_by_salesman"
                 android:textSize="10sp"
-                tools:ignore="SmallSp">
-
-                <requestFocus />
-            </EditText>
+                tools:ignore="SmallSp"></EditText>
         </LinearLayout>
 
         <Button
