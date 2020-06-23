@@ -65,9 +65,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/marginplus1"
+                android:autofillHints=""
                 android:hint="@string/copy_amp_paste_location_url_link_shared_by_salesman"
                 android:textSize="10sp"
-                tools:ignore="SmallSp"></EditText>
+                tools:ignore="SmallSp" />
         </LinearLayout>
 
         <Button

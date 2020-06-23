@@ -326,6 +326,7 @@ public class AddOrderActivity extends AppCompatActivity {
 package com.example.mysts;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -566,6 +567,8 @@ public class AddOrderActivity extends AppCompatActivity {
             if (id != -1) {
                 Toast.makeText(this, "Order Added with id : " + id, Toast.LENGTH_LONG).show();
                 finish();
+                Intent i = new Intent(AddOrderActivity.this, Order.class);
+                startActivity(i);
             } else {
                 Toast.makeText(this, "Failed to add Order.", Toast.LENGTH_LONG).show();
             }

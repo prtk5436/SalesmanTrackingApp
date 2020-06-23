@@ -9,9 +9,11 @@
     tools:showIn="@layout/app_bar_order">
 
     <LinearLayout
+
         android:id="@+id/delete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:elevation="@dimen/marginplus3"
         android:orientation="horizontal"
         android:padding="@dimen/marginplus2">
 

@@ -6,365 +6,335 @@
     android:background="@drawable/bg1"
     tools:context="OrderDetailsActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        tools:ignore="UselessParent">
 
-        <FrameLayout
-            android:layout_width="299dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg"
-            android:paddingBottom="@dimen/marginplus10">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/marginplus10"
+        android:layout_marginBottom="@dimen/marginplus3"
+        android:background="@drawable/bg"
+        android:padding="@dimen/marginplus2">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="UselessParent">
 
-                <LinearLayout
-                    android:id="@+id/ordersummary"
+            <LinearLayout
+                android:id="@+id/ordersummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/order" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
-                    android:layout_marginTop="40dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/todo"
-                        android:src="@drawable/order" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="@string/order_summary"
-                        android:textColor="@color/textwhite"
-                        android:textSize="20sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ordernumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/ordersummary"
-                    android:layout_marginTop="26dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="0.8"
-                        android:gravity="right"
-                        android:text="@string/your_order_no"
-                        android:textColor="@color/text"
-                        android:textSize="20sp"
-                        tools:ignore="RtlHardcoded" />
-
-                    <TextView
-                        android:id="@+id/tvOrderno"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="6dp"
-                        android:layout_weight="1"
-                        android:gravity="left"
-                        android:text="@string/_4343"
-                        android:textColor="@color/textred"
-                        android:textSize="20sp"
-                        tools:ignore="RtlHardcoded" />
-
-                </LinearLayout>
-
-                <View
-                    android:id="@+id/div1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="1dp"
-                    android:layout_below="@+id/ordernumber"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginBottom="6dp"
-                    android:background="@color/div" />
-
-                <LinearLayout
-                    android:id="@+id/date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/div1"
-                    android:layout_marginStart="55dp"
-                    android:layout_marginTop="16dp"
-                    android:orientation="horizontal"
-                    tools:ignore="UseCompoundDrawables">
-
-
-                    <ImageView
-
-                        android:layout_width="45dp"
-                        android:layout_height="28dp"
-                        android:layout_gravity="right"
-                        android:contentDescription="@string/todo"
-                        android:src="@drawable/ic_clock"
-                        tools:ignore="RtlHardcoded" />
-
-                    <TextView
-                        android:id="@+id/tv_time"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="6dp"
-                        android:layout_weight="1"
-                        android:gravity="left"
-                        android:text="@string/time"
-                        android:textColor="@color/textred"
-                        android:textSize="20sp"
-                        tools:ignore="RtlHardcoded" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/location"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/date"
-                    android:layout_marginStart="55dp"
-                    android:layout_marginTop="16dp"
-                    android:orientation="horizontal"
-                    tools:ignore="UseCompoundDrawables">
-
-
-                    <ImageView
-
-                        android:layout_width="45dp"
-                        android:layout_height="28dp"
-                        android:layout_gravity="right"
-                        android:contentDescription="@string/todo"
-                        android:src="@drawable/ic_location"
-                        tools:ignore="RtlHardcoded" />
-
-                    <TextView
-
-                        android:id="@+id/tv_address"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="6dp"
-                        android:layout_weight="1"
-                        android:gravity="left"
-                        android:text="@string/location"
-                        android:textColor="@color/textred"
-                        android:textSize="20sp"
-                        tools:ignore="RtlHardcoded" />
-
-                </LinearLayout>
-
-                <View
-                    android:id="@+id/div2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="1dp"
-                    android:layout_below="@+id/location"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginBottom="6dp"
-                    android:background="@color/div" />
-
-                <LinearLayout
-                    android:id="@+id/address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/div2"
-                    android:layout_marginTop="16dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/arrow" />
-                    </LinearLayout>
-
-                    <LinearLayout
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tvsale_name"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/marginplus1"
-                            android:text="@string/salesman_name"
-                            android:textColor="@color/text"
-                            android:textSize="18sp"
-
-                            />
-
-                        <TextView
-
-                            android:id="@+id/tvcus_name"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
-                            android:text="@string/customer_name"
-                            android:textColor="@color/text"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/tv_mob"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="right"
-                            android:text="@string/customer_mob"
-                            android:textColor="@color/text"
-                            android:textSize="13sp"
-                            tools:ignore="RtlHardcoded" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="34dp"
-                            android:layout_height="34dp"
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/truck" />
-
-
-                        <ImageView
-
-                            android:layout_width="34dp"
-                            android:layout_height="38dp"
-                            android:layout_marginTop="10dp"
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/ic_customer1" />
-
-                    </LinearLayout>
-                </LinearLayout>
-
-                <View
-                    android:id="@+id/div3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="1dp"
-                    android:layout_below="@+id/address"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginBottom="6dp"
-                    android:background="@color/div" />
-
-                <LinearLayout
-                    android:id="@+id/items"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/div3"
-                    android:baselineAligned="false"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:text="@string/order_summary"
+                    android:textColor="@color/textwhite"
+                    android:textSize="22sp" />
+            </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/ordernumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ordersummary"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="26dp"
+                android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/tvproduct"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:drawableStart="@drawable/ic_product"
-                            android:drawablePadding="13dp"
-                            android:text="@string/product_name_"
-                            android:textColor="@color/text"
-                            android:textSize="20sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_weight="2"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/_01"
-                            android:textColor="@color/textred"
-                            android:textSize="20sp"
-
-                            />
-
-                    </LinearLayout>
-                </LinearLayout>
-
-                <View
-                    android:id="@+id/div4"
+                <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="1dp"
-                    android:layout_below="@+id/items"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginBottom="6dp"
-                    android:background="@color/div" />
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="right"
+                    android:text="@string/your_order_no"
+                    android:textColor="@color/text"
+                    android:textSize="20sp"
+                    tools:ignore="RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/tvOrderno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="6dp"
+                    android:gravity="left"
+                    android:text="@string/_4343"
+                    android:textColor="@color/textred"
+                    android:textSize="20sp"
+                    tools:ignore="RtlHardcoded" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/div1"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/ordernumber"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="6dp"
+                android:background="@color/div" />
+
+            <LinearLayout
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/div1"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+
+                <ImageView
+
+                    android:layout_width="45dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_clock"
+                    tools:ignore="RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="@string/time"
+                    android:textColor="@color/textred"
+                    android:textSize="20sp"
+                    tools:ignore="RtlHardcoded" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/date"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_location"
+                    tools:ignore="RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:text="@string/location"
+                    android:textColor="@color/textred"
+                    android:textSize="20sp"
+                    tools:ignore="RtlHardcoded" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/div2"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/location"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="6dp"
+                android:background="@color/div" />
+
+            <LinearLayout
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/div2"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/div4"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="50dp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/tvsale_name"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:layout_weight="1"
+                        android:layout_marginTop="@dimen/marginplus1"
+                        android:text="@string/salesman_name"
+                        android:textColor="@color/text"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+
+                        android:id="@+id/tvcus_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/customer_name"
+                        android:textColor="@color/text"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_mob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:gravity="right"
-                        android:text="@string/dollar"
-                        android:textColor="@color/textred"
-                        android:textSize="20sp"
-                        tools:ignore="RtlHardcoded" />
-
-                    <TextView
-                        android:id="@+id/tvprice"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="2dp"
-                        android:layout_weight="1"
-                        android:gravity="left"
-                        android:text="@string/price_"
-                        android:textColor="@color/textred"
-                        android:textSize="20sp"
+                        android:text="@string/customer_mob"
+                        android:textColor="@color/text"
+                        android:textSize="15sp"
                         tools:ignore="RtlHardcoded" />
                 </LinearLayout>
-            </RelativeLayout>
-        </FrameLayout>
-    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/truck" />
+
+
+                    <ImageView
+
+                        android:layout_width="35dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_customer1" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/div3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/address"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="6dp"
+                android:background="@color/div" />
+
+            <LinearLayout
+                android:id="@+id/items"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/div3"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="16dp"
+                android:baselineAligned="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_product"
+                    tools:ignore="RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/tvproduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/product_name"
+                    android:textColor="@color/text"
+                    android:textSize="20sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/_01"
+                    android:textColor="@color/textred"
+                    android:textSize="20sp"
+                    android:textStyle="italic" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/div4"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/items"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="6dp"
+                android:background="@color/div" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/div4"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="@dimen/marginplus3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text="@string/dollar"
+                    android:textColor="@color/textred"
+                    android:textSize="20sp"
+                    tools:ignore="RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/tvprice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="3dp"
+                    android:text="@string/price_"
+                    android:textColor="@color/textred"
+                    android:textSize="20sp"
+                    tools:ignore="RtlHardcoded" />
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
 </RelativeLayout>

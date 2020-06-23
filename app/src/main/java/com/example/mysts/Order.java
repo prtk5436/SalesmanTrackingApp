@@ -99,9 +99,11 @@ public class Order extends AppCompatActivity implements NavigationView.OnNavigat
                 DBHelper db = new DBHelper(Order.this);
                 Integer deleterows = db.DeleteOrderOnId(id.getText().toString());
                 if (deleterows > 0) {
-                    Toast.makeText(Order.this, " Deleted" + deleterows, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Order.this, " Deleted >> ID : " + id.getText().toString(), Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(Order.this, Order.class);
+                    startActivity(i);
                 } else {
-                    Toast.makeText(Order.this, "not Deleted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Order.this, "not deleted", Toast.LENGTH_SHORT).show();
                 }
             }
         });

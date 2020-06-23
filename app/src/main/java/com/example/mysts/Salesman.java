@@ -97,9 +97,11 @@ public class Salesman extends AppCompatActivity implements NavigationView.OnNavi
             public void onClick(View v) {
                 Integer deleterows = db.DeleteSalesmanOnId(id.getText().toString());
                 if (deleterows == 0) {
-                    Toast.makeText(Salesman.this, "not Deleted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Salesman.this, "not deleted", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(Salesman.this, " Deleted" + deleterows, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Salesman.this, " Deleted >> ID :  " + id.getText().toString(), Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(Salesman.this, Salesman.class);
+                    startActivity(i);
                 }
             }
         });

@@ -6,29 +6,27 @@
     android:background="@color/white"
     tools:context=".SplacescreenActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:contentDescription="@string/todo"
+        android:src="@drawable/icon8" />
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/icon8" />
-
-    </LinearLayout>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/roboto_regular"
         android:gravity="center"
         android:text="@string/salesman_tracking_app"
-        android:textColor="#000" />
+        android:textColor="#000"
+        android:textSize="20sp" />
 </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.example.mysts;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -13,7 +14,6 @@ public class SalesmanRegistrationActivity extends AppCompatActivity {
 
     EditText et_name, et_mob, et_email, et_password;
     Context context;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +34,13 @@ public class SalesmanRegistrationActivity extends AppCompatActivity {
         String email = et_email.getText().toString();
         String password = et_password.getText().toString();
         SalesmanModel model = new SalesmanModel(this);
-        if (name != null || mob != null || email != null || password != null) {
+        if (!name.isEmpty() && !mob.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
             long id = (long) model.addSalesman(name, email, password, mob, sale_cnt);
             if (id != -1) {
                 Toast.makeText(this, "Salesman Added with id : " + id, Toast.LENGTH_LONG).show();
                 finish();
+                Intent i = new Intent(SalesmanRegistrationActivity.this, Salesman.class);
+                startActivity(i);
 
             } else {
                 Toast.makeText(this, "Failed to add salesman.", Toast.LENGTH_LONG).show();

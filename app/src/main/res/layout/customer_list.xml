@@ -11,14 +11,15 @@
         android:layout_height="wrap_content"
         android:text="@string/name"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvmob"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Customer_mobile"
-        android:textColor="@color/textsub"
+        android:textColor="@color/text"
         android:textSize="18sp" />
 
 
@@ -27,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/address"
-        android:textColor="@color/textsub"
+        android:textColor="@color/text"
         android:textSize="15sp" />
 
 

@@ -6,7 +6,6 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/l1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
@@ -27,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/order_no"
                 android:textColor="@color/text"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 tools:ignore="NestedWeights" />
 
             <TextView
@@ -37,17 +36,6 @@
                 android:text="@string/salesman"
                 android:textColor="@color/text"
                 android:textSize="20sp" />
-            <!--
-                        <TextView
-                            android:id="@+id/tvtime"
-                            android:layout_width="wrap_content"
-                            android:layout_height="0dp"
-                            android:layout_marginTop="@dimen/marginplus1"
-                            android:layout_weight="1"
-                            android:text="@string/Order_time"
-                            android:textColor="@color/text"
-                            android:textSize="15sp" />-->
-
         </LinearLayout>
 
 
@@ -70,20 +58,5 @@
         </LinearLayout>
 
     </LinearLayout>
-    <!--
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/l1"
-            android:layout_margin="@dimen/marginplus1">
 
-            <TextView
-                android:id="@+id/tvaddress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Order_address"
-                android:textColor="@color/text"
-                android:textSize="15sp" />
-
-        </LinearLayout>-->
 </RelativeLayout>

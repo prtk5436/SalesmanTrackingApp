@@ -17,10 +17,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/marginplus3"
             android:text="@string/add_product"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
-            android:textSize="30sp"
+            android:textSize="40sp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -42,7 +43,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:hint="@string/name"
                 android:inputType="text"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp" />
@@ -59,7 +59,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:hint="@string/phone"
                 android:inputType="number"
                 android:maxLength="10"
                 android:textColor="@color/colorPrimaryDark"

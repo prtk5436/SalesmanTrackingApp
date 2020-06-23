@@ -40,9 +40,9 @@ public class CustomerAdapter extends CursorAdapter {
         Log.d(TAG, "bindView: " + address);
         Log.d(TAG, "bindView: " + name);
 
-        tvmob.setText("Mobile : +91" + mobile);
-        tvaddress.setText("address : " + address);
-        tvname.setText("Name :" + name);
+        tvmob.setText("Mobile : +91 " + mobile);
+        tvaddress.setText("Address : " + address);
+        tvname.setText("Name : " + name);
 
     }
 }

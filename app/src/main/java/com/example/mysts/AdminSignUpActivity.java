@@ -21,15 +21,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 public class AdminSignUpActivity extends AppCompatActivity {
 
@@ -56,7 +50,7 @@ public class AdminSignUpActivity extends AppCompatActivity {
         etCpassword = findViewById(R.id.etCpassword);
         btnsubmit = findViewById(R.id.btn_newsubmit);
         Userpic = findViewById(R.id.iv_pic);
-        progressBar = findViewById(R.id.progbar);
+        // progressBar = findViewById(R.id.progbar);
         newuser = findViewById(R.id.tv_newuser);
 
         Userpic.setOnClickListener(new View.OnClickListener() {
@@ -108,7 +102,6 @@ public class AdminSignUpActivity extends AppCompatActivity {
                 }
 
                 btnsubmit.setVisibility(View.INVISIBLE);
-                progressBar.setVisibility(View.VISIBLE);
 
             }
 
@@ -165,19 +158,18 @@ public class AdminSignUpActivity extends AppCompatActivity {
                             Log.d("MSG", "createUserWithEmail:success");
                             Toast.makeText(AdminSignUpActivity.this, "account is created.",
                                     Toast.LENGTH_SHORT).show();
-                            newuser.setVisibility(View.GONE);
+//                            newuser.setVisibility(View.GONE);
 
-                            saveUserInfo(name, uriprofileImg, mAuth.getCurrentUser());
+                            //  saveUserInfo(name, uriprofileImg, mAuth.getCurrentUser());
                             finish();
                             Intent salesman1 = new Intent(AdminSignUpActivity.this, Salesman.class);
                             startActivity(salesman1);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("MSG", "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(AdminSignUpActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AdminSignUpActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                             btnsubmit.setVisibility(View.VISIBLE);
-                            progressBar.setVisibility(View.INVISIBLE);
+                            //   progressBar.setVisibility(View.INVISIBLE);
                         }
 
 
@@ -188,7 +180,7 @@ public class AdminSignUpActivity extends AppCompatActivity {
     }
 
 
-    private void saveUserInfo(final String Name, Uri uriprofileImg, final FirebaseUser currentUser) {
+    /*private void saveUserInfo(final String Name, Uri uriprofileImg, final FirebaseUser currentUser) {
 
         StorageReference mstorageRef = FirebaseStorage.getInstance().getReference().child("users_photos");
         final StorageReference imgFilePAth = mstorageRef.child(uriprofileImg.getLastPathSegment());
@@ -227,7 +219,7 @@ public class AdminSignUpActivity extends AppCompatActivity {
         finish();
         Intent salesman = new Intent(AdminSignUpActivity.this, Salesman.class);
         startActivity(salesman);
-
     }
+*/
 }
 

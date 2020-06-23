@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/marginplus2"
             android:background="@drawable/redbtn"
+            android:elevation="@dimen/marginplus3"
             android:text="@string/delete"
             android:textColor="@color/textwhite" />
     </LinearLayout>

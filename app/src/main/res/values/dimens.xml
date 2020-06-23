@@ -7,6 +7,4 @@
     <dimen name="fab_margin">16dp</dimen>
 
 
-    <dimen name="text">15dp</dimen>
-    <dimen name="textsub">13dp</dimen>
 </resources>

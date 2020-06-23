@@ -1,6 +1,7 @@
 package com.example.mysts;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -31,11 +32,13 @@ public class AddProductActivity extends AppCompatActivity {
         String name = et_name.getText().toString();
         String price = et_price.getText().toString();
         ProductModel model = new ProductModel(this);
-        if (name != null || price != null) {
+        if (!name.isEmpty() && !price.isEmpty()) {
             long id = (long) model.addProduct(name, price, prod_cnt);
             if (id != -1) {
                 Toast.makeText(this, "New Product Added with id : " + id, Toast.LENGTH_LONG).show();
                 finish();
+                Intent i = new Intent(AddProductActivity.this, Product.class);
+                startActivity(i);
             } else {
                 Toast.makeText(this, "Failed to add New Product.", Toast.LENGTH_LONG).show();
             }

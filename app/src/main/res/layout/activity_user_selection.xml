@@ -1,57 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#001400"
     android:orientation="vertical"
+    android:padding="@dimen/marginplus4"
     tools:context=".UserSelectionActivity">
 
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:minLines="4"
+        android:text="@string/welcome_to_salesman_tracking_app"
+        android:textColor="#fff"
+        android:textSize="50sp" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#001400"
-        android:orientation="vertical"
-        android:padding="30dp">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/t1"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/marginplus5"
+        android:orientation="vertical">
 
-        <TextView
+        <Button
+            android:id="@+id/btn_distributor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
-            android:text="Welcome to Salesman Tracking App"
-            android:textColor="#fff"
-            android:textSize="60sp"></TextView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:background="@drawable/buttonstylepink"
+            android:elevation="@dimen/marginplus10"
+            android:fontFamily="casual"
             android:gravity="center"
-            android:orientation="vertical"
-            android:paddingTop="15dp">
+            android:padding="@dimen/marginplus3"
+            android:text="@string/d_i_s_t_r_i_b_u_t_o_r"
+            android:textColor="#fff"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btn_distributor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/buttonstylepink"
-                android:elevation="@dimen/marginplus2"
-                android:fontFamily="casual"
-                android:text="D I S T R I B U T O R"
-                android:textColor="#fff"
-                android:textSize="20dp" />
+        <Button
+            android:id="@+id/btn_salesman"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/marginplus8"
+            android:background="@drawable/buttonstylepink"
+            android:elevation="@dimen/marginplus10"
+            android:fontFamily="casual"
+            android:text="@string/s_a_l_e_s_m_a_n"
+            android:textColor="#fff"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btn_salesman"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginplus5"
-                android:background="@drawable/buttonstylepink"
-                android:fontFamily="casual"
-                android:text="S A L E S M A N "
-                android:textColor="#fff"
-                android:textSize="20dp" />
-
-        </LinearLayout>
     </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

@@ -1,6 +1,7 @@
 package com.example.mysts;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -31,11 +32,13 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
         String mob = et_mob.getText().toString();
         String address = et_address.getText().toString();
         CustomerModel model = new CustomerModel(this);
-        if (name != null || mob != null || address != null) {
+        if (!name.isEmpty() && !mob.isEmpty() && !address.isEmpty()) {
             long id = model.addCustomer(name, address, mob, cust_cnt);
             if (id != -1) {
                 Toast.makeText(this, "New Customer Added with id : " + id, Toast.LENGTH_LONG).show();
                 finish();
+                Intent i = new Intent(CustomerRegistrationActivity.this, Customer.class);
+                startActivity(i);
             } else {
                 Toast.makeText(this, "Failed to add New Customer.", Toast.LENGTH_LONG).show();
             }

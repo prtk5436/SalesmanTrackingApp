@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_centerInParent="true"
     android:orientation="vertical"
     android:padding="@dimen/marginplus4"
     tools:context=".SalesmanDetailsActivity">
@@ -22,11 +21,36 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marginplus3"
+                android:layout_marginBottom="@dimen/marginplus3"
                 android:gravity="center"
                 android:text="@string/salesman_details"
                 android:textColor="@color/colorPrimary"
-                android:textSize="30sp"
+                android:textSize="40sp"
                 android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marginplus4"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enter_name"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tvsale_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/marginplus8"
+                    android:layout_marginBottom="@dimen/marginplus3"
+                    android:text="@string/pratik_pawar"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30sp" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,17 +61,18 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/salesman_name"
+                    android:text="@string/mobile"
                     android:textSize="25sp" />
 
                 <TextView
-                    android:id="@+id/tvsale_name"
+                    android:id="@+id/tv_mob"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/marginplus8"
                     android:layout_marginBottom="@dimen/marginplus3"
-                    android:text="@string/pratik_pawar"
-                    android:textSize="20sp" />
+                    android:text="@string/_1452369856"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30sp" />
             </LinearLayout>
 
 
@@ -70,39 +95,18 @@
                     android:layout_marginStart="@dimen/marginplus8"
                     android:layout_marginBottom="@dimen/marginplus3"
                     android:text="@string/nashik"
-                    android:textSize="20sp" />
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus2"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/mobile"
-                    android:textSize="25sp" />
-
-                <TextView
-                    android:id="@+id/tv_mob"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/marginplus8"
-                    android:layout_marginBottom="@dimen/marginplus3"
-                    android:text="@string/_1452369856"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginplus2"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/salesman_id"
                     android:textSize="25sp" />
@@ -111,32 +115,32 @@
                     android:id="@+id/tv_sales_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/marginplus8"
-                    android:layout_marginBottom="@dimen/marginplus3"
+                    android:layout_marginStart="@dimen/marginplus1"
                     android:text="@string/c_programming"
-                    android:textSize="20sp" />
+                    android:textColor="@color/colorAccent"
+                    android:textSize="25sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus2"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/Salesman_password"
+                    android:text="@string/password"
                     android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/tvpassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/marginplus8"
-                    android:layout_marginBottom="@dimen/marginplus3"
+                    android:layout_marginStart="@dimen/marginplus2"
                     android:text="@string/_450"
-                    android:textSize="20sp" />
+                    android:textColor="@color/colorAccent"
+                    android:textSize="25sp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
