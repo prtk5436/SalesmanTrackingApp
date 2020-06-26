@@ -41,7 +41,6 @@
     <string name="enter_order_id_to_delete">enter order Id to delete</string>
     <string name="Customer_mobile">mobile</string>
     <string name="address">Address :</string>
-    <string name="salesman">Salesman</string>
     <string name="no_data">No data found…</string>
     <string name="salesman_id_delete">enter Salesman Id to delete</string>
     <string name="product_name">Product Name : </string>
@@ -100,4 +99,16 @@
     <string name="d_i_s_t_r_i_b_u_t_o_r">D I S T R I B U T O R</string>
     <string name="s_a_l_e_s_m_a_n">S A L E S M A N</string>
     <string name="welcome_to_salesman_tracking_app">Welcome to Salesman Tracking App</string>
+    <string name="hi">Hi !</string>
+    <string name="don_t_have_account">Don\'t have account ?</string>
+    <string name="l_o_g_i_n">L o g i n</string>
+    <string name="password___">Password</string>
+    <string name="salesman_id_">Salesman Id</string>
+    <string name="salesman">Salesman</string>
+    <string name="distributor">Distributor</string>
+    <string name="email__">Email</string>
+    <string name="welcome_to_trackit">Welcome to trackit ,</string>
+    <string name="trackit_helps_you_to_monitor_your_orders_and_make_it_easy_to_manage">Trackit helps you to monitor your orders and make it easy to manage</string>
+    <string name="please_choose_your_role_and_continue">Please choose your role and continue</string>
+    <string name="c_o_n_t_i_n_u_e">C o n t i n u e</string>
 </resources>

@@ -1,163 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/trackit"
     android:orientation="vertical"
     tools:context=".SalesmanLoginActivity">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:background="@drawable/gradient_yellow">
+    <LinearLayout
+        android:id="@+id/t5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/marginplus14"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btn_distributor"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:ignore="UseCompoundDrawables,UselessParent">
+            android:background="@drawable/rect_outlinegrey"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:padding="@dimen/marginplus2"
+            android:paddingStart="@dimen/marginplus3"
+            android:text="@string/distributor"
+            android:textAllCaps="false"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            tools:ignore="ButtonStyle,RtlSymmetry" />
 
-            <ImageView
-                android:layout_width="125dp"
-                android:layout_height="125dp"
-                android:layout_marginStart="35dp"
-                android:layout_marginTop="70dp"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/logo_circle_black"
-                android:tint="@color/black" />
+        <Button
+            android:id="@+id/btn_salesman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginplus5"
+            android:background="@drawable/rect_outlineblue"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:padding="@dimen/marginplus2"
+            android:paddingStart="@dimen/marginplus3"
+            android:paddingEnd="@dimen/marginplus3"
+            android:text="@string/salesman"
+            android:textAllCaps="false"
+            android:textColor="#009688"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="ButtonStyle,RtlSymmetry" />
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="90dp"
-                android:fontFamily="@font/maven_pro_regular"
-                android:text="@string/saleman_login"
-                android:textColor="@color/black"
-                android:textSize="38sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-    </FrameLayout>
 
     <LinearLayout
+        android:id="@+id/l1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/t5"
+        android:layout_marginStart="@dimen/marginplus8"
+        android:layout_marginTop="@dimen/marginplus8"
+        android:layout_marginEnd="@dimen/marginplus8"
+        android:background="@drawable/rect_grayoutline1"
+        android:orientation="vertical"
+        android:padding="8dp">
 
-        <android.support.v7.widget.CardView
+        <EditText
+            android:id="@+id/etusername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginplus2"
+            android:autofillHints=""
+            android:background="#00000000"
+            android:fontFamily="@font/poppins_light"
+            android:hint="@string/salesman_id_"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/l2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/l1"
+        android:layout_marginStart="@dimen/marginplus8"
+        android:layout_marginTop="@dimen/marginplus3"
+        android:layout_marginEnd="@dimen/marginplus8"
+        android:background="@drawable/rect_grayoutline1"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/etpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginplus2"
+            android:autofillHints=""
+            android:background="#00000000"
+            android:fontFamily="@font/poppins_light"
+            android:hint="@string/password___"
+            android:inputType="textPassword"
+            android:maxLength="10"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/l2"
+        android:layout_marginStart="@dimen/marginplus10"
+        android:layout_marginEnd="@dimen/marginplus10">
+
+        <Button
+            android:id="@+id/submit_salesman"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="190dp"
-            android:background="@color/white"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="27dp"
-                    android:layout_marginTop="25dp"
-                    android:fontFamily="@font/maven_pro_medium"
-                    android:text="@string/salesman_id"
-                    android:textColor="@color/text"
-                    android:textSize="15sp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="27dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/rect_grayoutline1"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <EditText
-                        android:id="@+id/etusername"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:autofillHints=""
-                        android:background="#00000000"
-                        android:inputType="text"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/black"
-                        android:textSize="20sp"
-                        tools:ignore="LabelFor" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="27dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/maven_pro_medium"
-                    android:text="@string/password"
-                    android:textColor="@color/text"
-                    android:textSize="15sp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="27dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/rect_grayoutline1"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <EditText
-
-                        android:id="@+id/etpassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:autofillHints=""
-                        android:background="#00000000"
-                        android:inputType="textPassword"
-                        android:maxLength="10"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/black"
-                        android:textSize="20sp"
-                        tools:ignore="LabelFor" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <Button
-                        android:id="@+id/submit_salesman"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="25dp"
-                        android:background="@drawable/rect_yellow1"
-                        android:fontFamily="@font/maven_pro_bold"
-                        android:gravity="center"
-                        android:text="@string/login"
-                        android:textColor="@color/black"
-                        android:textSize="25sp" />
-                </LinearLayout>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
+            android:layout_marginTop="@dimen/marginplus5"
+            android:layout_marginBottom="@dimen/marginplus3"
+            android:background="@drawable/buttonstylepink"
+            android:elevation="@dimen/marginplus5"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/l_o_g_i_n"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/l3"
         android:layout_centerInParent="true"
         android:layout_marginBottom="@dimen/marginplus4"
         android:orientation="horizontal">
@@ -165,10 +140,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/maven_pro_regular"
-            android:text="@string/new_id_amp_password_given_by_distributor"
-            android:textColor="#4a4a4a"
-            android:textSize="16sp" />
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/don_t_have_account"
+            android:textColor="@color/text"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_newuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginplus1"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/sign_up"
+            android:textColor="@android:color/holo_purple"
+            android:textSize="15sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </RelativeLayout>

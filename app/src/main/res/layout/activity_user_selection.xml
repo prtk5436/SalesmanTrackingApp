@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#001400"
+    android:background="@drawable/trackit"
     android:orientation="vertical"
     android:padding="@dimen/marginplus4"
     tools:context=".UserSelectionActivity">
@@ -12,48 +12,119 @@
         android:id="@+id/t1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed"
-        android:minLines="4"
-        android:text="@string/welcome_to_salesman_tracking_app"
-        android:textColor="#fff"
-        android:textSize="50sp" />
+        android:layout_marginTop="@dimen/marginplus12"
+        android:fontFamily="@font/poppins_light"
+        android:text="@string/hi"
+        android:textColor="#0A0202"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/t2"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/t1"
+        android:layout_marginTop="@dimen/marginplus2"
+        android:fontFamily="@font/poppins_light"
+        android:text="@string/welcome_to_trackit"
+        android:textColor="#0A0202"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/t3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/t2"
+        android:layout_marginTop="@dimen/marginplus2"
+        android:fontFamily="@font/poppins_light"
+        android:lineSpacingExtra="@dimen/marginplus1"
+        android:text="@string/trackit_helps_you_to_monitor_your_orders_and_make_it_easy_to_manage"
+        android:textColor="@color/text"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/t4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/t3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/marginplus3"
+        android:layout_marginTop="@dimen/marginplus5"
+        android:fontFamily="@font/poppins_light"
+        android:text="@string/please_choose_your_role_and_continue"
+        android:textColor="@color/text"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/t1"
+        android:layout_below="@+id/t4"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="@dimen/marginplus5"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btn_distributor"
+        <LinearLayout
+            android:id="@+id/t5"
+            android:layout_marginTop="@dimen/marginplus1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/buttonstylepink"
-            android:elevation="@dimen/marginplus10"
-            android:fontFamily="casual"
-            android:gravity="center"
-            android:padding="@dimen/marginplus3"
-            android:text="@string/d_i_s_t_r_i_b_u_t_o_r"
-            android:textColor="#fff"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn_salesman"
+            <Button
+                android:id="@+id/btn_distributor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rect_outlinegrey"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center"
+                android:padding="@dimen/marginplus2"
+                android:paddingStart="@dimen/marginplus3"
+                android:text="@string/distributor"
+                android:textAllCaps="false"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                tools:ignore="ButtonStyle,RtlSymmetry" />
+
+            <Button
+                android:id="@+id/btn_salesman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marginplus3"
+                android:background="@drawable/rect_outlinegrey"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center"
+                android:padding="@dimen/marginplus2"
+                android:paddingStart="@dimen/marginplus3"
+                android:paddingEnd="@dimen/marginplus3"
+                android:text="@string/salesman"
+                android:textAllCaps="false"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                tools:ignore="ButtonStyle,RtlSymmetry" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/marginplus8"
-            android:background="@drawable/buttonstylepink"
-            android:elevation="@dimen/marginplus10"
-            android:fontFamily="casual"
-            android:text="@string/s_a_l_e_s_m_a_n"
-            android:textColor="#fff"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_continue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/marginplus4"
+                android:layout_marginBottom="@dimen/marginplus3"
+                android:background="@drawable/buttonstylepink"
+                android:elevation="@dimen/marginplus10"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/c_o_n_t_i_n_u_e"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
     </LinearLayout>
 </RelativeLayout>

@@ -9,5 +9,9 @@
     <dimen name="marginplus6">30dp</dimen>
     <dimen name="marginplus8">40dp</dimen>
     <dimen name="marginplus10">50dp</dimen>
+    <dimen name="marginplus11">60dp</dimen>
+    <dimen name="marginplus12">70dp</dimen>
+    <dimen name="marginplus13">80dp</dimen>
+    <dimen name="marginplus14">90dp</dimen>
     <dimen name="marginplus20">100dp</dimen>
 </resources>
