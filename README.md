@@ -1,4 +1,7 @@
 # mySTS2 
+
+[![HitCount](http://hits.dwyl.com/prtk5436/SalesmanTrackingApp.svg)](http://hits.dwyl.com/prtk5436/SalesmanTrackingApp)
+
 ## **My Diploma Project : _SALESMAN TRACKING APP_**
 
 - java files contain backend code of app.
