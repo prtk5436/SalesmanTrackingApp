@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.example.mysts.sql.tables.CustomerTable;
+import com.example.mysts.sql.tables.OrderTable;
 import com.example.mysts.sql.tables.OtpTable;
 import com.example.mysts.sql.tables.ProductTable;
 import com.example.mysts.sql.tables.SalesmanTable;
@@ -37,7 +38,7 @@ public class DBHelper extends SQLiteOpenHelper {
             db.execSQL(CustomerTable.CREATE_TABLE);
             db.execSQL(ProductTable.CREATE_TABLE);
             db.execSQL(TaskTable.CREATE_TABLE);
-            db.execSQL(OtpTable.CREATE_TABLE);
+            db.execSQL(OrderTable.CREATE_TABLE);
             // db.execSQL(TaskTable.CREATE_TABLE);
             /*db.execSQL(OtpTable.CREATE_TABLE);
              */
@@ -56,11 +57,10 @@ public class DBHelper extends SQLiteOpenHelper {
         dbname.execSQL(" DROP TABLE IF EXISTS " + CustomerTable.TABLE_NAME);
         dbname.execSQL(" DROP TABLE IF EXISTS " + ProductTable.TABLE_NAME);
         dbname.execSQL(" DROP TABLE IF EXISTS " + TaskTable.TABLE_NAME);
-        dbname.execSQL(" DROP TABLE IF EXISTS " + OtpTable.TABLE_NAME);
+        dbname.execSQL(" DROP TABLE IF EXISTS " + OrderTable.TABLE_NAME);
         /*dbname.execSQL(" DROP TABLE IF EXISTS "+TaskTable.TABLE_NAME);
         dbname.execSQL(" DROP TABLE IF EXISTS "+OtpTable.TABLE_NAME);
        */
-
     }
 
     public Integer DeleteSalesmanOnId(String id) {
@@ -150,5 +150,27 @@ public class DBHelper extends SQLiteOpenHelper {
         // returning lables
         return labels;
     }
+    public List<String> getAllOrders() {
+        List<String> labels = new ArrayList<>();
 
+        // Select All Query
+        String selectQuery = "SELECT  *  FROM " + OrderTable.TABLE_NAME;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                labels.add(cursor.getString(1));
+            } while (cursor.moveToNext());
+        }
+
+        // closing connection
+        cursor.close();
+        db.close();
+
+        // returning lables
+        return labels;
+    }
 }

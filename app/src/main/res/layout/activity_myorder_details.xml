@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg1"
-    tools:context="OrderDetailsActivity">
-
+    tools:context=".MyOrderDetailsActivity">
 
     <FrameLayout
         android:layout_width="wrap_content"
@@ -24,31 +23,36 @@
 
             <LinearLayout
                 android:id="@+id/ordersummary"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marginplus12"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="28dp"
                 android:orientation="horizontal"
                 tools:ignore="UseCompoundDrawables">
 
                 <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:contentDescription="@string/todo"
                     android:src="@drawable/order" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:gravity="center"
                     android:text="@string/order_summary"
                     android:textColor="@color/textwhite"
-                    android:textSize="22sp" />
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ordernumber"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/marginplus20"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ordersummary"
                 android:layout_centerInParent="true"
@@ -59,6 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_light"
                     android:gravity="right"
                     android:text="@string/your_order_no"
                     android:textColor="@color/text"
@@ -66,11 +71,12 @@
                     tools:ignore="RtlHardcoded" />
 
                 <TextView
-                    android:id="@+id/tvOrderno"
+                    android:id="@+id/tv_orderid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="6dp"
+                    android:fontFamily="@font/poppins_light"
                     android:gravity="left"
                     android:text="@string/_4343"
                     android:textColor="@color/textred"
@@ -89,107 +95,128 @@
                 android:background="@color/div" />
 
             <LinearLayout
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
+                android:id="@+id/l5"
+                android:layout_width="match_parent"
+                android:gravity="center"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/div1"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="16dp"
-                android:orientation="horizontal"
-                tools:ignore="UseCompoundDrawables">
-
-
-                <ImageView
-
-                    android:layout_width="45dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="right"
-                    android:contentDescription="@string/todo"
-                    android:src="@drawable/ic_clock"
-                    tools:ignore="RtlHardcoded" />
-
-                <TextView
-                    android:id="@+id/tv_time"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="6dp"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:text="@string/time"
-                    android:textColor="@color/textred"
-                    android:textSize="20sp"
-                    tools:ignore="RtlHardcoded" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/date"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="16dp"
-                android:orientation="horizontal"
-                tools:ignore="UseCompoundDrawables">
-
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="right"
-                    android:contentDescription="@string/todo"
-                    android:src="@drawable/ic_location"
-                    tools:ignore="RtlHardcoded" />
-
-                <TextView
-                    android:id="@+id/tv_address"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="6dp"
-                    android:layout_weight="1"
-                    android:text="@string/location"
-                    android:textColor="@color/textred"
-                    android:textSize="20sp"
-                    tools:ignore="RtlHardcoded" />
-            </LinearLayout>
-
-            <View
-                android:id="@+id/div2"
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_below="@+id/location"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="6dp"
-                android:background="@color/div" />
-
-            <LinearLayout
-                android:id="@+id/address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/div2"
-                android:layout_centerInParent="true"
+                android:layout_below="@id/div1"
+                android:layout_marginStart="@dimen/marginplus10"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="50dp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:contentDescription="@string/todo"
-                        android:src="@drawable/arrow" />
+                        android:src="@drawable/ic_clock"
+                        tools:ignore="RtlHardcoded" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/marginplus1"
+                        android:background="@drawable/ic_location"
+                        android:contentDescription="@string/todo"
+                        tools:ignore="RtlHardcoded" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/marginplus2"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_light"
+                        android:gravity="left"
+                        android:text="@string/time"
+                        android:textColor="@color/textred"
+                        android:textSize="20sp"
+                        tools:ignore="RtlHardcoded" />
+
+                    <TextView
+                        android:id="@+id/tv_loc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/marginplus1"
+                        android:fontFamily="@font/poppins_light"
+                        android:maxLines="2"
+                        android:text="@string/location"
+                        android:textColor="@color/textred"
+                        android:textSize="15sp"
+                        tools:ignore="RtlHardcoded" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/div2"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/l5"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="6dp"
+                android:background="@color/div" />
+
+            <LinearLayout
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marginplus10"
+                android:layout_below="@+id/div2"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_height="60dp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/arrow" />
+
+
+                <LinearLayout
                     android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/truck" />
+
+
+                    <ImageView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="@dimen/marginplus1"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_customer2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
+                    android:layout_marginStart="10dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -197,6 +224,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/marginplus1"
+                        android:fontFamily="@font/poppins_light"
                         android:text="@string/salesman_name"
                         android:textColor="@color/text"
                         android:textSize="18sp"
@@ -204,48 +232,44 @@
 
                     <TextView
 
-                        android:id="@+id/tvcus_name"
+                        android:id="@+id/tvcust_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
+                        android:fontFamily="@font/poppins_light"
                         android:text="@string/customer_name"
                         android:textColor="@color/text"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/tv_mob"
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="@string/customer_mob"
-                        android:textColor="@color/text"
-                        android:textSize="15sp"
-                        tools:ignore="RtlHardcoded" />
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:background="@drawable/ic_baseline_phone_24"
+                            android:contentDescription="@string/todo"
+                            tools:ignore="RtlHardcoded">
+
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/tvcust_mob"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/customer_mob"
+                            android:textColor="@color/text"
+                            android:textSize="15sp"
+                            tools:ignore="RtlHardcoded" />
+                    </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:contentDescription="@string/todo"
-                        android:src="@drawable/truck" />
-
-
-                    <ImageView
-
-                        android:layout_width="35dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="10dp"
-                        android:contentDescription="@string/todo"
-                        android:src="@drawable/ic_customer1" />
-
-                </LinearLayout>
             </LinearLayout>
 
             <View
@@ -269,31 +293,33 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_margin="@dimen/marginplus1"
                     android:contentDescription="@string/todo"
-                    android:src="@drawable/ic_product"
+                    android:src="@drawable/ic_product1"
                     tools:ignore="RtlHardcoded" />
 
                 <TextView
                     android:id="@+id/tvproduct"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/product_name"
                     android:textColor="@color/text"
                     android:textSize="20sp"
                     android:textStyle="italic" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="@dimen/marginplus1"
+                    android:layout_marginEnd="@dimen/marginplus1"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/_01"
                     android:textColor="@color/textred"
-                    android:textSize="20sp"
-                    android:textStyle="italic" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -317,11 +343,12 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/dollar"
-                    android:textColor="@color/textred"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     tools:ignore="RtlHardcoded" />
 
                 <TextView
@@ -330,6 +357,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="3dp"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/price_"
                     android:textColor="@color/textred"
                     android:textSize="20sp"

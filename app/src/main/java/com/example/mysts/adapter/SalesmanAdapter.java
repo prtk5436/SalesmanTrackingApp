@@ -12,15 +12,21 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mysts.R;
+import com.example.mysts.Salesman;
 import com.example.mysts.SalesmanDetailsActivity;
+import com.example.mysts.sql.DBHelper;
 import com.example.mysts.sql.tables.SalesmanTable;
 
 public class SalesmanAdapter extends CursorAdapter {
     String TAG = "cursor data";
     int count = 0;
+
+    DBHelper db;
 
     public SalesmanAdapter(Context context, Cursor cursor) {
         super(context, cursor, true);
@@ -35,14 +41,17 @@ public class SalesmanAdapter extends CursorAdapter {
 
     @Override
     public void bindView(final View view, final Context context, Cursor cursor) {
+
+        db = new DBHelper(context);
         // TextView tvID = view.findViewById(R.id.tvID);
         TextView tvname = view.findViewById(R.id.tvname);
         TextView tvmob = view.findViewById(R.id.tvmob);
         //TextView tvemail = view.findViewById(R.id.tvemail);
         final EditText et_url = view.findViewById(R.id.et_url);
 
-        Button i_btnview_salesman = view.findViewById(R.id.i_btnview_salesman);
-        Button btnget_location = view.findViewById(R.id.btnget_location);
+        ImageButton btn_delete = view.findViewById(R.id.delete);
+        ImageButton i_btnview_salesman = view.findViewById(R.id.i_btnview_salesman);
+        ImageButton btnget_location = view.findViewById(R.id.btnget_location);
 
         final int id = cursor.getInt(cursor.getColumnIndex(SalesmanTable.Columns.SALE_ID));
         final String name = cursor.getString(cursor.getColumnIndex(SalesmanTable.Columns.NAME));
@@ -57,9 +66,9 @@ public class SalesmanAdapter extends CursorAdapter {
 
 
         //tvID.setText("Salesman ID : "+id);
-        tvmob.setText("Mobile : " + mobile);
+        tvmob.setText("" + mobile);
         //tvemail.setText("Email : "+email);
-        tvname.setText("Name : " + name);
+        tvname.setText("" + name);
 
 
         i_btnview_salesman.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +86,7 @@ public class SalesmanAdapter extends CursorAdapter {
                 // context.startActivity(new Intent(context, OTPGenerationActivity.class));
             }
         });
+
 
         btnget_location.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,5 +111,19 @@ public class SalesmanAdapter extends CursorAdapter {
             }
         });
 
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String str_id = String.valueOf(id);
+                Integer deleterows = db.DeleteSalesmanOnId(str_id);
+                if (deleterows == 0) {
+                    Toast.makeText(context, "not deleted", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(context, " Deleted >> ID :  " + str_id, Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(context, Salesman.class);
+                    context.startActivity(i);
+                }
+            }
+        });
     }
 }

@@ -1,106 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#00000000">
+    android:layout_height="wrap_content">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:baselineAligned="false"
-        android:orientation="horizontal"
-        android:padding="@dimen/marginplus2">
+        android:layout_margin="@dimen/marginplus2"
+        android:background="#ffff"
+        android:elevation="@dimen/marginplus1"
+        app:cardCornerRadius="@dimen/marginplus1">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/marginplus1"
-            android:layout_weight="2"
-            android:orientation="vertical">
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:padding="@dimen/marginplus2">
 
-            <TextView
-                android:id="@+id/tvsale_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/salesman"
-                android:textColor="@color/text"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/tvtime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/time"
-                android:textColor="@color/text"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/tvaddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLines="2"
-                android:text="@string/location"
-                android:textColor="@color/textsub"
-                android:textSize="15sp"
-
-                />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/i_btnview_order"
-                style="@android:style/Widget.DeviceDefault.Light.Button"
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="26dp"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_marginStart="@dimen/marginplus2"
-                android:layout_weight="0.3"
-                android:background="@drawable/rect2"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/i"
-                android:textAllCaps="false"
-                android:textColor="@color/textred"
-                android:textSize="20sp"
-                tools:ignore="NestedWeights" />
+                android:layout_height="match_parent"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btn_done1"
-                style="@android:style/Widget.DeviceDefault.Light.Button"
+                <TextView
+                    android:id="@+id/tv_sales_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/salesman_id"
+                    android:textColor="@color/text"
+                    android:textSize="12sp"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvsale_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/salesman"
+                    android:textColor="@color/text"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvaddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/poppins_light"
+                    android:maxLines="2"
+                    android:text="@string/location"
+                    android:textColor="@color/textsub"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="@dimen/marginplus2"
-                android:layout_weight="0.6"
-                android:background="@drawable/rect"
-                android:gravity="center"
-                android:text="@string/done"
-                android:textColor="#fff"
-                android:textSize="16sp" />
+                android:layout_weight="0.5"
+                android:orientation="vertical">
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_horizontal"
+                    android:orientation="vertical"
+                    tools:ignore="RtlHardcoded">
 
+                    <TextView
+                        android:id="@+id/tvtime"
+                        android:layout_marginEnd="@dimen/marginplus1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_light"
+                        android:paddingBottom="@dimen/marginplus1"
+                        android:text="@string/time"
+                        android:textColor="@color/text"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/i_btnview_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/marginplus1"
+                        android:background="@drawable/ic_baseline_info_24"
+                        android:contentDescription="@string/todo"
+                        tools:ignore="NestedWeights" />
+
+                    <Button
+                        android:id="@+id/btn_done1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/rect"
+                        android:elevation="@dimen/marginplus1"
+                        android:fontFamily="@font/poppins_light"
+                        android:gravity="center"
+                        android:text="@string/done"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
-
-
-    </LinearLayout>
-
-    <!--<View-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="1dp"-->
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:background="@color/textsub"-->
-    <!--android:layout_marginLeft="16dp"-->
-    <!--android:layout_marginRight="16dp"-->
-    <!--&gt;-->
-
-    <!--</View>-->
-
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>

@@ -40,7 +40,7 @@ public class ProductAdapter extends CursorAdapter {
         Log.d(TAG, "bindView: " + price);
         Log.d(TAG, "bindView: " + name);
 
-        tvprice.setText("Price : $" + price);
-        tvname.setText("Name : " + name);
+        tvprice.setText("$ " + price);
+        tvname.setText("" + name);
     }
 }

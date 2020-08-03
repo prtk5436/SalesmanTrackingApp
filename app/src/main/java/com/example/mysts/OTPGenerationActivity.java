@@ -3,8 +3,8 @@ package com.example.mysts;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import com.example.mysts.sql.DBHelper;
 import com.example.mysts.sql.OtpModel;
@@ -32,7 +33,7 @@ public class OTPGenerationActivity extends AppCompatActivity implements View.OnC
     EditText et_otp;
     Context context;
     String TAG = "TAG", cus_name = "", mobile = "";
-    int otp, cus_id, order_id;
+    int otp, cus_id, orderno = 0;
     PhoneAuthProvider.OnVerificationStateChangedCallbacks mcallback;
     String verification_code;
 
@@ -47,9 +48,8 @@ public class OTPGenerationActivity extends AppCompatActivity implements View.OnC
         context = this;
 
         Log.d(TAG, "onCreate: inside otp generation");
-        tvorderId = findViewById(R.id.tvOrderno);
         progressBar = findViewById(R.id.progbar);
-
+        tvorderId = findViewById(R.id.tvOrderno);
         et_cust_name = (TextView) findViewById(R.id.et_cust_name);
         et_mobno = (TextView) findViewById(R.id.et_mobno);
         et_otp = findViewById(R.id.et_otp);
@@ -60,11 +60,11 @@ public class OTPGenerationActivity extends AppCompatActivity implements View.OnC
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
 
-            order_id = extras.getInt("order_id");
-            cus_name = extras.getString("cus_name");
-            mobile = extras.getString("mobile");
+            orderno = extras.getInt("orderId");
+            cus_name = extras.getString("customer_name");
+            mobile = extras.getString("customer_mobile");
         }
-        tvorderId.setText("Order no." + order_id);
+        tvorderId.setText("Order no." + orderno);
         et_mobno.setText("" + mobile);
         et_cust_name.setText("Customer Name : " + cus_name);
         btn_generateOTP.setOnClickListener(this);
@@ -94,7 +94,7 @@ public class OTPGenerationActivity extends AppCompatActivity implements View.OnC
                 //super.onCodeSent(s, forceResendingToken);
                 Log.d(TAG, "onCodeSent:" + s);
                 verification_code = s;
-                Toast.makeText(context, "Code is send to number", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "OTP sent on customers mob. no.",Toast.LENGTH_SHORT).show();
             }
         };
     }
@@ -104,6 +104,7 @@ public class OTPGenerationActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_generateOTP:
+                progressBar.setVisibility(View.VISIBLE);
                 generate_otp();
                 break;
             case R.id.btn_done:
@@ -120,6 +121,7 @@ public class OTPGenerationActivity extends AppCompatActivity implements View.OnC
         PhoneAuthProvider.getInstance().verifyPhoneNumber
                 ("+91" + number, 60, TimeUnit.SECONDS, this, mcallback);
         Log.d(TAG, "number" + number);
+        progressBar.setVisibility(View.GONE);
         et_otp.setVisibility(View.VISIBLE);
         btn_done.setVisibility(View.VISIBLE);
     }
@@ -130,9 +132,10 @@ public class OTPGenerationActivity extends AppCompatActivity implements View.OnC
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            finish();
                             Intent I = new Intent(OTPGenerationActivity.this, SalesmanPanelActivity.class);
                             startActivity(I);
-                            Toast.makeText(context, "User order closed successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Task Completed..!!", Toast.LENGTH_SHORT).show();
                         }
 
                     }
@@ -174,7 +177,7 @@ public class OTPGenerationActivity extends AppCompatActivity implements View.OnC
 
     private void DeleteData() {
         DBHelper db = new DBHelper(OTPGenerationActivity.this);
-        String S_order_id = String.valueOf(order_id);
+        String S_order_id = String.valueOf(orderno);
         Integer deleterows = db.DeleteOrderOnId(S_order_id);
         if (deleterows > 0) {
             Toast.makeText(OTPGenerationActivity.this, " Deleted" + deleterows, Toast.LENGTH_SHORT).show();

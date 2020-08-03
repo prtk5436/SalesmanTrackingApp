@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Salesman Tracker</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="menu_salesman">Salesman</string>
     <string name="title_activity_SalesmanRegistration">Salesman Registration</string>
@@ -13,10 +11,7 @@
     <string name="action_logout">Log Out</string>
     <string name="view">View</string>
     <string name="sign_up">Sign-up</string>
-    <string name="for_a_new_account">  for a new account.</string>
     <string name="name">name : </string>
-    <string name="copy_amp_paste_location_url_link_shared_by_salesman"><![CDATA[copy & paste location URL link shared by salesman]]></string>
-    <string name="get_location">Get Location</string>
     <string name="new_user">NEW USER</string>
     <string name="tap_on_camera_to_add_img">tap on camera icon</string>
     <string name="company_name">Company Name</string>
@@ -25,7 +20,7 @@
     <string name="email_address">Email Address</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="new_password">New Password</string>
-    <string name="submit">S U B M I T</string>
+    <string name="submit">S u b m i t</string>
     <string name="salesman_details">Salesman Details</string>
     <string name="email">Email : </string>
     <string name="nashik">Nashik</string>
@@ -36,20 +31,14 @@
     <string name="_450">450</string>
     <string name="pratik_pawar">Pratik Pawar</string>
     <string name="salesman_tracking_app">SALESMAN TRACKING APP</string>
-    <string name="hello">hello</string>
     <string name="delete">DELETE</string>
     <string name="enter_order_id_to_delete">enter order Id to delete</string>
     <string name="Customer_mobile">mobile</string>
     <string name="address">Address :</string>
     <string name="no_data">No data found…</string>
-    <string name="salesman_id_delete">enter Salesman Id to delete</string>
     <string name="product_name">Product Name : </string>
     <string name="price">Price : </string>
     <string name="submit_product">Submit</string>
-    <string name="distributor_login">Distributor Login</string>
-    <string name="email_admin">Email</string>
-    <string name="todo">TODO</string>
-    <string name="new_user_admin">new user?</string>
     <string name="title_activity_CustomerRegistrationActivity">Add Customer</string>
     <string name="title_activity_AddOrderActivity">Add Order</string>
     <string name="title_activity_AddProductActivity">Add Product</string>
@@ -84,10 +73,7 @@
     <string name="enter_mobile">Mobile : </string>
     <string name="enter_email">Email : </string>
     <string name="enter_password">Enter Password : </string>
-    <string name="saleman_login">Salesman Login</string>
     <string name="password">Password :</string>
-    <string name="login">LOGIN</string>
-    <string name="new_id_amp_password_given_by_distributor"><![CDATA[New? ID & PASSWORD given by distributor..]]></string>
     <string name="task_list">Task List</string>
     <string name="other">Other</string>
     <string name="customer_name_">Customer Name : </string>
@@ -95,10 +81,6 @@
     <string name="_2453153425">2453153425</string>
     <string name="gk_nagar_nandgaon">gk nagar nandgaon</string>
     <string name="_5000">$5000</string>
-    <string name="i">i</string>
-    <string name="d_i_s_t_r_i_b_u_t_o_r">D I S T R I B U T O R</string>
-    <string name="s_a_l_e_s_m_a_n">S A L E S M A N</string>
-    <string name="welcome_to_salesman_tracking_app">Welcome to Salesman Tracking App</string>
     <string name="hi">Hi !</string>
     <string name="don_t_have_account">Don\'t have account ?</string>
     <string name="l_o_g_i_n">L o g i n</string>
@@ -106,9 +88,22 @@
     <string name="salesman_id_">Salesman Id</string>
     <string name="salesman">Salesman</string>
     <string name="distributor">Distributor</string>
-    <string name="email__">Email</string>
     <string name="welcome_to_trackit">Welcome to trackit ,</string>
     <string name="trackit_helps_you_to_monitor_your_orders_and_make_it_easy_to_manage">Trackit helps you to monitor your orders and make it easy to manage</string>
     <string name="please_choose_your_role_and_continue">Please choose your role and continue</string>
     <string name="c_o_n_t_i_n_u_e">C o n t i n u e</string>
+    <string name="todo">TODO</string>
+    <string name="enter_url_to_locate">Enter Url to locate</string>
+    <string name="select_order_id">Select Order ID</string>
+    <string name="customer">Customer</string>
+    <string name="orders">Orders</string>
+    <string name="products">Products</string>
+    <string name="menu_history">OrderHistory</string>
+    <string name="search">Search</string>
+    <string name="new_order">New Order</string>
+    <string name="new_product">New Product</string>
+    <string name="new_customer">New Customer</string>
+    <string name="new_salesman">New Salesman</string>
+    <string name="get_otp">GET OTP</string>
+    <string name="please_contact_to_your_distributor">*please contact to your distributor</string>
 </resources>

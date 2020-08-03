@@ -1,47 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal|center_vertical"
-    android:orientation="vertical"
-    android:padding="@dimen/marginplus4"
-    tools:context=".AddOrderActivity">
+    android:layout_height="match_parent">
 
-    <ScrollView
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="UselessParent">
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".AddOrderActivity">
+
+        <TextView
+            android:id="@+id/t1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginplus3"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/new_order"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_below="@+id/t1"
+            android:orientation="vertical"
+            android:padding="@dimen/marginplus5">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/add_order"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="40sp"
-                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/marginplus6"
                 android:minHeight="40dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/poppins_light"
                     android:gravity="center_vertical"
                     android:text="@string/select_customer"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <Spinner
                     android:id="@+id/spinner_select_customer"
@@ -64,7 +71,8 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/poppins_light"
                     android:gravity="center_vertical"
                     android:text="@string/mobile_no"
                     android:textSize="18sp" />
@@ -74,8 +82,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:fontFamily="@font/poppins_light"
                     android:gravity="center_vertical"
-                    android:text="@string/_2453153425"
+                    android:hint="@string/_2453153425"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -90,7 +99,8 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/poppins_light"
                     android:gravity="center_vertical"
                     android:text="@string/address_"
                     android:textSize="18sp" />
@@ -100,12 +110,12 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:fontFamily="@font/poppins_light"
                     android:gravity="center_vertical"
-                    android:text="@string/gk_nagar_nandgaon"
+                    android:hint="@string/gk_nagar_nandgaon"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="18sp" />
+                    android:textSize="15sp" />
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -117,10 +127,11 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="0.8"
+                    android:fontFamily="@font/poppins_light"
                     android:gravity="center_vertical"
                     android:text="@string/select_product"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <Spinner
                     android:id="@+id/spinner_select_product"
@@ -143,7 +154,8 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/poppins_light"
                     android:gravity="center_vertical"
                     android:text="@string/price"
                     android:textSize="18sp" />
@@ -153,8 +165,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:fontFamily="@font/poppins_light"
                     android:gravity="center_vertical"
-                    android:text="@string/_5000"
+                    android:hint="@string/_5000"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -170,10 +183,11 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/poppins_light"
                     android:gravity="center_vertical"
                     android:text="@string/assign_order_to"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <Spinner
                     android:id="@+id/spinner_select_salesman"
@@ -190,22 +204,50 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus3"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
+                    android:layout_weight=".8"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center_vertical"
+                    android:text="@string/salesman_id"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_sales_id"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_light"
+                    android:hint="@string/salesman_id"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marginplus3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.3"
+                    android:fontFamily="@font/poppins_light"
                     android:gravity="center_vertical"
                     android:text="@string/time"
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/ettime"
+                    android:id="@+id/et_time"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
                     android:autofillHints=""
+                    android:fontFamily="@font/poppins_light"
                     android:gravity="center_vertical"
                     android:hint="@string/time__"
                     android:inputType="numberDecimal"
@@ -217,7 +259,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/marginplus1"
-                    android:layout_weight="1.3"
+                    android:layout_weight="1"
                     android:elevation="@dimen/marginplus3"
                     android:entries="@array/Time_Slot"
                     android:gravity="center_vertical"
@@ -226,17 +268,19 @@
             </LinearLayout>
 
             <Button
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/marginplus5"
                 android:background="@color/colorPrimary"
+                android:fontFamily="@font/poppins_light"
                 android:onClick="submit_order"
-                android:text="@string/submit"
-                android:textAllCaps="false"
+                android:padding="@dimen/marginplus2"
+                android:text="@string/add_order"
                 android:textColor="@android:color/white"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+    </RelativeLayout>
+</ScrollView>

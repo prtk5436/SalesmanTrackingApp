@@ -1,80 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/marginplus2"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".AdminSignUpActivity">
+
+    <ProgressBar
+        android:id="@+id/progbar"
+        android:layout_width="@dimen/marginplus16"
+        android:layout_height="@dimen/marginplus16"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/f1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/curve" />
 
     <TextView
         android:id="@+id/heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="@dimen/marginplus2"
+        android:fontFamily="@font/poppins_light"
         android:gravity="center"
         android:text="@string/new_user"
-        android:textColor="@color/colorLightAccent"
-        android:textSize="30sp" />
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textStyle="bold" />
 
     <LinearLayout
-        android:id="@+id/camera"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:layout_below="@id/heading"
-        android:layout_marginTop="@dimen/marginplus2"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:padding="@dimen/marginplus5"
+        android:background="@drawable/rect_grayoutcircle"
+        android:gravity="center">
 
-        <android.support.v7.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/marginplus1"
-            app:cardCornerRadius="@dimen/marginplus3">
-
-            <ImageView
-                android:id="@+id/iv_pic"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="@dimen/marginplus1"
-                android:background="@drawable/ic_camera"
-                android:contentDescription="@string/todo"
-                android:scaleType="centerCrop"
-                android:tag="@string/tap_on_camera_to_add_img" />
-
-            <android.support.v4.widget.ContentLoadingProgressBar
-                android:id="@+id/progbar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="visible" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginplus1"
-                android:gravity="center"
-                android:text="@string/tap_on_camera_to_add_img"
-                android:textSize="10sp"
-                tools:ignore="SmallSp" />
-        </android.support.v7.widget.CardView>
+        <ImageView
+            android:id="@+id/iv_pic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/rect_grayoutcircle"
+            android:contentDescription="@string/todo"
+            android:background="@drawable/ic_camera"
+            android:tag="@string/tap_on_camera_to_add_img" />
     </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_newsubmit"
-        android:layout_below="@+id/camera"
-        android:padding="@dimen/marginplus2">
+        android:layout_below="@+id/f1">
 
         <LinearLayout
+            android:id="@+id/liner"
+            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/marginplus3">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus1"
+                android:fontFamily="@font/poppins_light"
                 android:text="@string/company_name"
                 android:textSize="15sp" />
 
@@ -82,31 +77,41 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
+                android:background="@drawable/rect_grayoutline1"
+                android:fontFamily="@font/poppins_light"
                 android:hint="@string/optional"
                 android:inputType="text"
+                android:padding="@dimen/marginplus2"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
                 tools:ignore="LabelFor" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginplus1"
+                android:layout_marginTop="@dimen/marginplus2"
+                android:fontFamily="@font/poppins_light"
                 android:text="@string/company_address"
                 android:textSize="15sp" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rect_grayoutline1"
+                android:fontFamily="@font/poppins_light"
                 android:hint="@string/optional"
                 android:importantForAutofill="no"
                 android:inputType="text"
+                android:padding="@dimen/marginplus2"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
                 tools:ignore="LabelFor" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginplus1"
+                android:layout_marginTop="@dimen/marginplus2"
+                android:fontFamily="@font/poppins_light"
                 android:text="@string/user_name"
                 android:textSize="15sp" />
 
@@ -114,15 +119,18 @@
                 android:id="@+id/et_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rect_grayoutline1"
                 android:importantForAutofill="no"
                 android:inputType="text"
+                android:padding="@dimen/marginplus2"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
                 tools:ignore="LabelFor" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginplus1"
+                android:layout_marginTop="@dimen/marginplus2"
                 android:text="@string/email_address"
                 android:textSize="15sp" />
 
@@ -130,15 +138,19 @@
                 android:id="@+id/etemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rect_grayoutline1"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
+                android:padding="@dimen/marginplus2"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
                 tools:ignore="LabelFor" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus2"
+                android:fontFamily="@font/poppins_light"
                 android:text="@string/new_password"
                 android:textSize="15sp" />
 
@@ -146,15 +158,19 @@
                 android:id="@+id/etpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rect_grayoutline1"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
+                android:padding="@dimen/marginplus2"
                 android:textColor="@color/colorLightAccent"
+                android:textSize="18sp"
                 tools:ignore="LabelFor" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marginplus2"
+                android:fontFamily="@font/poppins_light"
                 android:text="@string/confirm_password"
                 android:textSize="15sp" />
 
@@ -162,23 +178,28 @@
                 android:id="@+id/etCpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/marginplus1"
+                android:layout_marginBottom="@dimen/marginplus4"
                 android:autofillHints=""
+                android:background="@drawable/rect_grayoutline1"
                 android:inputType="textPassword"
+                android:padding="@dimen/marginplus2"
                 android:textColor="@color/colorLightAccent"
+                android:textSize="18sp"
                 tools:ignore="LabelFor" />
+
+            <Button
+                android:id="@+id/btn_newsubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/marginplus2"
+                android:background="@drawable/buttonstylepink"
+                android:elevation="@dimen/marginplus1"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/submit"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/btn_newsubmit"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/marginplus2"
-        android:background="@color/colorPrimary"
-        android:text="@string/submit"
-        android:textColor="#ffffff"
-        android:textSize="20sp" />
 </RelativeLayout>

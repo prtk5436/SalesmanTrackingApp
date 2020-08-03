@@ -1,26 +1,30 @@
 package com.example.mysts;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
+import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.navigation.NavigationView;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.mysts.adapter.CustomerAdapter;
+import com.example.mysts.design.MBottomBar;
 import com.example.mysts.sql.CustomerModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -34,31 +38,18 @@ public class Customer extends AppCompatActivity implements NavigationView.OnNavi
     FirebaseAuth mAuth;
     FirebaseUser currentUser;
 
+    MBottomBar mBottomBar;
+    private boolean isOpenMenu2 = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer);
-        Toolbar toolbar = findViewById(R.id.toolbar);
         TextView data = findViewById(R.id.tvDATA);
         auth = FirebaseAuth.getInstance();
-        setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab_addCustomer);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Customer.this, CustomerRegistrationActivity.class);
-                startActivity(i);
+        auth = FirebaseAuth.getInstance();  mBottomBar = new MBottomBar(findViewById(R.id.home_bottom_bar));
+        setFabClick();
+        setBarItemClick();
 
-            }
-        });
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
-        context = this;
 
 
         Log.d(TAG, "onCreate:ShowCustomerList_Activity ");
@@ -88,31 +79,84 @@ public class Customer extends AppCompatActivity implements NavigationView.OnNavi
             super.onBackPressed();
         }
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.admin, menu);
-        return true;
+    private void setFabClick() {
+        mBottomBar.getFab().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isOpenMenu2 = !isOpenMenu2;
+                changeBarMenu();
+            }
+        });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_refresh) {
-            Intent i = new Intent(Customer.this, Customer.class);
-            startActivity(i);
-
-            return true;
+    private void changeBarMenu() {
+        if (isOpenMenu2) {
+            mBottomBar.getBottomBar().setNavigationIcon(null);
+            mBottomBar.getBottomBar().setFabAlignmentMode(BottomAppBar.FAB_ALIGNMENT_MODE_END);
+            mBottomBar.getBottomBar().replaceMenu(R.menu.bottom_bar_menu_2);
+            mBottomBar.fabAnimation(isOpenMenu2);
+        } else {
+            mBottomBar.getBottomBar().setNavigationIcon(R.drawable.ic_menu);
+            mBottomBar.getBottomBar().setFabAlignmentMode(BottomAppBar.FAB_ALIGNMENT_MODE_CENTER);
+            mBottomBar.getBottomBar().replaceMenu(R.menu.bottom_bar_menu);
+            mBottomBar.fabAnimation(isOpenMenu2);
         }
-
-        return super.onOptionsItemSelected(item);
     }
+
+    private void setBarItemClick() {
+        mBottomBar.getBottomBar().setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+
+                    case R.id.bar_favorite:
+                        Toast.makeText(Customer.this, "Bar Favorite Click", Toast.LENGTH_LONG).show();
+                        break;
+                    case R.id.bar_add_sale:
+                        finish();
+                        Intent i = new Intent(Customer.this, SalesmanRegistrationActivity.class);
+                        startActivity(i);
+                        break;
+                    case R.id.bar_add_prod:
+                        finish();
+                        Intent i2 = new Intent(Customer.this, AddProductActivity.class);
+                        startActivity(i2);break;
+                    case R.id.bar_add_cust:
+                        finish();
+                        Intent i3 = new Intent(Customer.this, CustomerRegistrationActivity.class);
+                        startActivity(i3);break;
+                    case R.id.bar_order:
+
+                        finish();
+                        Intent i4 = new Intent(Customer.this, AddOrderActivity.class);
+                        startActivity(i4);Toast.makeText(Customer.this, "Bar Shopping Click", Toast.LENGTH_LONG).show();
+                        break;
+                    case R.id.bar_more:
+                        Toast.makeText(Customer.this, "Bar More Click", Toast.LENGTH_LONG).show();
+                        break;
+                }
+
+                return false;
+            }
+        });/*
+        final DrawerLayout navDrawer = findViewById(R.id.drawer_layout);*/
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        mBottomBar.getBottomBar().setNavigationOnClickListener(new View.OnClickListener() {
+            @SuppressLint("WrongConstant")
+            @Override
+            public void onClick(View v) {
+                final DrawerLayout navDrawer = findViewById(R.id.drawer_layout);
+                if (!navDrawer.isDrawerOpen(GravityCompat.START))
+                    navDrawer.openDrawer(Gravity.START);
+                else navDrawer.closeDrawer(Gravity.END);
+            }
+
+        });
+        navigationView.setNavigationItemSelectedListener(this);
+        context = this;
+    }
+
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -159,12 +203,12 @@ public class Customer extends AppCompatActivity implements NavigationView.OnNavi
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         View headerview = navigationView.getHeaderView(0);
-        //   TextView navUserName = headerview.findViewById(R.id.nav_username);
+        TextView navUserName = headerview.findViewById(R.id.nav_username);
         TextView navEmail = headerview.findViewById(R.id.nav_email);
         ImageView navProfileDP = headerview.findViewById(R.id.nav_iv_dp);
 
         navEmail.setText(currentUser.getEmail());
-        //navUserName.setText(currentUser.getDisplayName());
+        navUserName.setText(currentUser.getDisplayName());
 
         Glide.with(this).load(currentUser.getPhotoUrl()).into(navProfileDP);
     }

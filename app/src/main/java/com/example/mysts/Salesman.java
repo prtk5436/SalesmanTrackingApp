@@ -1,35 +1,39 @@
 package com.example.mysts;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.bumptech.glide.Glide;
 import com.example.mysts.adapter.SalesmanAdapter;
+import com.example.mysts.design.MBottomBar;
 import com.example.mysts.sql.DBHelper;
 import com.example.mysts.sql.SalesmanModel;
+import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Salesman extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Salesman extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
     FirebaseAuth mAuth;
     FirebaseUser currentUser;
     Context context;
@@ -38,38 +42,32 @@ public class Salesman extends AppCompatActivity implements NavigationView.OnNavi
     String TAG = "TAG";
     TextView data;
     TextView newUser;
-    Button btn_delete;
+    ImageButton menu;
     EditText id;
     DBHelper db;
+
+    MBottomBar mBottomBar;
+    private boolean isOpenMenu2 = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_salesman);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-
+        setContentView(R.layout.activity_salesman);/*
+        menu = findViewById(R.id.menu);*/
+        mBottomBar = new MBottomBar(findViewById(R.id.home_bottom_bar));
+        setFabClick();
+        setBarItemClick();
         db = new DBHelper(this);
         id = findViewById(R.id.et_id);
-        btn_delete = findViewById(R.id.btn_delete);
         data = findViewById(R.id.tvDATA);
-        FloatingActionButton fab = findViewById(R.id.fab_addSalesman);
+     /*   FloatingActionButton fab = findViewById(R.id.fab_addSalesman);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(Salesman.this, SalesmanRegistrationActivity.class);
                 startActivity(i);
             }
-        });
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
-        context = this;
+        });*/
 
         newUser = findViewById(R.id.tv_newuser);
         Log.d(TAG, "onCreate:ShowSalesmanList_Activity ");
@@ -85,27 +83,6 @@ public class Salesman extends AppCompatActivity implements NavigationView.OnNavi
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
         UpdateNavHeader();
-
-
-        DeleteData();
-    }
-
-    private void DeleteData() {
-
-        btn_delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Integer deleterows = db.DeleteSalesmanOnId(id.getText().toString());
-                if (deleterows == 0) {
-                    Toast.makeText(Salesman.this, "not deleted", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(Salesman.this, " Deleted >> ID :  " + id.getText().toString(), Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(Salesman.this, Salesman.class);
-                    startActivity(i);
-                }
-            }
-        });
-
     }
 
     @Override
@@ -136,28 +113,82 @@ public class Salesman extends AppCompatActivity implements NavigationView.OnNavi
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.admin, menu);
-        return true;
+
+    private void setFabClick() {
+        mBottomBar.getFab().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isOpenMenu2 = !isOpenMenu2;
+                changeBarMenu();
+            }
+        });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_refresh) {
-            Intent i = new Intent(Salesman.this, Salesman.class);
-            startActivity(i);
-            return true;
+    private void changeBarMenu() {
+        if (isOpenMenu2) {
+            mBottomBar.getBottomBar().setNavigationIcon(null);
+            mBottomBar.getBottomBar().setFabAlignmentMode(BottomAppBar.FAB_ALIGNMENT_MODE_END);
+            mBottomBar.getBottomBar().replaceMenu(R.menu.bottom_bar_menu_2);
+            mBottomBar.fabAnimation(isOpenMenu2);
+        } else {
+            mBottomBar.getBottomBar().setNavigationIcon(R.drawable.ic_menu);
+            mBottomBar.getBottomBar().setFabAlignmentMode(BottomAppBar.FAB_ALIGNMENT_MODE_CENTER);
+            mBottomBar.getBottomBar().replaceMenu(R.menu.bottom_bar_menu);
+            mBottomBar.fabAnimation(isOpenMenu2);
         }
+    }
 
-        return super.onOptionsItemSelected(item);
+    private void setBarItemClick() {
+        mBottomBar.getBottomBar().setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+
+                    case R.id.bar_favorite:
+                        Toast.makeText(Salesman.this, "Bar Favorite Click", Toast.LENGTH_LONG).show();
+                        break;
+                    case R.id.bar_add_sale:
+                        finish();
+                        Intent i = new Intent(Salesman.this, SalesmanRegistrationActivity.class);
+                        startActivity(i);
+                        break;
+                    case R.id.bar_add_prod:
+                        finish();
+                        Intent i2 = new Intent(Salesman.this, AddProductActivity.class);
+                        startActivity(i2);break;
+                    case R.id.bar_add_cust:
+                        finish();
+                        Intent i3 = new Intent(Salesman.this, CustomerRegistrationActivity.class);
+                        startActivity(i3);break;
+                    case R.id.bar_order:
+
+                        finish();
+                        Intent i4 = new Intent(Salesman.this, AddOrderActivity.class);
+                        startActivity(i4);Toast.makeText(Salesman.this, "Bar Shopping Click", Toast.LENGTH_LONG).show();
+                        break;
+                    case R.id.bar_more:
+                        Toast.makeText(Salesman.this, "Bar More Click", Toast.LENGTH_LONG).show();
+                        break;
+                }
+
+                return false;
+            }
+        });/*
+        final DrawerLayout navDrawer = findViewById(R.id.drawer_layout);*/
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        mBottomBar.getBottomBar().setNavigationOnClickListener(new View.OnClickListener() {
+            @SuppressLint("WrongConstant")
+            @Override
+            public void onClick(View v) {
+                final DrawerLayout navDrawer = findViewById(R.id.drawer_layout);
+                if (!navDrawer.isDrawerOpen(GravityCompat.START))
+                    navDrawer.openDrawer(Gravity.START);
+                else navDrawer.closeDrawer(Gravity.END);
+            }
+
+        });
+        navigationView.setNavigationItemSelectedListener(this);
+        context = this;
     }
 
     @Override
@@ -200,16 +231,17 @@ public class Salesman extends AppCompatActivity implements NavigationView.OnNavi
         return true;
     }
 
+
     public void UpdateNavHeader() {
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         View headerview = navigationView.getHeaderView(0);
-        //   TextView navUserName = headerview.findViewById(R.id.nav_username);
+        TextView navUserName = headerview.findViewById(R.id.nav_username);
         TextView navEmail = headerview.findViewById(R.id.nav_email);
         ImageView navProfileDP = headerview.findViewById(R.id.nav_iv_dp);
 
         navEmail.setText(currentUser.getEmail());
-        ///navUserName.setText(currentUser.getDisplayName());
+        navUserName.setText(currentUser.getDisplayName());
 
         Glide.with(this).load(currentUser.getPhotoUrl()).into(navProfileDP);
     }

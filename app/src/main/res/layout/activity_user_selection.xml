@@ -3,10 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/trackit"
     android:orientation="vertical"
-    android:padding="@dimen/marginplus4"
     tools:context=".UserSelectionActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/marginplus1"
+        android:background="@drawable/trackit"
+        android:padding="@dimen/marginplus5" />
 
     <TextView
         android:id="@+id/t1"
@@ -14,33 +20,36 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginplus12"
         android:fontFamily="@font/poppins_light"
+        android:layout_marginStart="@dimen/marginplus5"
         android:text="@string/hi"
         android:textColor="#0A0202"
-        android:textSize="40sp" />
+        android:textSize="35sp"
+        tools:ignore="RelativeOverlap,RtlSymmetry" />
 
     <TextView
         android:id="@+id/t2"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/t1"
-        android:layout_marginTop="@dimen/marginplus2"
         android:fontFamily="@font/poppins_light"
+        android:layout_marginStart="@dimen/marginplus5"
         android:text="@string/welcome_to_trackit"
         android:textColor="#0A0202"
-        android:textSize="35sp" />
+        android:textSize="30sp"
+        tools:ignore="RtlSymmetry" />
 
     <TextView
         android:id="@+id/t3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/t2"
-        android:layout_marginTop="@dimen/marginplus2"
         android:fontFamily="@font/poppins_light"
-        android:lineSpacingExtra="@dimen/marginplus1"
+        android:layout_marginStart="@dimen/marginplus5"
+        android:paddingEnd="@dimen/marginplus4"
         android:text="@string/trackit_helps_you_to_monitor_your_orders_and_make_it_easy_to_manage"
         android:textColor="@color/text"
-        android:textSize="18sp" />
+        android:textSize="15sp"
+        tools:ignore="RtlSymmetry" />
 
     <TextView
         android:id="@+id/t4"
@@ -48,12 +57,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/t3"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="@dimen/marginplus3"
-        android:layout_marginTop="@dimen/marginplus5"
+        android:layout_marginStart="@dimen/marginplus6"
+        android:layout_marginTop="@dimen/marginplus3"
         android:fontFamily="@font/poppins_light"
         android:text="@string/please_choose_your_role_and_continue"
         android:textColor="@color/text"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -61,15 +70,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/t4"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="@dimen/marginplus5"
+        android:layout_marginTop="@dimen/marginplus3"
         android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/t5"
-            android:layout_marginTop="@dimen/marginplus1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginplus1"
             android:orientation="horizontal">
 
             <Button
@@ -80,51 +88,43 @@
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
                 android:padding="@dimen/marginplus2"
-                android:paddingStart="@dimen/marginplus3"
                 android:text="@string/distributor"
                 android:textAllCaps="false"
                 android:textColor="@color/text"
                 android:textSize="20sp"
+                android:textStyle="bold"
                 tools:ignore="ButtonStyle,RtlSymmetry" />
 
             <Button
                 android:id="@+id/btn_salesman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/marginplus3"
+                android:layout_marginStart="@dimen/marginplus5"
                 android:background="@drawable/rect_outlinegrey"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
                 android:padding="@dimen/marginplus2"
-                android:paddingStart="@dimen/marginplus3"
-                android:paddingEnd="@dimen/marginplus3"
                 android:text="@string/salesman"
                 android:textAllCaps="false"
                 android:textColor="@color/text"
                 android:textSize="20sp"
+                android:textStyle="bold"
                 tools:ignore="ButtonStyle,RtlSymmetry" />
         </LinearLayout>
-
-        <LinearLayout
+        <Button
+            android:id="@+id/btn_continue"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/btn_continue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/marginplus4"
-                android:layout_marginBottom="@dimen/marginplus3"
-                android:background="@drawable/buttonstylepink"
-                android:elevation="@dimen/marginplus10"
-                android:fontFamily="@font/poppins_light"
-                android:text="@string/c_o_n_t_i_n_u_e"
-                android:textAllCaps="false"
-                android:textColor="#fff"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/marginplus5"
+            android:layout_marginBottom="@dimen/marginplus5"
+            android:background="@drawable/buttonstylepink"
+            android:elevation="@dimen/marginplus2"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/c_o_n_t_i_n_u_e"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </RelativeLayout>

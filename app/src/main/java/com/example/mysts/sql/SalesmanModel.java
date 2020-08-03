@@ -115,6 +115,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.example.mysts.sql.tables.CustomerTable;
 import com.example.mysts.sql.tables.SalesmanTable;
 
 import java.util.ArrayList;
@@ -182,7 +183,7 @@ public class SalesmanModel {
         // returning lables
         return labels;
     }
-
+/*
     public Cursor getSalesmanId(String salename) {
         Log.d(TAG, "getSalesmanId: inside method");
         String name = "name";
@@ -196,8 +197,25 @@ public class SalesmanModel {
             } while (cursor.moveToNext());
         }
         return cursor;
-    }
+    }*/
 
+    public Cursor getSalesmanDetails(String salename) {
+        Log.d(TAG, "getCustomerDetails: inside method");
+        String[] columns = {"name", "mobile", "salesmanId"};
+        Cursor cursor = db.query(SalesmanTable.TABLE_NAME, columns, "name=?", new String[]{salename}, null, null, null);
+        if (cursor.moveToFirst()) {
+            do {
+                //   String address = cursor.getString(cursor.getColumnIndex("address"));
+                //    String mobile = cursor.getString(cursor.getColumnIndex("mobile"));
+                int salesmanId = cursor.getInt(cursor.getColumnIndex("salesmanId"));
+                // Log.d(TAG, "getCustomerDetails: address" + address);
+                // Log.d(TAG, "getCustomerDetails: mobile" + mobile);
+                Log.d(TAG, "getCustomerDetails: salesmanId" + salesmanId);
+
+            } while (cursor.moveToNext());
+        }
+        return cursor;
+    }
     public Cursor getSaleDetailsOnId(int sales_id) {
         Log.d(TAG, "Inside getSaleDetailsOnId: ");
         String salesmanId = "salesmanId";

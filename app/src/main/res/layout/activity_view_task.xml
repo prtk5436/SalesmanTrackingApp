@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ViewTaskActivity">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/curve" />
+
     <TextView
+        android:id="@+id/t15"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/marginplus2"
+        android:fontFamily="@font/poppins_light"
         android:gravity="center"
+        android:padding="@dimen/marginplus2"
         android:text="@string/task_list"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
         android:textSize="50sp"
         android:textStyle="bold" />
 
@@ -20,6 +27,6 @@
         android:id="@+id/lvtask_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#36FAFAFA"
-        android:dividerHeight="2dp" />
-</LinearLayout>
+        android:layout_below="@+id/t15"
+        android:dividerHeight="-1dp" />
+</RelativeLayout>

@@ -35,56 +35,51 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".SalesmanDetailsActivity" />
-        <activity android:name=".OTPGenerationActivity" />
-        <activity android:name=".ViewTaskActivity" />
-        <activity android:name=".SalesmanPanelActivity" />
-
-        <activity android:name=".OrderDetailsActivity" />
         <activity
             android:name=".AddProductActivity"
             android:label="@string/title_activity_AddProductActivity" />
-
-
         <activity
             android:name=".AddOrderActivity"
             android:label="@string/title_activity_AddOrderActivity" />
         <activity
             android:name=".CustomerRegistrationActivity"
             android:label="@string/title_activity_CustomerRegistrationActivity" />
-
         <activity
             android:name=".SalesmanRegistrationActivity"
             android:label="@string/title_activity_SalesmanRegistration" />
-
-        <activity android:name=".SalesmanLoginActivity" />
-        <activity android:name=".AdminSignUpActivity" />
-
-        <activity android:name=".DistributorLoginActivity" />
-
-        <activity android:name=".UserSelectionActivity" />
         <activity
             android:name=".Product"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="Products" />
         <activity
             android:name=".Order"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="Orders" />
         <activity
             android:name=".Customer"
-            android:theme="@style/AppTheme.NoActionBar" />
-
+            android:label="Customers" />
         <activity
             android:name=".Salesman"
+            android:label="Salesman" />
+        <activity android:name=".MyOrderDetailsActivity" />
+        <activity
+            android:name=".SalesmanLoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AdminSignUpActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DistributorLoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UserSelectionActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".SplacescreenActivity"
             android:theme="@style/AppTheme.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 

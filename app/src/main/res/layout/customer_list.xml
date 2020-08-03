@@ -1,35 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="@dimen/marginplus3">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvname"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/name"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_marginStart="@dimen/marginplus3"
+        android:layout_marginTop="@dimen/marginplus1"
+        android:layout_marginEnd="@dimen/marginplus3"
+        android:layout_marginBottom="@dimen/marginplus2"
+        android:background="#ffff"
+        android:elevation="@dimen/marginplus1"
+        app:cardCornerRadius="@dimen/marginplus1">
 
-    <TextView
-        android:id="@+id/tvmob"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/Customer_mobile"
-        android:textColor="@color/text"
-        android:textSize="18sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginplus3"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/name"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvmob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/Customer_mobile"
+                android:textColor="@color/text"
+                android:textSize="14sp" />
 
 
-    <TextView
-        android:id="@+id/tvaddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/address"
-        android:textColor="@color/text"
-        android:textSize="15sp" />
+            <TextView
+                android:id="@+id/tvaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/address"
+                android:textColor="@color/text"
+                android:textSize="12sp" />
 
 
-</LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

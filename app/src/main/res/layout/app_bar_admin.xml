@@ -1,38 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Salesman">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello" />
-
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+    <!--
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/action_bar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-    </android.support.design.widget.AppBarLayout>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:tag="@string/todo"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    <include layout="@layout/content_admin" />
+        </android.support.design.widget.AppBarLayout>-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/curve"
+        >
+        <!--
 
-    <android.support.design.widget.FloatingActionButton
+                <LinearLayout
+                    android:showDividers="end"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/marginplus10"
+                    android:padding="@dimen/marginplus3"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/menu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_menu"
+                        android:contentDescription="@string/todo" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/marginplus1"
+                        android:layout_marginStart="@dimen/marginplus2"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="@string/salesman"
+                        android:textColor="#ffff"
+                        android:textSize="35sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+                </LinearLayout>
+        -->
+
+    </FrameLayout>
+
+    <include
+        layout="@layout/content_admin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/marginplus12"
+        android:layout_marginBottom="@dimen/marginplus10"/><!--
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_addSalesman"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/ic_add_new" />
+        app:srcCompat="@drawable/ic_add_new" />-->
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

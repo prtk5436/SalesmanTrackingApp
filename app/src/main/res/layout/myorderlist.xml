@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginplus1"
+        android:layout_marginBottom="@dimen/marginplus2"
+        android:layout_marginStart="@dimen/marginplus3"
+        android:layout_marginEnd="@dimen/marginplus3"
+        android:elevation="@dimen/marginplus1"
+        android:background="#ffff"
+        app:cardCornerRadius="@dimen/marginplus1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/marginplus3">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                tools:ignore="RtlHardcoded">
+
+                <TextView
+                    android:id="@+id/tvOrder_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_no"
+                    android:textColor="@color/text"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_sales_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/salesman_id"
+                    android:textColor="@color/text"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvsalesman"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/salesman"
+                    android:textColor="@color/text"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnview_order"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|center_vertical"
+                android:layout_margin="@dimen/marginplus1"
+                android:background="@drawable/rectgreen"
+                android:gravity="center"
+                android:text="@string/view"
+                android:textColor="#fff"
+                tools:ignore="RtlHardcoded" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

@@ -329,7 +329,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -339,9 +338,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.mysts.sql.CustomerModel;
 import com.example.mysts.sql.DBHelper;
-import com.example.mysts.sql.OrderModel;
+import com.example.mysts.sql.MyOrderModel;
 import com.example.mysts.sql.ProductModel;
 import com.example.mysts.sql.SalesmanModel;
 import com.example.mysts.sql.tables.CustomerTable;
@@ -354,8 +355,8 @@ import java.util.List;
 public class AddOrderActivity extends AppCompatActivity {
     private static final String TAG = "list items: ";
     Spinner spinner_select_time, spinner_select_salesman, spinner_select_product, spinner_select_customer;
-    TextView tvproduct, tvprice, tvaddress, tvmob;
-    EditText ettime, ettime_value;
+    TextView tvsaleId, tvprice, tvaddress, tvmob;
+    EditText ettime;
     Context context;
     String product, salesman, customer, time, time_am_pm;
     Cursor order_cursor;
@@ -371,11 +372,11 @@ public class AddOrderActivity extends AppCompatActivity {
         spinner_select_product = (Spinner) findViewById(R.id.spinner_select_product);
         spinner_select_salesman = (Spinner) findViewById(R.id.spinner_select_salesman);
         spinner_select_time = (Spinner) findViewById(R.id.spinner_select_time);
+        tvsaleId = (TextView) findViewById(R.id.tv_sales_id);
         tvprice = (TextView) findViewById(R.id.tvprice);
         tvmob = (TextView) findViewById(R.id.tvmob);
         tvaddress = (TextView) findViewById(R.id.tvaddress);
-        tvproduct = (TextView) findViewById(R.id.tvproduct);
-        ettime = (EditText) findViewById(R.id.ettime);
+        ettime = (EditText) findViewById(R.id.et_time);
         //  ettime_value = (EditText) findViewById(R.id.ettime_value);
 
 
@@ -436,14 +437,12 @@ public class AddOrderActivity extends AppCompatActivity {
     }
 
     private void add_productname_ToSpinner() {
-
         DBHelper db = new DBHelper(getApplicationContext());
         List<String> lables = db.getAllProduct();
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lables);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_select_product.setAdapter(dataAdapter);
         click_product();
-
     }
 
     private void click_product() {
@@ -500,8 +499,7 @@ public class AddOrderActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 // On selecting a spinner item
                 salesman = parent.getItemAtPosition(position).toString();
-
-
+                fetch_salesman_details(salesman);
                 Log.d(TAG, "onItemSelected: salesman" + salesman);
                 Toast.makeText(parent.getContext(), "You selected: " + salesman, Toast.LENGTH_LONG).show();
             }
@@ -510,6 +508,23 @@ public class AddOrderActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+    }
+    private void fetch_salesman_details(String label) {
+
+        Log.d(TAG, "fetchdetails: item " + label);
+        String id = "", mobile = "";
+        Cursor salesman_cursor = new SalesmanModel(AddOrderActivity.this).getSalesmanDetails(label);
+        try {
+            if (salesman_cursor.moveToFirst())
+                do {
+                    Log.d(TAG, "fetch_salesman_details: inside if loop");
+                    sale_id = salesman_cursor.getInt(salesman_cursor.getColumnIndex(SalesmanTable.Columns.SALE_ID));
+                    Log.d(TAG, "fetch_salesman_details: id " + sale_id);
+                } while (salesman_cursor.moveToNext());
+            tvsaleId.setText("" + sale_id);
+        } finally {
+            salesman_cursor.close();
+        }
     }
 
     private void getTime() {
@@ -532,20 +547,8 @@ public class AddOrderActivity extends AppCompatActivity {
         Log.d(TAG, "getTime: time" + time);
     }
 
+
     public void submit_order(View view) {
-
-        order_cursor = new SalesmanModel(this).getSalesmanId(salesman);
-        try {
-            if (order_cursor.moveToFirst())
-                do {
-                    sale_id = order_cursor.getInt(order_cursor.getColumnIndex(SalesmanTable.Columns.SALE_ID));
-                    Log.d(TAG, "order_cursor: sale_id" + sale_id);
-                } while (order_cursor.moveToNext());
-            tvprice.setText("" + price);
-        } finally {
-            order_cursor.close();
-        }
-
 
         String t = ettime.getText().toString();
         Log.d(TAG, "submit_order: t : " + t);
@@ -554,36 +557,44 @@ public class AddOrderActivity extends AppCompatActivity {
         Log.d(TAG, "submit_order: finalT :" + finalT);
         Log.d(TAG, "submit_order: time_am_pm" + time_am_pm);
 
-        OrderModel model = new OrderModel(this);
-        Log.d(TAG, "submit_order: cus_id" + cus_id);
-        Log.d(TAG, "submit_order: sale_id" + sale_id);
-        Log.d(TAG, "submit_order: prdt_id " + prdt_id);
-        Log.d(TAG, "submit_order: time " + finalT);
+        spinner_select_time.setPrompt("Select Time");
+        spinner_select_salesman.setPrompt("Select Salesman");
+        spinner_select_product.setPrompt("Select Product");
+        spinner_select_customer.setPrompt("Select Customer");
 
-        int order_cnt = 0;
-        if (cus_id != 0 && sale_id != 0 && prdt_id != 0 && finalT != null) {
-            long id = (long) model.addOrder(cus_id, sale_id, prdt_id, finalT, order_cnt);
-            Log.d(TAG, "submit_order: Id  :" + id);
+        int myorder_cnt = 0;
+        String salesman_id = tvsaleId.getText().toString();
+        String salesman_name = salesman;
+        String customer_name = customer;
+        String product_name = product;
+        String customer_mobile = tvmob.getText().toString();
+        String order_time = finalT;
+        String order_location = tvaddress.getText().toString();
+        String product_price = tvprice.getText().toString();
+        MyOrderModel mymodel = new MyOrderModel(this);
+        if (!salesman_name.isEmpty() && !customer_name.isEmpty() && !product_name.isEmpty() && !customer_mobile.isEmpty()
+                && !order_time.isEmpty() && !order_location.isEmpty() && !product_price.isEmpty() && !salesman_id.isEmpty()) {
+            long id = (long) mymodel.addMyOrder(salesman_name, customer_name, customer_mobile, order_time, order_location, product_name, product_price, myorder_cnt, salesman_id);
+
             if (id != -1) {
                 Toast.makeText(this, "Order Added with id : " + id, Toast.LENGTH_LONG).show();
                 finish();
                 Intent i = new Intent(AddOrderActivity.this, Order.class);
                 startActivity(i);
+
             } else {
                 Toast.makeText(this, "Failed to add Order.", Toast.LENGTH_LONG).show();
             }
         } else {
-            Toast.makeText(context, "Do not Enter Empty Field", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Do not Enter Empty Field", Toast.LENGTH_LONG).show();
         }
-        spinner_select_time.setPrompt("Select Time");
-        spinner_select_salesman.setPrompt("Select Salesman");
-        spinner_select_product.setPrompt("Select Product");
-        spinner_select_customer.setPrompt("Select Customer");
+        tvsaleId.setText("");
         ettime.setText("");
+        tvaddress.setText("");
+        tvmob.setText("");
+        tvprice.setText("");
         tvaddress.setText("");
         tvmob.setText("");
         tvprice.setText("");
     }
 }
-
-

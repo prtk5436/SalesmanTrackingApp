@@ -3,9 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/trackit"
     android:orientation="vertical"
     tools:context=".SalesmanLoginActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/marginplus3"
+        android:background="@drawable/trackit">
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/t5"
@@ -50,112 +55,92 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/l1"
+    <EditText
+        android:id="@+id/etusername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/t5"
-        android:layout_marginStart="@dimen/marginplus8"
-        android:layout_marginTop="@dimen/marginplus8"
-        android:layout_marginEnd="@dimen/marginplus8"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/marginplus12"
+        android:layout_marginTop="@dimen/marginplus6"
         android:background="@drawable/rect_grayoutline1"
-        android:orientation="vertical"
-        android:padding="8dp">
-
-        <EditText
-            android:id="@+id/etusername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/marginplus2"
-            android:autofillHints=""
-            android:background="#00000000"
-            android:fontFamily="@font/poppins_light"
-            android:hint="@string/salesman_id_"
-            android:inputType="number"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-    </LinearLayout>
+        android:fontFamily="@font/poppins_light"
+        android:hint="@string/salesman_id_"
+        android:inputType="number"
+        android:padding="@dimen/marginplus2"
+        android:paddingStart="@dimen/marginplus3"
+        android:textColor="#009688"
+        android:textSize="20sp"
+        tools:ignore="RtlSymmetry"
+        android:autofillHints="" />
 
 
-    <LinearLayout
-        android:id="@+id/l2"
+    <EditText
+        android:id="@+id/etpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/l1"
-        android:layout_marginStart="@dimen/marginplus8"
-        android:layout_marginTop="@dimen/marginplus3"
-        android:layout_marginEnd="@dimen/marginplus8"
+        android:layout_below="@+id/etusername"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/marginplus12"
+        android:layout_marginTop="@dimen/marginplus4"
         android:background="@drawable/rect_grayoutline1"
-        android:orientation="vertical"
-        android:padding="8dp">
+        android:fontFamily="@font/poppins_light"
+        android:hint="@string/password___"
+        android:inputType="textPassword"
+        android:maxLength="10"
+        android:padding="@dimen/marginplus2"
+        android:paddingStart="@dimen/marginplus3"
+        android:textColor="#009688"
+        android:textSize="20sp"
+        tools:ignore="RtlSymmetry"
+        android:autofillHints="" />
 
-        <EditText
-            android:id="@+id/etpassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/marginplus2"
-            android:autofillHints=""
-            android:background="#00000000"
-            android:fontFamily="@font/poppins_light"
-            android:hint="@string/password___"
-            android:inputType="textPassword"
-            android:maxLength="10"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/l3"
+    <Button
+        android:id="@+id/submit_salesman"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/l2"
-        android:layout_marginStart="@dimen/marginplus10"
-        android:layout_marginEnd="@dimen/marginplus10">
+        android:layout_below="@+id/etpassword"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/marginplus20"
+        android:layout_marginTop="@dimen/marginplus6"
+        android:layout_marginBottom="@dimen/marginplus2"
+        android:background="@drawable/buttonstylepink"
+        android:elevation="@dimen/marginplus2"
+        android:fontFamily="@font/poppins_light"
+        android:text="@string/l_o_g_i_n"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/submit_salesman"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/marginplus5"
-            android:layout_marginBottom="@dimen/marginplus3"
-            android:background="@drawable/buttonstylepink"
-            android:elevation="@dimen/marginplus5"
-            android:fontFamily="@font/poppins_light"
-            android:text="@string/l_o_g_i_n"
-            android:textAllCaps="false"
-            android:textColor="#fff"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </LinearLayout>
 
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/l3"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="@dimen/marginplus4"
-        android:orientation="horizontal">
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/submit_salesman"
+        android:fontFamily="@font/poppins_light"
+        android:text="@string/don_t_have_account"
+        android:textColor="@color/text"
+        android:textSize="10sp"
+        tools:ignore="SmallSp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_light"
-            android:text="@string/don_t_have_account"
-            android:textColor="@color/text"
-            android:textSize="15sp" />
+    <TextView
+        android:layout_below="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_light"
+        android:text="@string/please_contact_to_your_distributor"
+        android:textColor="@color/text"
+        android:textSize="10sp"
+        tools:ignore="SmallSp" />
 
-        <TextView
-            android:id="@+id/tv_newuser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/marginplus1"
-            android:fontFamily="@font/poppins_light"
-            android:text="@string/sign_up"
-            android:textColor="@android:color/holo_purple"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+
 
 </RelativeLayout>
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/bar_favorite"
+        android:icon="@drawable/ic_favorite"
+        android:title="Favorite"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/bar_more"
+        android:icon="@drawable/ic_more"
+        app:showAsAction="withText"
+        android:title="TODO" />
+    <item
+        android:id="@+id/bar_help"
+        android:icon="@drawable/ic_baseline_help_24"
+        android:title="How to track Salesman?"
+        app:showAsAction="withText" />
+
+</menu>

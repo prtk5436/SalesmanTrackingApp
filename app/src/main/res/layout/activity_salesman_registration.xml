@@ -2,23 +2,24 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal|center_vertical"
-    android:fillViewport="true"
-    tools:ignore="ScrollViewCount">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/marginplus3"
-        android:gravity="center_vertical"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         tools:context=".SalesmanRegistrationActivity">
 
         <TextView
+            android:id="@+id/s1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/add_salesman"
+            android:layout_marginTop="@dimen/marginplus3"
+            android:layout_marginBottom="@dimen/marginplus3"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/new_salesman"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="40sp"
@@ -27,15 +28,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/s1"
             android:layout_gravity="center_vertical"
-            android:layout_margin="@dimen/marginplus3"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="@dimen/marginplus5">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_light"
                 android:text="@string/enter_name"
                 android:textSize="20sp" />
 
@@ -44,6 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
+                android:fontFamily="@font/poppins_light"
                 android:inputType="text"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
@@ -52,7 +54,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/marginplus4"
+                android:fontFamily="@font/poppins_light"
                 android:text="@string/enter_mobile"
                 android:textSize="20sp" />
 
@@ -61,6 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
+                android:fontFamily="@font/poppins_light"
                 android:inputType="number"
                 android:maxLength="10"
                 android:textColor="@color/colorPrimaryDark"
@@ -70,7 +74,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/marginplus4"
+                android:fontFamily="@font/poppins_light"
                 android:text="@string/enter_email"
                 android:textSize="20sp" />
 
@@ -79,7 +84,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:inputType="textEmailAddress"
+                android:fontFamily="@font/poppins_light"
+                android:inputType="textWebEmailAddress"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
                 tools:ignore="LabelFor" />
@@ -87,7 +93,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/marginplus4"
+                android:fontFamily="@font/poppins_light"
                 android:text="@string/enter_password"
                 android:textSize="20sp" />
 
@@ -96,6 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
+                android:fontFamily="@font/poppins_light"
                 android:inputType="textPassword"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
@@ -103,16 +111,18 @@
 
 
             <Button
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/marginplus6"
                 android:background="@color/colorPrimary"
+                android:fontFamily="@font/poppins_light"
                 android:onClick="add_salesman"
-                android:text="@string/submit"
-                android:textAllCaps="false"
+                android:padding="@dimen/marginplus2"
+                android:text="@string/add_salesman"
                 android:textColor="#ffffff"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 </ScrollView>

@@ -1,102 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal|center_vertical"
-    android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".CustomerRegistrationActivity">
+    android:layout_height="match_parent">
 
-    <ScrollView
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="UselessParent">
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".CustomerRegistrationActivity">
+
+
+        <TextView
+            android:id="@+id/s1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginplus3"
+            android:layout_marginBottom="@dimen/marginplus3"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/new_customer"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_below="@+id/s1"
+            android:layout_marginTop="@dimen/marginplus5"
+            android:orientation="vertical"
+            android:padding="@dimen/marginplus5">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/add_customer"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="@dimen/marginplus4"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/customer_name_"
+                android:textSize="20sp" />
 
-            <LinearLayout
+            <EditText
+                android:id="@+id/et_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="vertical">
+                android:autofillHints=""
+                android:fontFamily="@font/poppins_light"
+                android:inputType="text"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                tools:ignore="LabelFor" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/customer_name_"
-                    android:textSize="20sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marginplus4"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/mobile_no"
+                android:textSize="20sp" />
 
-                <EditText
-                    android:id="@+id/et_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:autofillHints=""
-                    android:inputType="text"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    tools:ignore="LabelFor" />
+            <EditText
+                android:id="@+id/et_mob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:fontFamily="@font/poppins_light"
+                android:inputType="number"
+                android:maxLength="10"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                tools:ignore="LabelFor" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/mobile_no"
-                    android:textSize="20sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marginplus4"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/address"
+                android:textSize="20sp" />
 
-                <EditText
-                    android:id="@+id/et_mob"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:autofillHints=""
-                    android:inputType="number"
-                    android:maxLength="10"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    tools:ignore="LabelFor" />
+            <EditText
+                android:id="@+id/et_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:fontFamily="@font/poppins_light"
+                android:inputType="text"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                tools:ignore="LabelFor" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/address"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/et_address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:autofillHints=""
-                    android:inputType="text"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    tools:ignore="LabelFor" />
-
-                <Button
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="@dimen/marginplus6"
-                    android:background="@color/colorPrimary"
-                    android:onClick="add_customer"
-                    android:text="@string/submit"
-                    android:textAllCaps="false"
-                    android:textColor="#ffffff"
-                    android:textSize="20sp" />
-            </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/marginplus6"
+                android:background="@color/colorPrimary"
+                android:fontFamily="@font/poppins_light"
+                android:onClick="add_customer"
+                android:text="@string/add_customer"
+                android:padding="@dimen/marginplus2"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+    </RelativeLayout>
+</ScrollView>

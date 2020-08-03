@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/bar_add_sale"
+        android:icon="@drawable/ic_baseline_person_add_24"
+        android:title="@string/add_salesman"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/bar_add_prod"
+        android:icon="@drawable/ic_shopping"
+        android:title="@string/add_product"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/bar_add_cust"
+        android:icon="@drawable/ic_customer_add_24"
+        android:title="@string/add_customer"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/bar_order"
+        android:icon="@drawable/ic_add_order_24"
+        android:title="@string/add_order"
+        app:showAsAction="always" />
+
+</menu>

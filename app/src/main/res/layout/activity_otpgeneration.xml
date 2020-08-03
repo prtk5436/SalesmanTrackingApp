@@ -1,108 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="@dimen/marginplus3"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".OTPGenerationActivity">
 
-    <ScrollView
+    <TextView
+        android:id="@+id/o1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="UselessParent">
+        android:layout_marginBottom="@dimen/marginplus3"
+        android:fontFamily="@font/poppins_light"
+        android:text="@string/destination"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp"
+        android:textStyle="bold" />
 
-        <LinearLayout
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/o1"
+        android:layout_marginBottom="@dimen/marginplus3"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvOrderno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginplus1"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/order_no"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/et_cust_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_margin="@dimen/marginplus1"
+            android:fontFamily="@font/poppins_light"
+            android:inputType="text"
+            android:text="@string/customer_name"
+            android:textSize="20sp"
+            tools:ignore="TextViewEdits" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"
-                android:text="@string/destination"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/et_mobno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginplus1"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/customer_mob"
+            android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/tvOrderno"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginStart="@dimen/marginplus5"
-                android:layout_weight="4"
-                android:text="@string/order_no"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="30sp" />
+        <Button
+            android:id="@+id/btn_generateOTP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/marginplus5"
+            android:background="@color/colorPrimary"
+            android:fontFamily="@font/poppins_light"
+            android:padding="@dimen/marginplus2"
+            android:text="@string/get_otp"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
 
-            <TextView
-                android:id="@+id/et_cust_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:inputType="text"
-                tools:ignore="TextViewEdits" />
+        <ProgressBar
+            android:id="@+id/progbar"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible" />
+        <EditText
+            android:id="@+id/et_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:autofillHints=""
+            android:background="@drawable/rect_grayoutline2"
+            android:fontFamily="@font/poppins_light"
+            android:hint="@string/enter_otp"
+            android:inputType="number"
+            android:padding="@dimen/marginplus1"
+            android:paddingStart="@dimen/marginplus3"
+            android:paddingEnd="@dimen/marginplus3"
+            android:textSize="20sp"
+            android:visibility="visible" />
 
-            <TextView
-                android:id="@+id/et_mobno"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
 
-            <Button
-                android:id="@+id/btn_generateOTP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="60dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/generate_otp"
-                android:textAllCaps="false"
-                android:textColor="#ffffff"
-                android:textSize="20sp"
-                android:visibility="visible" />
+        <Button
+            android:id="@+id/btn_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/marginplus5"
+            android:background="@color/colorPrimary"
+            android:fontFamily="@font/poppins_light"
+            android:padding="@dimen/marginplus2"
+            android:text="@string/done"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
 
-            <EditText
-                android:id="@+id/et_otp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="20dp"
-                android:autofillHints=""
-                android:hint="@string/enter_otp"
-                android:inputType="number"
-                android:visibility="gone" />
 
-            <Button
-                android:id="@+id/btn_done"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="60dp"
-                android:layout_marginBottom="60dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/done"
-                android:textAllCaps="false"
-                android:textColor="#ffffff"
-                android:textSize="20sp"
-                android:visibility="gone" />
+    </LinearLayout>
 
-            <android.support.v4.widget.ContentLoadingProgressBar
-                android:id="@+id/progbar"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:layout_marginTop="214dp"
-                android:visibility="gone" />
 
-        </LinearLayout>
-    </ScrollView>
-
-</LinearLayout>
+</RelativeLayout>

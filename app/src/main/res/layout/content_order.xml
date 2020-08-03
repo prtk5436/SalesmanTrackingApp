@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:elevation="@dimen/marginplus3"
         android:orientation="horizontal"
-        android:padding="@dimen/marginplus2">
+        android:padding="@dimen/marginplus3">
 
         <EditText
             android:id="@+id/et_id"
@@ -31,8 +31,9 @@
 
         <Button
             android:id="@+id/btn_delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
             android:layout_marginStart="@dimen/marginplus2"
             android:background="@drawable/redbtn"
             android:text="@string/delete"
@@ -41,20 +42,14 @@
     </LinearLayout>
 
 
-    <LinearLayout
+    <ListView
+        android:id="@+id/lvlistviewOrder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/delete"
-        android:orientation="vertical">
+        android:dividerHeight="-1dp">
 
-        <ListView
-            android:id="@+id/lvlistviewOrder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:dividerHeight="2dp">
-
-        </ListView>
-    </LinearLayout>
+    </ListView>
 
     <TextView
         android:id="@+id/tvDATA"

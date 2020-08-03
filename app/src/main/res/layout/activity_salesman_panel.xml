@@ -1,28 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#36FAFAFA"
     android:orientation="vertical"
     tools:context=".SalesmanPanelActivity">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/curve" />
     <TextView
+        android:id="@+id/t11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_light"
+        android:padding="@dimen/marginplus2"
+        android:gravity="center"
+        android:text="@string/task_list"
+        android:textColor="@color/colorWhite"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:layout_below="@+id/t11"
+        android:id="@+id/tv_sales_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/marginplus2"
         android:gravity="center"
-        android:text="@string/task_list"
-        android:textColor="@color/colorPrimary"
-        android:textSize="50sp"
-        android:textStyle="bold" />
+        android:text="@string/salesman_id"
+        android:textColor="@color/colorWhite"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        tools:ignore="SmallSp" />
+
+    <LinearLayout
+        android:id="@+id/m"
+        android:layout_below="@+id/tv_sales_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginplus1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/colorWhite"
+            android:gravity="center_vertical"
+            android:text="@string/select_order_id"
+            android:textSize="15sp" />
+
+        <Spinner
+            android:id="@+id/spinner_select_orderId"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:elevation="@dimen/marginplus3"
+            android:gravity="center_vertical"
+            android:minHeight="20dp"
+            android:textColor="@color/white"
+            android:textSize="50sp" />
+    </LinearLayout>
 
     <ListView
+        android:layout_marginTop="@dimen/marginplus3"
+        android:layout_below="@+id/m"
         android:id="@+id/lvtask_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#36FAFAFA"
-        android:dividerHeight="2dp" />
+        android:dividerHeight="-1dp" />
 
 
-</LinearLayout>
+</RelativeLayout>
