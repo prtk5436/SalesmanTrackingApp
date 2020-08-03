@@ -8,7 +8,6 @@ import android.util.Log;
 
 import com.example.mysts.sql.tables.CustomerTable;
 import com.example.mysts.sql.tables.OrderTable;
-import com.example.mysts.sql.tables.OtpTable;
 import com.example.mysts.sql.tables.ProductTable;
 import com.example.mysts.sql.tables.SalesmanTable;
 import com.example.mysts.sql.tables.TaskTable;
@@ -22,7 +21,7 @@ import java.util.List;
  */
 
 public class DBHelper extends SQLiteOpenHelper {
-    private static int version = 2;
+    private static int version = 3;
     private static String dbname = "SalesmanDB";
     String TAG = "Error Message";
 
