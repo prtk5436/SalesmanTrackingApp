@@ -2,8 +2,10 @@ package com.example.mysts;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
+
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SalesmanDetailsActivity extends AppCompatActivity {
 

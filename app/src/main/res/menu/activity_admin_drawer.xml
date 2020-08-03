@@ -21,9 +21,7 @@
             android:id="@+id/nav_product"
             android:icon="@drawable/ic_product"
             android:title="@string/menu_product" />
-
     </group>
-
 
     <item android:title="@string/other">
         <menu>

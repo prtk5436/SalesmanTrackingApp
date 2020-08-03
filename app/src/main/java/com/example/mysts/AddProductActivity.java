@@ -3,10 +3,11 @@ package com.example.mysts;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mysts.sql.ProductModel;
 
@@ -32,7 +33,7 @@ public class AddProductActivity extends AppCompatActivity {
         String name = et_name.getText().toString();
         String price = et_price.getText().toString();
         ProductModel model = new ProductModel(this);
-        if (!name.isEmpty() && !price.isEmpty()) {
+        if (!name.isEmpty() && name.length()>=3 && !price.isEmpty()) {
             long id = (long) model.addProduct(name, price, prod_cnt);
             if (id != -1) {
                 Toast.makeText(this, "New Product Added with id : " + id, Toast.LENGTH_LONG).show();
@@ -43,7 +44,7 @@ public class AddProductActivity extends AppCompatActivity {
                 Toast.makeText(this, "Failed to add New Product.", Toast.LENGTH_LONG).show();
             }
         } else {
-            Toast.makeText(this, "Do not Enter Empty Field", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "please enter valid info", Toast.LENGTH_LONG).show();
         }
         et_price.setText("");
         et_name.setText("");

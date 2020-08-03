@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.example.mysts.sql.tables.OrderTable;
+import com.example.mysts.sql.tables.SalesmanTable;
 
 public class MyOrderModel {
     SQLiteDatabase db;

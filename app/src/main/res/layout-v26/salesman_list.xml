@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginplus3"
+        android:layout_marginEnd="@dimen/marginplus3"
+        android:layout_marginTop="@dimen/marginplus1"
+        android:layout_marginBottom="@dimen/marginplus1"
+        android:background="#ffff"
+        app:cardCornerRadius="@dimen/marginplus1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:padding="@dimen/marginplus2">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/rect_grayoutcircle"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_baseline_person_outline_24"
+                    android:contentDescription="@string/todo" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marginplus3"
+                android:orientation="vertical"
+                tools:ignore="RtlSymmetry">
+
+                <ImageButton
+                    android:id="@+id/i_btnview_salesman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@drawable/ic_baseline_info_24"
+                    android:contentDescription="@string/todo"
+                    tools:ignore="RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/tvname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:hint="@string/name"
+                    android:textColor="@color/text"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:ignore="SpUsage" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_baseline_phone_24"
+                        android:contentDescription="@string/todo" />
+
+                    <TextView
+                        android:id="@+id/tvmob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="3dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:hint="@string/mobile"
+                        android:textColor="@color/text"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <ImageButton
+
+                    android:id="@+id/delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@drawable/ic_baseline_delete_24"
+                    android:contentDescription="@string/todo"
+                    tools:ignore="RtlHardcoded" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/marginplus3"
+        android:layout_marginTop="@dimen/marginplus1"
+        android:layout_marginRight="@dimen/marginplus3"
+        android:layout_marginBottom="@dimen/marginplus2"
+        android:background="#ffff"
+        app:cardCornerRadius="@dimen/marginplus1"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginplus2"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_url"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/marginplus3"
+                android:layout_weight="3"
+                android:autofillHints=""
+                android:background="@drawable/rect_grayoutline2"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center_vertical"
+                android:hint="@string/enter_url_to_locate"
+                android:inputType="textUri"
+                android:padding="@dimen/marginplus1"
+                android:paddingStart="@dimen/marginplus2"
+                android:textSize="12sp"
+                tools:ignore="RtlSymmetry,SmallSp,TextFields" />
+
+            <ImageButton
+                android:id="@+id/btnget_location"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="0.8"
+                android:background="@drawable/rectgreen"
+                android:contentDescription="@string/todo"
+                android:elevation="@dimen/marginplus1"
+                android:padding="8dp"
+                android:src="@drawable/ic_baseline_location_on_24" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

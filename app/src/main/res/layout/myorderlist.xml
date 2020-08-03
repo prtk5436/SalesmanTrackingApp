@@ -29,8 +29,7 @@
                 android:layout_gravity="left"
                 android:layout_weight="2"
                 android:gravity="center_vertical"
-                android:orientation="vertical"
-                tools:ignore="RtlHardcoded">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tvOrder_no"

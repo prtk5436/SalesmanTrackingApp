@@ -10,7 +10,7 @@ import com.example.mysts.R;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class  MBottomBar extends AppCompatActivity {
+public class MBottomBar extends AppCompatActivity {
     private BottomAppBar bottom_bar;
     private FloatingActionButton bottom_bar_fab;
     private OvershootInterpolator overshootInterpolator;

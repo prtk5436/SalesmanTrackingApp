@@ -182,12 +182,12 @@
                 android:orientation="horizontal">
 
 
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_height="60dp"
-                        android:contentDescription="@string/todo"
-                        android:src="@drawable/arrow" />
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_height="60dp"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/arrow" />
 
 
                 <LinearLayout

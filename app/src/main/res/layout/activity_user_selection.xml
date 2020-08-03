@@ -24,7 +24,7 @@
         android:text="@string/hi"
         android:textColor="#0A0202"
         android:textSize="35sp"
-        tools:ignore="RelativeOverlap,RtlSymmetry" />
+        tools:ignore="RtlSymmetry" />
 
     <TextView
         android:id="@+id/t2"

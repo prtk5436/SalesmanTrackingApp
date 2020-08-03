@@ -3,10 +3,11 @@ package com.example.mysts;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mysts.sql.CustomerModel;
 
@@ -32,22 +33,22 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
         String mob = et_mob.getText().toString();
         String address = et_address.getText().toString();
         CustomerModel model = new CustomerModel(this);
-        if (!name.isEmpty() && !mob.isEmpty() && !address.isEmpty()) {
-            long id = model.addCustomer(name, address, mob, cust_cnt);
-            if (id != -1) {
-                Toast.makeText(this, "New Customer Added with id : " + id, Toast.LENGTH_LONG).show();
-                finish();
-                Intent i = new Intent(CustomerRegistrationActivity.this, Customer.class);
-                startActivity(i);
+        if (!name.isEmpty() && name.length() >= 3 && !address.isEmpty() && address.length() >= 3) {
+            if (mob.length() == 10) {
+                long id = model.addCustomer(name, address, mob, cust_cnt);
+                if (id != -1) {
+                    Toast.makeText(this, "New Customer Added with id : " + id, Toast.LENGTH_LONG).show();
+                    finish();
+                    Intent i = new Intent(CustomerRegistrationActivity.this, Customer.class);
+                    startActivity(i);
+                } else {
+                    Toast.makeText(this, "Failed to add New Customer.", Toast.LENGTH_LONG).show();
+                }
             } else {
-                Toast.makeText(this, "Failed to add New Customer.", Toast.LENGTH_LONG).show();
+                et_mob.setError("enter 10 digit mobile no.");
             }
         } else {
             Toast.makeText(this, "Do not Enter Empty Field", Toast.LENGTH_LONG).show();
         }
-        et_address.setText("");
-        et_mob.setText("");
-        et_name.setText("");
     }
 }
-

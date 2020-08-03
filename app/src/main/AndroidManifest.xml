@@ -3,18 +3,14 @@
     package="com.example.mysts">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" />
-
+    <!-- <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
-
 
     <application
         android:icon="@drawable/icon8"
@@ -35,6 +31,10 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
+        <activity android:name=".SalesmanDetailsActivity" />
+        <activity android:name=".OTPGenerationActivity" />
+        <activity android:name=".ViewTaskActivity" />
+        <activity android:name=".SalesmanPanelActivity" />
         <activity
             android:name=".AddProductActivity"
             android:label="@string/title_activity_AddProductActivity" />
@@ -82,5 +82,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Order">
+    tools:context=".Product">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,7 +33,7 @@
                         android:layout_marginTop="@dimen/marginplus1"
                         android:layout_marginStart="@dimen/marginplus2"
                         android:fontFamily="@font/poppins_light"
-                        android:text="@string/orders"
+                        android:text="@string/products"
                         android:textColor="#ffff"
                         android:textSize="35sp"
                         android:textStyle="bold"
@@ -42,15 +43,14 @@
     </FrameLayout>
 
     <include
-        layout="@layout/content_order"
+        layout="@layout/content_product"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/marginplus12"
         android:layout_marginBottom="@dimen/marginplus10"
-        />
+        android:layout_marginTop="@dimen/marginplus12" />
     <!--
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_addOrder"
+            android:id="@+id/fab_addProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
